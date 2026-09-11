@@ -2,23 +2,29 @@
 
 \subsection{问题分析}
 
-第一次测向后，干扰源仅知位于角域 \(\Omega_1=W_1\cap B\) 中。第二检测点若与首个检测点过近，或两条示向线近似平行，交会区域会很长；若移动过远，又会增加时间并可能超出有效接收范围。因此选址需兼顾交会角、基线长度、接收可靠性、区域边界与移动代价。
+第一次测向后，干扰源仅知位于一个截断角域中。已有有界误差方位传感器研究采用“目标位置与允许测量误差的双重最坏情形”评价传感器布设，并以测向扇形交集的直径衡量定位效果\cite{tokekar2013bearing}。本文沿用这一鲁棒评价思想，但针对单台移动测向机补充有效接收半径、目标圆边界和移动时间约束。第二检测点若与首个检测点过近，或两条示向线近似平行，交会区域会很长；若移动过远，又会增加时间并可能超出有效接收范围。因此选址需兼顾交会角、基线长度、接收可靠性、区域边界与移动代价。
 
 \subsection{第二检测点候选区域}
 
 记第一次检测点为 \(S_1\)，其示向中心射线方向为 \(\vect u_1\)。由一次测向形成的源位置可行域为
 \begin{equation}
-  \Omega_1=W_1\cap B.
+  \Omega_1=W_1\cap B\cap
+  \left\{g:20<\|g-S_1\|_2\le1500\right\}.
 \end{equation}
 第二检测点 \(S_2\) 首先应位于目标圆域内。考虑有效接收半径未知但位于 \([1000,1500]\,\mathrm{m}\)，定义可能接收域
 \begin{equation}
   \mathcal{R}_{\mathrm{poss}}
   =\left\{s\in B:\min_{g\in\Omega_1}\|s-g\|_2\le1500\right\},
 \end{equation}
-以及保守接收域
+并利用第一次检测已经成功这一事实，令
+\begin{equation}
+  \rho(g)=\max\left\{1000,\|g-S_1\|_2\right\}.
+\end{equation}
+于是保证再次接收到信号的区域为
 \begin{equation}
   \mathcal{R}_{\mathrm{safe}}
-  =\left\{s\in B:\max_{g\in\Omega_1}\|s-g\|_2\le1000\right\}.
+  =B\cap\bigcap_{g\in\Omega_1}
+  \left\{s:\|s-g\|_2\le\rho(g)\right\}.
 \end{equation}
 
 为避免基线过短，并鼓励接近垂直交会，给定基线区间 \([L_{\min},L_{\max}]\) 和允许的偏离角 \(\delta\)，候选区域可写为
@@ -50,6 +56,18 @@
   S_2^*=\arg\max_{s\in\mathcal{C}}J(s).
   \label{eq:p2-objective}
 \end{equation}
+
+为与文献中的最坏直径准则对应，可对评分靠前的候选点进一步计算
+\begin{equation}
+  D_{\mathrm{wc}}(s)=
+  \max_{g\in\Omega_1}\max_{e_2\in[-\varepsilon,\varepsilon]}
+  \operatorname{diam}\!\left[
+  B\cap W(S_1,\theta_1)\cap
+  W\!\left(s,\arg(g-s)+e_2\right)
+  \right],
+  \label{eq:p2-worst-diameter}
+\end{equation}
+并优先取 \(D_{\mathrm{wc}}\) 较小者。式~\eqref{eq:p2-worst-diameter} 是对论文鲁棒传感器布设思想的自适应移动版本；其中的接收约束和移动代价是本文根据赛题条件所作的扩展，论文关于方形区域内固定传感器三角网格的结论不直接作为本题单次选点结论。
 
 \begin{modelalgorithm}{第二检测点选择}
   \AlgoIn{\(S_1,\theta_1,\Omega_1\) 与评分参数}
