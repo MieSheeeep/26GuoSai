@@ -1,0 +1,65 @@
+% 全文统一使用的便捷命令
+\newcommand{\placeholder}[1]{\textcolor{BrickRed}{\textbf{【待填写：#1】}}}
+\newcommand{\tableplaceholder}{\textcolor{BrickRed}{待填}}
+\newcommand{\vect}[1]{\bm{#1}}
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\degree}{^{\circ}}
+
+% 图片不存在时显示可编译的占位框。
+\newcommand{\safeimage}[3][0.78\textwidth]{%
+  \begin{figure}[H]
+    \centering
+    \IfFileExists{#2}{%
+      \includegraphics[width=#1]{#2}%
+    }{%
+      \fbox{\begin{minipage}[c][4.8cm][c]{#1}
+        \centering\small 图片占位\\[0.5em]
+        \texttt{\detokenize{#2}}\\[0.5em]
+        将图片放到上述路径后会自动替换本框。
+      \end{minipage}}%
+    }
+    \caption{#3}
+  \end{figure}
+}
+
+\newtheorem{definition}{定义}[section]
+\newtheorem{theorem}{定理}[section]
+\newtheorem{assumption}{假设}[section]
+
+% 不依赖额外算法宏包的轻量伪代码环境。
+\newcounter{modelalgorithm}
+\renewcommand{\themodelalgorithm}{\arabic{modelalgorithm}}
+\newenvironment{modelalgorithm}[1]{%
+  \refstepcounter{modelalgorithm}%
+  \par\medskip\noindent
+  \begin{minipage}{\textwidth}
+  \hrule\smallskip
+  \textbf{算法 \themodelalgorithm\quad #1}\par\smallskip\hrule\smallskip
+}{%
+  \smallskip\hrule
+  \end{minipage}\par\medskip
+}
+\newcommand{\AlgoIn}[1]{\noindent\textbf{输入：}#1\par}
+\newcommand{\AlgoOut}[1]{\noindent\textbf{输出：}#1\par}
+\newcommand{\AlgoStep}[1]{\item #1}
+
+\newcommand{\contesttitle}{无线电干扰源的快速自动定位与清除}
+\newcommand{\problemnumber}{B}
+\newcommand{\teamnumber}{\placeholder{参赛队号}}
+
+\newcommand{\contestcover}{%
+  \thispagestyle{empty}
+  \begin{center}
+    {\zihao{3}\heiti 2026 年高教社杯全国大学生数学建模竞赛\par}
+    \vspace{2.8cm}
+    {\zihao{1}\heiti \contesttitle\par}
+    \vspace{1.5cm}
+    {\zihao{3}题号：\problemnumber\par}
+    \vspace{0.8cm}
+    {\zihao{3}参赛队号：\teamnumber\par}
+    \vfill
+    {\zihao{-4}\today\par}
+  \end{center}
+  \clearpage
+}

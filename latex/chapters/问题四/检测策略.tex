@@ -1,0 +1,21 @@
+\subsection{定向源检测与覆盖补偿}
+
+将频道状态扩展为
+\[
+  z_c=(n_c^{+},\mathcal{P}_c^{+},\mathcal{P}_c^{-},\Omega_c,q_c),
+\]
+其中 \(\mathcal{P}_c^{+}\) 和 \(\mathcal{P}_c^{-}\) 分别记录有信号与无信号的检测点，\(q_c\) 为清除状态。对未知频道，不以单点无信号作排除判断；只有当检测点从多个方位围绕目标区域且覆盖距离满足要求时，才降低该频道的搜索优先级。
+
+策略在问题三基础上增加三项机制：
+\begin{enumerate}
+  \item \textbf{多方向进入：}覆盖路线包含方向差异较大的径向与环向航段；
+  \item \textbf{背面补测：}某频道首次出现后，在估计源位置的不同方位安排检测点，避免始终处于辐射背面；
+  \item \textbf{失败恢复：}接近估计位置仍无信号时，不立即放弃，而是沿安全环绕点检测并尝试进入 \(20\,\mathrm{m}\) 光学范围。
+\end{enumerate}
+
+可定义频道--网格单元的覆盖置信度
+\begin{equation}
+  Q_{c,g}=1-\prod_{p\in\mathcal{P}_{c,g}}
+  \bigl(1-\eta_d(p,g)\eta_a(p,g)\bigr),
+\end{equation}
+其中 \(\eta_d\) 表示距离可探测性，\(\eta_a\) 表示方位多样性。\placeholder{给出实际使用的置信度近似与阈值。}

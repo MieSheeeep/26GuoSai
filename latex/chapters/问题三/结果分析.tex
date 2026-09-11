@@ -1,0 +1,25 @@
+\subsection{演练与正式测试结果}
+
+评价指标为清除比例与平均定位清除时间：
+\begin{equation}
+  \rho=\frac{N_c}{N},\qquad
+  \bar T=\frac{T_{\mathrm{all}}}{N_c}.
+\end{equation}
+其中 \(N\) 为测试结束后模拟器给出的干扰源总数，\(N_c\) 为被清除干扰源个数。
+
+\begin{table}[H]
+  \centering
+  \caption{问题三演练测试统计}
+  \footnotesize
+  \begin{tabularx}{\textwidth}{c*{4}{>{\centering\arraybackslash}X}}
+    \toprule
+    演练次数 & 平均清除比例 & 平均定位清除时间/s & 最差清除比例 & 平均程序时间/s \\
+    \midrule
+    \tableplaceholder & \tableplaceholder & \tableplaceholder & \tableplaceholder & \tableplaceholder \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\input{tables/problem3_formal_tests}
+
+\placeholder{分析未清除案例、时间构成、参数稳定性及正式测试差异。}

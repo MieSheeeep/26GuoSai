@@ -1,0 +1,17 @@
+\subsection{算法设计}
+
+\begin{modelalgorithm}{全向干扰源搜索定位与清除}
+  \label{alg:p3}
+  \AlgoIn{目标圆域、频道集 \(\{1,\ldots,20\}\)、演练标定参数}
+  \AlgoOut{清除记录与完整行为日志}
+  \begin{enumerate}[leftmargin=2.5em]
+    \AlgoStep{初始化位置为原点、频道为 1，并调用 \texttt{/enter}。}
+    \AlgoStep{生成覆盖航点，初始化全部频道状态为“未知”。}
+    \AlgoStep{循环选择“可清除、待复测、继续覆盖”中优先级最高的动作。}
+    \AlgoStep{移动、换台并检测；有示向度则更新角域交，否则记录无信号。}
+    \AlgoStep{距估计源位置不超过光学阈值时，执行光学定位与清除。}
+    \AlgoStep{满足终止条件后调用 \texttt{/exit}，保存统计量与日志。}
+  \end{enumerate}
+\end{modelalgorithm}
+
+终止条件应同时包含：所有已发现源均清除、空间与频道达到预设覆盖标准、连续若干轮无新发现，以及程序剩余时间不足以完成下一安全动作。\placeholder{填写实际阈值与防死循环设置。}

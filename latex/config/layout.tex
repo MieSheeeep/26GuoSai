@@ -1,0 +1,51 @@
+% 页面与段落
+\onehalfspacing
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+\setlength{\headheight}{15pt}
+\setlist{nosep,leftmargin=2em}
+
+% 标题
+\ctexset{
+  section={format=\centering\heiti\zihao{3},beforeskip=1.4ex,afterskip=1.0ex},
+  subsection={format=\heiti\zihao{4},beforeskip=1.2ex,afterskip=0.7ex},
+  subsubsection={format=\heiti\zihao{-4},beforeskip=1.0ex,afterskip=0.5ex}
+}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
+\numberwithin{equation}{section}
+
+% 页眉页脚
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{2026 年高教社杯全国大学生数学建模竞赛 B 题}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% 图表与链接
+\captionsetup{font=small,labelsep=quad}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=NavyBlue,
+  pdfauthor={参赛队伍},
+  pdftitle={无线电干扰源的快速自动定位与清除}
+}
+
+% 代码清单
+\lstdefinestyle{modeling}{
+  language=Python,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{NavyBlue}\bfseries,
+  commentstyle=\color{OliveGreen},
+  stringstyle=\color{BrickRed},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  frame=single,
+  breaklines=true,
+  showstringspaces=false,
+  columns=fullflexible
+}
+\lstset{style=modeling}

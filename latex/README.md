@@ -1,0 +1,56 @@
+# B 题 LaTeX 论文模板
+
+本目录是“无线电干扰源的快速自动定位与清除”专用论文骨架。唯一编译入口为 `main.tex`；公共大标题和问题一至问题四分别位于 `chapters/` 下的独立文件夹。
+
+## 快速编译
+
+在本目录打开 PowerShell，依次运行：
+
+```powershell
+xelatex -interaction=nonstopmode -halt-on-error main.tex
+biber main
+xelatex -interaction=nonstopmode -halt-on-error main.tex
+xelatex -interaction=nonstopmode -halt-on-error main.tex
+```
+
+若安装了 `latexmk`，也可运行：
+
+```powershell
+latexmk -xelatex -interaction=nonstopmode main.tex
+```
+
+模板使用 `ctexart`，必须用 XeLaTeX 或 LuaLaTeX，不能用 pdfLaTeX。首次编译时 MiKTeX 可能提示安装缺失宏包，请允许安装。
+
+若系统没有 Biber，可先安装 Biber；应急情况下，可注释 `config/packages.tex` 中的 `biblatex` 和 `addbibresource` 两行，再把 `chapters/参考文献/main.tex` 改为标准 `thebibliography` 环境。正式交稿前建议恢复 Biber，以获得稳定的中文文献处理。
+
+## 目录职责
+
+- `config/`：宏包、页面格式和公共命令。官方格式变化时优先修改这里。
+- `chapters/`：论文正文；每个一级大标题一个文件夹。
+- `chapters/问题一/` 至 `chapters/问题四/`：各问进一步拆分为分析、模型或策略、算法和结果。
+- `figures/`：论文图片。模板中的图片不存在时会显示可编译的占位框。
+- `tables/`：问题三、问题四的正式测试表等共享表格。
+- `code/`：附录引用的源程序。
+- `references/`：BibLaTeX 文献数据库。
+- `tests/`：模板结构与必备内容检查。
+
+## 推荐填写顺序
+
+1. 在四个问题目录中完善模型、算法和实验结果。
+2. 将图片放入 `figures/`，文件名与 `\safeimage` 的路径一致。
+3. 填写问题三、问题四的正式测试结果表，并保留模拟器日志原文件名。
+4. 根据全文结果回写问题分析、摘要、模型评价和参考文献。
+5. 搜索 `\placeholder` 或“待填写”，清理所有占位内容。
+6. 按当年官方论文格式规范核对封面、字号、页边距、页码和提交材料。
+
+如需目录，将 `main.tex` 中的 `\showtocfalse` 改为 `\showtoctrue`。
+
+## 自动检查
+
+在项目根目录运行：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File latex/tests/check_structure.ps1
+```
+
+检查通过只表示工程结构和赛题必备栏目齐全；最终数值、图表、引用和论证仍需人工复核。

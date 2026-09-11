@@ -1,0 +1,34 @@
+\documentclass[UTF8,a4paper,12pt]{ctexart}
+
+\input{config/packages}
+\input{config/layout}
+\input{config/commands}
+
+% 改为 \showtoctrue 可显示目录；正式提交前请以当年规范为准。
+\newif\ifshowtoc
+\showtocfalse
+
+\begin{document}
+
+\contestcover
+\input{chapters/摘要/main}
+
+\ifshowtoc
+  \clearpage
+  \tableofcontents
+\fi
+
+\clearpage
+\input{chapters/问题重述/main}
+\input{chapters/问题分析/main}
+\input{chapters/模型假设/main}
+\input{chapters/符号说明/main}
+\input{chapters/问题一/main}
+\input{chapters/问题二/main}
+\input{chapters/问题三/main}
+\input{chapters/问题四/main}
+\input{chapters/模型评价与推广/main}
+\input{chapters/参考文献/main}
+\input{chapters/附录/main}
+
+\end{document}

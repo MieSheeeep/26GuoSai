@@ -1,0 +1,19 @@
+\subsection{算法设计}
+
+先求每条扇形边界直线两两交点，保留满足全部不等式及目标圆约束的点；再去重并求凸包。若存在圆边界截断，还需加入直线与圆的可行交点。最后计算多边形直径并判定覆盖性。
+
+\begin{modelalgorithm}{定位多边形直径与覆盖判定}
+  \label{alg:p1}
+  \AlgoIn{检测点与示向度 \(\{(S_i,\theta_i)\}_{i=1}^{m}\)，误差 \(\varepsilon\)}
+  \AlgoOut{顶点集 \(V\)、多边形直径 \(D\)、覆盖判定 \(q\)}
+  \begin{enumerate}[leftmargin=2.5em]
+    \AlgoStep{生成所有角域边界与目标圆约束。}
+    \AlgoStep{计算边界两两交点，并仅保留满足全部约束的候选点。}
+    \AlgoStep{对候选点去重，求逆时针凸包 \(V\)。}
+    \AlgoStep{用顶点对枚举或旋转卡壳求最远点对 \((A,B)\) 与 \(D\)。}
+    \AlgoStep{令 \(C\leftarrow(A+B)/2\)，\(r\leftarrow D/2\)。}
+    \AlgoStep{计算 \(q\leftarrow[\max_{v\in V}\|v-C\|_2\le r+\tau]\)，返回 \((V,D,q)\)。}
+  \end{enumerate}
+\end{modelalgorithm}
+
+其中 \(\tau\) 为数值容差。正式程序还应检测空集、退化线段、重复顶点和平行边界等情形。
