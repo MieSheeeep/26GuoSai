@@ -2,102 +2,262 @@
 
 \subsection{问题分析}
 
-第一次测向后，干扰源仅知位于一个截断角域中。已有有界误差方位传感器研究采用“目标位置与允许测量误差的双重最坏情形”评价传感器布设，并以测向扇形交集的直径衡量定位效果\cite{tokekar2013bearing}。本文沿用这一鲁棒评价思想，但针对单台移动测向机补充有效接收半径、目标圆边界和移动时间约束。第二检测点若与首个检测点过近，或两条示向线近似平行，交会区域会很长；若移动过远，又会增加时间并可能超出有效接收范围。因此选址需兼顾交会角、基线长度、接收可靠性、区域边界与移动代价。
+第一次测向给出了干扰源方向，却没有给出距离。若第二检测点离 \(S_1\) 太近，两次观测的基线过短；若第二点落在首次示向线附近，两条观测方向近似平行，\(1\degree\) 的角度误差会被放大为很长的定位区域；若第二点离开过远，则可能无法再次接收信号，并增加机器狗移动时间。因此，本问实质上是在首次位置不确定性下，寻找兼顾接收可靠性、交会几何和移动代价的鲁棒检测点。
 
-\subsection{第二检测点候选区域}
+已有研究用目标位置与允许测量误差的双重最坏情形评价方位传感器布设，并以测向扇形交集的直径度量定位效果\cite{tokekar2013bearing}。本文继承其有界误差和最坏情形思想，但不直接套用固定传感器的三角网格结论，而是根据题意加入未知有效接收半径、目标圆边界、光学清除距离和单台机器狗移动成本。
 
-记第一次检测点为 \(S_1\)，其示向中心射线方向为 \(\vect u_1\)。由一次测向形成的源位置可行域为
+\subsection{首次测向后的源位置可行域}
+
+目标区域记为
 \begin{equation}
-  \Omega_1=W_1\cap B\cap
+  \mathcal T=\{g\in\R^2:\|g\|_2\le1800\}.
+\end{equation}
+第一次检测点为 \(S_1\)，测得示向度为 \(\alpha\)，误差上界为 \(\varepsilon=1\degree\)。用 \(\operatorname{wrap}\) 将角度差映射到 \([-180\degree,180\degree)\)，则首次示向扇形为
+\begin{equation}
+  W_1=\left\{
+  g:\left|\operatorname{wrap}\!\left(
+  \arg(g-S_1)-\alpha
+  \right)\right|\le\varepsilon
+  \right\}.
+\end{equation}
+第一次已经获得有效示向度，说明干扰源与 \(S_1\) 的距离不超过其实际有效接收半径，而该半径至多为 \(1500\,\mathrm{m}\)。若二者距离不超过 \(20\,\mathrm{m}\)，可直接进行光学精确定位，无须第二次测向。因此，需要选择第二检测点时，源位置可行域为
+\begin{equation}
+  \boxed{
+  \Omega_1=\mathcal T\cap W_1\cap
   \left\{g:20<\|g-S_1\|_2\le1500\right\}.
-\end{equation}
-第二检测点 \(S_2\) 首先应位于目标圆域内。考虑有效接收半径未知但位于 \([1000,1500]\,\mathrm{m}\)，定义可能接收域
-\begin{equation}
-  \mathcal{R}_{\mathrm{poss}}
-  =\left\{s\in B:\min_{g\in\Omega_1}\|s-g\|_2\le1500\right\},
-\end{equation}
-并利用第一次检测已经成功这一事实，令
-\begin{equation}
-  \rho(g)=\max\left\{1000,\|g-S_1\|_2\right\}.
-\end{equation}
-于是保证再次接收到信号的区域为
-\begin{equation}
-  \mathcal{R}_{\mathrm{safe}}
-  =B\cap\bigcap_{g\in\Omega_1}
-  \left\{s:\|s-g\|_2\le\rho(g)\right\}.
+  }
+  \label{eq:p2-source-region}
 \end{equation}
 
-为避免基线过短，并鼓励接近垂直交会，给定基线区间 \([L_{\min},L_{\max}]\) 和允许的偏离角 \(\delta\)，候选区域可写为
+对任一候选方向
+\(\theta\in[\alpha-\varepsilon,\alpha+\varepsilon]\)，令
+\(\vect u=\vect u(\theta)\)。射线 \(S_1+r\vect u\) 到目标圆边界的正向距离由
+\(\|S_1+r\vect u\|_2=1800\) 得到：
 \begin{equation}
-  \mathcal{C}=\left\{s\in\mathcal{R}_{\mathrm{poss}}:
-  L_{\min}\le\|s-S_1\|_2\le L_{\max},\quad
-  |(s-S_1)^{\mathsf T}\vect u_1|
-  \le\|s-S_1\|_2\sin\delta\right\}.
-  \label{eq:candidate-region}
+  r_{\mathcal T}(\theta)=
+  -S_1^{\mathsf T}\vect u+
+  \sqrt{(S_1^{\mathsf T}\vect u)^2+
+  1800^2-\|S_1\|_2^2}.
+  \label{eq:p2-ray-circle}
 \end{equation}
-若 \(\mathcal{R}_{\mathrm{safe}}\cap\mathcal{C}\neq\varnothing\)，优先在该交集内选点；否则在 \(\mathcal{C}\) 中以接收风险作为惩罚项优化。
+故该方向的径向范围为
+\begin{equation}
+  20<r\le
+  r_{\max}(\theta)
+  =\min\{1500,r_{\mathcal T}(\theta)\}.
+\end{equation}
+这一表达式使 \(\Omega_1\) 可以直接按角度和距离确定性采样，无须引入额外几何库。
 
-\subsection{选址优化模型}
+\subsection{保证接收候选区域}
 
-对候选点 \(s\) 和可能源位置 \(g\in\Omega_1\)，记两条观测射线的锐交会角为
+记干扰源实际有效接收半径为 \(R_G\in[1000,1500]\)。若真实位置为 \(G\in\Omega_1\)，由第一次成功接收可知
+\[
+  R_G\ge\|G-S_1\|_2.
+\]
+结合 \(R_G\ge1000\)，可得到与位置 \(G\) 相容的接收半径下界
 \begin{equation}
-  \phi(s,g)=\arccos\frac{|(g-S_1)^{\mathsf T}(g-s)|}
-  {\|g-S_1\|_2\,\|g-s\|_2}.
+  \rho(G)=\max\{1000,\|G-S_1\|_2\}.
+  \label{eq:p2-compatible-radius}
 \end{equation}
-交会角接近 \(90\degree\) 时几何精度较好。定义归一化评分
+若第二检测点 \(S_2\) 对全部 \(G\in\Omega_1\) 都满足
+\(\|S_2-G\|_2\le\rho(G)\)，则不论干扰源位于首次可行域中的何处，也不论其实际接收半径取何种相容值，第二次检测都能接收到信号。因此定义
 \begin{equation}
-  J(s)=w_1\min_{g\in\Omega_1}\sin\phi(s,g)
-  +w_2\frac{\|s-S_1\|_2}{L_{\max}}
-  -w_3\frac{\|s-S_1\|_2}{5T_{\mathrm{ref}}}
-  -w_4P_{\mathrm{recv}}(s),
+  \boxed{
+  \mathcal{C}_{\mathrm{safe}}
+  =\mathcal T\cap
+  \bigcap_{G\in\Omega_1}
+  B\!\left(G,\rho(G)\right).
+  }
+  \label{eq:p2-safe-region}
 \end{equation}
-其中 \(P_{\mathrm{recv}}\) 衡量超出保守接收域的风险。最终选择
+该集合是一族闭圆盘与目标圆盘的交集，因此是凸集。为排除过短基线，设
+\(L_{\min}=100\,\mathrm{m}\)，首选候选区域为
 \begin{equation}
-  S_2^*=\arg\max_{s\in\mathcal{C}}J(s).
-  \label{eq:p2-objective}
+  \mathcal{C}_0=
+  \mathcal{C}_{\mathrm{safe}}\cap
+  \{s:\|s-S_1\|_2\ge L_{\min}\}.
+  \label{eq:p2-primary-candidates}
 \end{equation}
 
-为与文献中的最坏直径准则对应，可对评分靠前的候选点进一步计算
+在目标圆边界附近，离散网格上的 \(\mathcal{C}_0\) 可能为空。此时退化到“可能接收区”
 \begin{equation}
-  D_{\mathrm{wc}}(s)=
-  \max_{g\in\Omega_1}\max_{e_2\in[-\varepsilon,\varepsilon]}
-  \operatorname{diam}\!\left[
-  B\cap W(S_1,\theta_1)\cap
-  W\!\left(s,\arg(g-s)+e_2\right)
-  \right],
+  \mathcal{C}_{\mathrm{poss}}
+  =\mathcal T\cap
+  \bigcup_{G\in\Omega_1}B(G,1500)
+  \cap\{s:\|s-S_1\|_2\ge L_{\min}\},
+  \label{eq:p2-possible-region}
+\end{equation}
+并在目标函数中惩罚接收风险。程序始终先搜索 \(\mathcal{C}_0\)，仅当其中没有网格点时才使用 \(\mathcal{C}_{\mathrm{poss}}\)，从而区分“保证接收”和“可能接收”。
+
+\subsection{定位效果的鲁棒评价}
+
+\subsubsection{最坏交会角}
+
+对给定第二检测点 \(s\) 和可能源位置 \(g\)，两条站源向量的锐交会角为
+\begin{equation}
+  \gamma(s,g)=
+  \arccos
+  \frac{\left|(g-S_1)^{\mathsf T}(g-s)\right|}
+  {\|g-S_1\|_2\|g-s\|_2},
+  \qquad 0\le\gamma\le90\degree.
+  \label{eq:p2-crossing-angle}
+\end{equation}
+交会角越接近 \(90\degree\)，两条测向带越接近正交，定位区域通常越紧凑。定义候选点的最坏交会角
+\begin{equation}
+  \gamma_{\min}(s)=
+  \min_{g\in\Omega_1}\gamma(s,g).
+\end{equation}
+
+\subsubsection{定位误差代理}
+
+仅增大交会角并不足以保证定位精度，因为 \(1\degree\) 误差在远距离处对应更大的横向偏差。令
+\(d_1=\|g-S_1\|_2\)、\(d_2=\|g-s\|_2\)，两条测向带在目标附近的横向半宽近似为
+\(d_i\tan\varepsilon\)。据此定义一阶保守误差代理
+\begin{equation}
+  E(s,g)=
+  \frac{(d_1+d_2)\tan\varepsilon}
+  {\sin\gamma(s,g)}.
+  \label{eq:p2-error-proxy}
+\end{equation}
+当交会角趋近于零时，\(E\) 趋于无穷；当 \(s\) 与 \(g\) 的距离不超过 \(20\,\mathrm{m}\) 时，可以直接光学定位，程序将该情形的误差代理记为零。候选点的鲁棒误差指标为
+\begin{equation}
+  E_{\max}(s)=\max_{g\in\Omega_1}E(s,g).
+\end{equation}
+
+\subsubsection{接收裕量、移动代价与综合评分}
+
+候选点的最坏接收裕量定义为
+\begin{equation}
+  M(s)=\min_{g\in\Omega_1}
+  \left[\rho(g)-\|s-g\|_2\right].
+  \label{eq:p2-margin}
+\end{equation}
+其中 \(M(s)\ge0\) 等价于 \(s\in\mathcal{C}_{\mathrm{safe}}\)。再记移动距离为
+\(L(s)=\|s-S_1\|_2\)，本文采用无量纲评分
+\begin{equation}
+  \begin{aligned}
+  J(s)={}&
+  \frac{0.65}{1+E_{\max}(s)/(100\,\mathrm{m})}
+  +0.35\sin\gamma_{\min}(s)\\
+  &+0.15\operatorname{clip}
+  \left(\frac{M(s)}{1000\,\mathrm{m}},-1,1\right)
+  -0.08\frac{L(s)}{3600\,\mathrm{m}}.
+  \end{aligned}
+  \label{eq:p2-score}
+\end{equation}
+前两项决定定位质量，第三项奖励接收余量，第四项限制移动成本。候选区域是硬约束，评分只负责在同类可行点间排序，不能用较好的交会角抵消无法保证接收的问题。最终决策为
+\begin{equation}
+  S_2^*=\arg\max_{s\in\mathcal{C}_0}J(s).
+  \label{eq:p2-decision}
+\end{equation}
+第一次示向线两侧在无遮挡环境中具有近似对称的定位价值，因此程序分别返回两侧评分最高的点；若一侧受目标圆边界或实际障碍限制，可直接采用另一侧方案。
+
+\subsubsection{最坏定位直径的精确复核}
+
+式~\eqref{eq:p2-error-proxy} 是适合大规模候选筛选的一阶代理。对评分靠前的少量候选点，还可沿用文献的最坏直径思想，定义
+\begin{equation}
+  \begin{aligned}
+  D_{\mathrm{wc}}(s)
+  =\max_{g\in\Omega_1}
+  \max_{e_2\in[-\varepsilon,\varepsilon]}
+  \operatorname{diam}\bigl[
+  &\mathcal T\cap W(S_1,\alpha)\\
+  &{}\cap W(s,\arg(g-s)+e_2)
+  \bigr].
+  \end{aligned}
   \label{eq:p2-worst-diameter}
 \end{equation}
-并优先取 \(D_{\mathrm{wc}}\) 较小者。式~\eqref{eq:p2-worst-diameter} 是对论文鲁棒传感器布设思想的自适应移动版本；其中的接收约束和移动代价是本文根据赛题条件所作的扩展，论文关于方形区域内固定传感器三角网格的结论不直接作为本题单次选点结论。
+式~\eqref{eq:p2-worst-diameter} 同时考虑未知真实位置与第二次测向误差，可用于最终复核。当前程序使用 \(E_{\max}\) 完成全网格排序，尚未把 \(D_{\mathrm{wc}}\) 计入所报告的数值结果，因此本文不将代理量误写成定位区域的精确直径。
 
-\begin{modelalgorithm}{第二检测点选择}
-  \AlgoIn{\(S_1,\theta_1,\Omega_1\) 与评分参数}
-  \AlgoOut{第二检测点 \(S_2^*\)}
+\subsection{算法设计与复杂度}
+
+\begin{modelalgorithm}{保证接收优先的第二检测点选择}
+  \label{alg:p2}
+  \AlgoIn{\(S_1\)、示向度 \(\alpha\)、误差 \(\varepsilon\)、圆域与接收半径参数、网格步长 \(h\)}
+  \AlgoOut{候选模式、候选区域离散表示及示向线两侧的推荐点}
   \begin{enumerate}[leftmargin=2.5em]
-    \AlgoStep{在目标圆内生成候选网格并按式~\eqref{eq:candidate-region} 筛选。}
-    \AlgoStep{对每个候选点，在 \(\Omega_1\) 边界上采样并计算最坏交会角。}
-    \AlgoStep{计算接收风险、移动成本与综合评分 \(J\)。}
-    \AlgoStep{返回评分最大的可达候选点。}
+    \AlgoStep{在 \([\alpha-\varepsilon,\alpha+\varepsilon]\) 上确定性采样方向，并按式~\eqref{eq:p2-ray-circle} 计算各方向径向上界。}
+    \AlgoStep{在 \(20\,\mathrm{m}\) 至径向上界间采样，得到 \(\Omega_1\) 的离散点集。}
+    \AlgoStep{在目标圆域内生成间距为 \(h\) 的候选网格，并删除基线短于 \(L_{\min}\) 的点。}
+    \AlgoStep{对每个候选点遍历全部源位置样本，计算 \(M\)、\(\gamma_{\min}\)、\(E_{\max}\) 与 \(J\)。}
+    \AlgoStep{若存在 \(M\ge0\) 的点，仅保留保证接收点；否则保留可能接收点并标记退化模式。}
+    \AlgoStep{按第一次示向线的法向投影区分左右两侧，各返回一个评分最高的点。}
   \end{enumerate}
 \end{modelalgorithm}
 
-\placeholder{用演练实验确定权重与基线区间，并说明参数选择依据。}
+若源位置样本数为 \(N_\Omega\)，目标圆内候选网格点数为 \(N_C\)，则每个候选点需要遍历全部源位置样本，时间复杂度为
+\(O(N_CN_\Omega)\)，空间复杂度为 \(O(N_C+N_\Omega)\)。网格步长越小，候选边界与最优点越精细，但运行时间近似按 \(h^{-2}\) 增长。
 
-\subsection{结果与分析}
+\subsection{算例结果}
 
-\safeimage{figures/problem2_candidate_region.pdf}{第二检测点候选区域与推荐位置}
+取第一次检测点 \(S_1=(0,0)\,\mathrm{m}\)，测得示向度
+\(\alpha=0\degree\)，其中心方向为正东方向。采用 \(9\) 个角度样本、\(31\) 个径向样本和 \(100\,\mathrm{m}\) 候选网格。程序得到 \(279\) 个首次源位置样本和 \(122\) 个保证接收候选点。离散候选集的坐标包围盒为
+\[
+  x\in[100,1000],\qquad y\in[-800,800].
+\]
+该矩形只是候选点的轴对齐包围盒，并不表示其中每一点都属于保证接收区。候选区域的实际结构和网格敏感性如图所示。
+
+\safeimage[0.94\textwidth]{figures/problem2_candidate_region.pdf}{问题二保证接收候选区域、推荐点及网格敏感性}
+
+示向线两侧的推荐点为
+\begin{equation}
+  \boxed{
+  S_2^{(+)}=(700,700)\,\mathrm{m},\qquad
+  S_2^{(-)}=(700,-700)\,\mathrm{m}.
+  }
+\end{equation}
+两点在本算例中完全对称，其质量指标见表~\ref{tab:p2-result}。
 
 \begin{table}[H]
   \centering
-  \caption{第二检测点策略的参数敏感性}
-  \small
-  \begin{tabularx}{\textwidth}{c*{4}{>{\centering\arraybackslash}X}}
+  \caption{问题二默认算例的推荐点质量}
+  \label{tab:p2-result}
+  \begin{tabular}{lc}
     \toprule
-    方案 & \(L_{\min}\)/m & \(L_{\max}\)/m & \(\delta\) & 定位区域直径/m \\
+    指标 & 数值 \\
     \midrule
-    1 & \tableplaceholder & \tableplaceholder & \tableplaceholder & \tableplaceholder \\
-    2 & \tableplaceholder & \tableplaceholder & \tableplaceholder & \tableplaceholder \\
+    候选模式 & 保证接收 \\
+    移动距离 & \(989.9495\,\mathrm{m}\) \\
+    纯移动时间 & \(197.99\,\mathrm{s}\) \\
+    最坏交会角 & \(41.1147\degree\) \\
+    最坏定位误差代理 & \(68.3232\,\mathrm{m}\) \\
+    最坏接收裕量 & \(23.8377\,\mathrm{m}\) \\
+    综合评分 & \(0.597888\) \\
     \bottomrule
-  \end{tabularx}
+  \end{tabular}
 \end{table}
 
-\placeholder{比较不同候选点的交会角、移动时间和定位区域直径。}
+机器狗速度为 \(5\,\mathrm{m/s}\)，因此到达推荐点的纯移动时间约为
+\(989.9495/5=197.99\,\mathrm{s}\)；到达后进行一次测向还需 \(5\,\mathrm{s}\)，若期间切换频道则再增加 \(1\,\mathrm{s}\)。问题二的主要目标是得到稳定的第二次交会结果，因此评分保留较弱的移动惩罚，而在问题三、问题四中可根据总任务时间重新标定权重。
+
+\subsection{网格敏感性与策略解释}
+
+保持角度样本数和径向样本数不变，仅改变候选网格步长，结果如表~\ref{tab:p2-sensitivity}。网格由 \(100\,\mathrm{m}\) 细化至 \(50\,\mathrm{m}\) 后，综合评分提高约 \(0.23\%\)，最坏定位误差代理下降约 \(2.36\%\)。这说明 \(100\,\mathrm{m}\) 网格已经能够稳定识别“沿示向方向前移并向侧方偏移”的策略结构；最终制图或离线优化可采用 \(50\,\mathrm{m}\) 网格进一步细化。
+
+\begin{table}[H]
+  \centering
+  \caption{问题二候选网格的敏感性分析}
+  \label{tab:p2-sensitivity}
+  \small
+  \begin{tabular}{cccccc}
+    \toprule
+    步长/m & 单侧推荐点/m & 最坏交会角/\(\degree\) &
+    误差代理/m & 接收裕量/m & 评分 \\
+    \midrule
+    \(200\) & \((600,800)\) & \(41.5584\) & \(71.6096\) & \(11.5861\) & \(0.590467\) \\
+    \(100\) & \((700,700)\) & \(41.1147\) & \(68.3232\) & \(23.8377\) & \(0.597888\) \\
+    \(50\)  & \((750,650)\) & \(40.6668\) & \(66.7103\) & \(22.3199\) & \(0.599272\) \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+第二检测点不应机械地取在 \(S_1\) 处作出的示向垂线上。原因在于源距离未知：若只向正侧方移动，远距离源对应的交会角仍然可能很小。推荐点同时沿首次示向方向前移并向侧方偏移，使近端源、远端源和中间位置的定位质量达到折中。程序在默认算例的全部离散源位置和相容接收半径下均得到非负接收裕量，因此两推荐点不仅“可能接收”，而是具有采样意义下的最坏情形接收保证。
+
+% 可选增强图构想一：绘制“鲁棒选址性能地形图”。横纵轴为第二检测点坐标，
+% 底色使用 cividis 表示综合评分 J(s)，叠加 M(s)=0 的白色粗等值线作为保证接收区边界，
+% 再用黑色虚线给出 E_max=70 m、80 m、100 m 等值线，并用朱红色菱形标出推荐点。
+% 该图可直观看出推荐点位于安全边界、交会几何和移动距离共同形成的评分脊线上。
+%
+% 可选增强图构想二：绘制“接收安全—定位精度—移动时间 Pareto 图”。横轴为移动时间，
+% 纵轴为 E_max，点的颜色表示接收裕量 M，点大小表示最坏交会角；用深色折线连接非支配点，
+% 并标注 200 m、100 m、50 m 三种网格的最终方案，以展示权重变化时可选择的折中范围。
