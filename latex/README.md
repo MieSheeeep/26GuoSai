@@ -1,6 +1,6 @@
 # B 题 LaTeX 论文模板
 
-本目录是“无线电干扰源的快速自动定位与清除”专用论文骨架。唯一编译入口为 `main.tex`；公共大标题和问题一至问题四分别位于 `chapters/` 下的独立文件夹。
+本目录是“无线电干扰源的快速自动定位与清除”专用论文骨架。唯一编译入口为 `main.tex`；每个论文大标题在 `chapters/` 下拥有一个独立文件夹，文件夹内只保留一个 `main.tex`。
 
 ## 快速编译
 
@@ -27,9 +27,8 @@ latexmk -xelatex -interaction=nonstopmode main.tex
 
 - `config/`：宏包、页面格式和公共命令。官方格式变化时优先修改这里。
 - `chapters/`：论文正文；每个一级大标题一个文件夹。
-- `chapters/问题一/` 至 `chapters/问题四/`：各问进一步拆分为分析、模型或策略、算法和结果。
+- `chapters/问题一/main.tex` 至 `chapters/问题四/main.tex`：各问的分析、模型或策略、算法和结果集中写在同一个文件中。
 - `figures/`：论文图片。模板中的图片不存在时会显示可编译的占位框。
-- `tables/`：问题三、问题四的正式测试表等共享表格。
 - `code/`：附录引用的源程序。
 - `references/`：BibLaTeX 文献数据库。
 - `tests/`：模板结构与必备内容检查。

@@ -1,5 +1,89 @@
 \section{问题三：全向干扰源的自动搜索定位与清除}
-\input{chapters/问题三/问题分析}
-\input{chapters/问题三/搜索策略}
-\input{chapters/问题三/算法设计}
-\input{chapters/问题三/结果分析}
+
+\subsection{问题分析}
+
+全向源在有效接收半径内从任意方向可见，但频道编号、数量、位置和接收半径均未知。机器狗需要在移动成本与扫频成本之间权衡：过密扫描会浪费检测时间，过疏扫描会造成盲区。对已发现频道应优先通过异地点复测缩小定位区域，之后移动到候选点附近并执行光学定位与清除。
+
+\subsection{搜索定位策略}
+
+为每个频道维护状态
+\[
+  z_c\in\{\text{未知},\text{已发现},\text{待复测},\text{已定位},\text{已清除}\},
+  \qquad c=1,\ldots,20.
+\]
+机器狗按照覆盖目标圆的航点序列移动。在航点处扫描尚未清除的频道；一旦发现信号，记录检测点与示向度，并依据问题二策略选取复测点。两次或多次测向形成的定位区域足够小时，前往其中心或最小覆盖圆圆心。若进入 \(20\,\mathrm{m}\) 光学范围则执行精确定位和清除；若定位失败，则在定位区域边界附近补测并更新约束。
+
+建议按以下优先级选择动作：
+\begin{enumerate}
+  \item 可立即光学定位并清除的频道；
+  \item 已发现且一次补测即可显著缩小定位区域的频道；
+  \item 沿当前覆盖路线顺路可检测的未知频道；
+  \item 尚未覆盖的空间航点与频道。
+\end{enumerate}
+
+一次动作序列的虚拟时间为
+\begin{equation}
+  T_{\mathrm{all}}=
+  \sum_k\frac{\|P_{k+1}-P_k\|_2}{5}
+  +N_{\mathrm{switch}}+5N_{\mathrm{detect}}
+  +3N_{\mathrm{optical}}+2N_{\mathrm{clear}}.
+  \label{eq:time-p3}
+\end{equation}
+
+\subsection{算法设计}
+
+\begin{modelalgorithm}{全向干扰源搜索定位与清除}
+  \label{alg:p3}
+  \AlgoIn{目标圆域、频道集 \(\{1,\ldots,20\}\)、演练标定参数}
+  \AlgoOut{清除记录与完整行为日志}
+  \begin{enumerate}[leftmargin=2.5em]
+    \AlgoStep{初始化位置为原点、频道为 1，并调用 \texttt{/enter}。}
+    \AlgoStep{生成覆盖航点，初始化全部频道状态为“未知”。}
+    \AlgoStep{循环选择“可清除、待复测、继续覆盖”中优先级最高的动作。}
+    \AlgoStep{移动、换台并检测；有示向度则更新角域交，否则记录无信号。}
+    \AlgoStep{距估计源位置不超过光学阈值时，执行光学定位与清除。}
+    \AlgoStep{满足终止条件后调用 \texttt{/exit}，保存统计量与日志。}
+  \end{enumerate}
+\end{modelalgorithm}
+
+终止条件应同时包含：所有已发现源均清除、空间与频道达到预设覆盖标准、连续若干轮无新发现，以及程序剩余时间不足以完成下一安全动作。\placeholder{填写实际阈值与防死循环设置。}
+
+\subsection{演练与正式测试结果}
+
+评价指标为清除比例与平均定位清除时间：
+\begin{equation}
+  \rho=\frac{N_c}{N},\qquad
+  \bar T=\frac{T_{\mathrm{all}}}{N_c}.
+\end{equation}
+其中 \(N\) 为测试结束后模拟器给出的干扰源总数，\(N_c\) 为被清除干扰源个数。
+
+\begin{table}[H]
+  \centering
+  \caption{问题三演练测试统计}
+  \footnotesize
+  \begin{tabularx}{\textwidth}{c*{4}{>{\centering\arraybackslash}X}}
+    \toprule
+    演练次数 & 平均清除比例 & 平均定位清除时间/s & 最差清除比例 & 平均程序时间/s \\
+    \midrule
+    \tableplaceholder & \tableplaceholder & \tableplaceholder & \tableplaceholder & \tableplaceholder \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \caption{问题三正式测试结果}
+  \label{tab:p3-formal}
+  \small
+  \begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X*{3}{>{\centering\arraybackslash}X}}
+    \toprule
+    测试案例编码 & 清除干扰源个数 & 平均定位清除时间/s & 程序运行时间/s \\
+    \midrule
+    \tableplaceholder & \tableplaceholder & \tableplaceholder & \tableplaceholder \\
+    \tableplaceholder & \tableplaceholder & \tableplaceholder & \tableplaceholder \\
+    \tableplaceholder & \tableplaceholder & \tableplaceholder & \tableplaceholder \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\placeholder{分析未清除案例、时间构成、参数稳定性及正式测试差异。}

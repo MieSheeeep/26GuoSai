@@ -1,5 +1,85 @@
 \section{问题二：第二检测点选择}
-\input{chapters/问题二/问题分析}
-\input{chapters/问题二/候选区域}
-\input{chapters/问题二/优化模型}
-\input{chapters/问题二/结果分析}
+
+\subsection{问题分析}
+
+第一次测向后，干扰源仅知位于角域 \(\Omega_1=W_1\cap B\) 中。第二检测点若与首个检测点过近，或两条示向线近似平行，交会区域会很长；若移动过远，又会增加时间并可能超出有效接收范围。因此选址需兼顾交会角、基线长度、接收可靠性、区域边界与移动代价。
+
+\subsection{第二检测点候选区域}
+
+记第一次检测点为 \(S_1\)，其示向中心射线方向为 \(\vect u_1\)。由一次测向形成的源位置可行域为
+\begin{equation}
+  \Omega_1=W_1\cap B.
+\end{equation}
+第二检测点 \(S_2\) 首先应位于目标圆域内。考虑有效接收半径未知但位于 \([1000,1500]\,\mathrm{m}\)，定义可能接收域
+\begin{equation}
+  \mathcal{R}_{\mathrm{poss}}
+  =\left\{s\in B:\min_{g\in\Omega_1}\|s-g\|_2\le1500\right\},
+\end{equation}
+以及保守接收域
+\begin{equation}
+  \mathcal{R}_{\mathrm{safe}}
+  =\left\{s\in B:\max_{g\in\Omega_1}\|s-g\|_2\le1000\right\}.
+\end{equation}
+
+为避免基线过短，并鼓励接近垂直交会，给定基线区间 \([L_{\min},L_{\max}]\) 和允许的偏离角 \(\delta\)，候选区域可写为
+\begin{equation}
+  \mathcal{C}=\left\{s\in\mathcal{R}_{\mathrm{poss}}:
+  L_{\min}\le\|s-S_1\|_2\le L_{\max},\quad
+  |(s-S_1)^{\mathsf T}\vect u_1|
+  \le\|s-S_1\|_2\sin\delta\right\}.
+  \label{eq:candidate-region}
+\end{equation}
+若 \(\mathcal{R}_{\mathrm{safe}}\cap\mathcal{C}\neq\varnothing\)，优先在该交集内选点；否则在 \(\mathcal{C}\) 中以接收风险作为惩罚项优化。
+
+\subsection{选址优化模型}
+
+对候选点 \(s\) 和可能源位置 \(g\in\Omega_1\)，记两条观测射线的锐交会角为
+\begin{equation}
+  \phi(s,g)=\arccos\frac{|(g-S_1)^{\mathsf T}(g-s)|}
+  {\|g-S_1\|_2\,\|g-s\|_2}.
+\end{equation}
+交会角接近 \(90\degree\) 时几何精度较好。定义归一化评分
+\begin{equation}
+  J(s)=w_1\min_{g\in\Omega_1}\sin\phi(s,g)
+  +w_2\frac{\|s-S_1\|_2}{L_{\max}}
+  -w_3\frac{\|s-S_1\|_2}{5T_{\mathrm{ref}}}
+  -w_4P_{\mathrm{recv}}(s),
+\end{equation}
+其中 \(P_{\mathrm{recv}}\) 衡量超出保守接收域的风险。最终选择
+\begin{equation}
+  S_2^*=\arg\max_{s\in\mathcal{C}}J(s).
+  \label{eq:p2-objective}
+\end{equation}
+
+\begin{modelalgorithm}{第二检测点选择}
+  \AlgoIn{\(S_1,\theta_1,\Omega_1\) 与评分参数}
+  \AlgoOut{第二检测点 \(S_2^*\)}
+  \begin{enumerate}[leftmargin=2.5em]
+    \AlgoStep{在目标圆内生成候选网格并按式~\eqref{eq:candidate-region} 筛选。}
+    \AlgoStep{对每个候选点，在 \(\Omega_1\) 边界上采样并计算最坏交会角。}
+    \AlgoStep{计算接收风险、移动成本与综合评分 \(J\)。}
+    \AlgoStep{返回评分最大的可达候选点。}
+  \end{enumerate}
+\end{modelalgorithm}
+
+\placeholder{用演练实验确定权重与基线区间，并说明参数选择依据。}
+
+\subsection{结果与分析}
+
+\safeimage{figures/problem2_candidate_region.pdf}{第二检测点候选区域与推荐位置}
+
+\begin{table}[H]
+  \centering
+  \caption{第二检测点策略的参数敏感性}
+  \small
+  \begin{tabularx}{\textwidth}{c*{4}{>{\centering\arraybackslash}X}}
+    \toprule
+    方案 & \(L_{\min}\)/m & \(L_{\max}\)/m & \(\delta\) & 定位区域直径/m \\
+    \midrule
+    1 & \tableplaceholder & \tableplaceholder & \tableplaceholder & \tableplaceholder \\
+    2 & \tableplaceholder & \tableplaceholder & \tableplaceholder & \tableplaceholder \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\placeholder{比较不同候选点的交会角、移动时间和定位区域直径。}

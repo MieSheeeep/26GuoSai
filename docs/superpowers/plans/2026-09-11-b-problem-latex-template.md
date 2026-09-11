@@ -1,5 +1,7 @@
 # B 题 LaTeX Template Implementation Plan
 
+> **Current structure note:** Per later user feedback, each level-one chapter directory now contains only `main.tex`; the finer-grained problem files and standalone table files described below were consolidated after the initial implementation.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Build a modular, B-problem-specific Chinese mathematical-modeling paper template that compiles with XeLaTeX.
