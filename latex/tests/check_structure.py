@@ -9,7 +9,7 @@ REQUIRED_FILES = [
     "main.tex",
     "config/packages.tex", "config/layout.tex", "config/commands.tex",
     "chapters/摘要/main.tex", "chapters/问题重述/main.tex",
-    "chapters/问题分析/main.tex", "chapters/模型假设/main.tex",
+    "chapters/模型假设/main.tex",
     "chapters/符号说明/main.tex", "chapters/模型评价与推广/main.tex",
     "chapters/参考文献/main.tex", "chapters/附录/main.tex",
     "chapters/问题一/main.tex", "chapters/问题二/main.tex",
@@ -28,6 +28,21 @@ CONTENT_RULES = {
     "chapters/附录/main.tex": [r"原文件名"],
 }
 
+PROBLEM_CHAPTERS = [
+    "chapters/问题一/main.tex",
+    "chapters/问题二/main.tex",
+    "chapters/问题三/main.tex",
+    "chapters/问题四/main.tex",
+]
+
+PROBLEM_SECTION_ORDER = [
+    r"\\subsection\{问题分析\}",
+    r"\\subsection\{模型建立[^}]*\}",
+    r"\\subsection\{模型求解[^}]*\}",
+    r"\\subsection\{结果分析[^}]*\}",
+    r"\\subsection\{本问小结\}",
+]
+
 
 def main() -> int:
     failures = [path for path in REQUIRED_FILES if not (LATEX_ROOT / path).is_file()]
@@ -45,6 +60,31 @@ def main() -> int:
     packages_path = LATEX_ROOT / "config/packages.tex"
     if packages_path.is_file() and "algorithm2e" in packages_path.read_text(encoding="utf-8"):
         failures.append("config/packages.tex must not depend on unavailable algorithm2e")
+
+    main_path = LATEX_ROOT / "main.tex"
+    if main_path.is_file():
+        main_content = main_path.read_text(encoding="utf-8")
+        if "chapters/问题分析/main" in main_content:
+            failures.append("main.tex must not include a standalone problem-analysis chapter")
+
+    standalone_analysis = LATEX_ROOT / "chapters/问题分析/main.tex"
+    if standalone_analysis.exists():
+        failures.append("chapters/问题分析/main.tex must be removed after migration")
+
+    for relative_path in PROBLEM_CHAPTERS:
+        chapter_path = LATEX_ROOT / relative_path
+        if not chapter_path.is_file():
+            continue
+        chapter_content = chapter_path.read_text(encoding="utf-8")
+        positions = []
+        for pattern in PROBLEM_SECTION_ORDER:
+            match = re.search(pattern, chapter_content)
+            if match is None:
+                failures.append(f"{relative_path} lacks ordered section: {pattern}")
+                break
+            positions.append(match.start())
+        if len(positions) == len(PROBLEM_SECTION_ORDER) and positions != sorted(positions):
+            failures.append(f"{relative_path} does not follow the C023 section order")
 
     chapters_root = LATEX_ROOT / "chapters"
     if chapters_root.is_dir():
