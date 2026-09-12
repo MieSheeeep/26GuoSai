@@ -15,7 +15,7 @@ import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-from matplotlib.patches import Circle, FancyArrowPatch, Polygon, Wedge
+from matplotlib.patches import Circle, FancyArrowPatch, FancyBboxPatch, Polygon
 
 from src.problem1 import solve
 from src.problem2 import (
@@ -105,72 +105,110 @@ def _save(fig: plt.Figure, path: Path) -> None:
     plt.close(fig)
 
 
-def _draw_overview(path: Path) -> None:
-    fig, axes = plt.subplots(1, 3, figsize=(9.2, 3.15), constrained_layout=True)
+def _draw_workflow(
+    path: Path,
+    stages: list[tuple[str, str, str]],
+    colors: list[str],
+) -> None:
+    """Draw a compact left-to-right workflow shared by both problem chapters."""
 
-    ax = axes[0]
-    ax.add_patch(Wedge((0.0, 0.0), 2.3, -12, 12, color=SKY, alpha=0.35))
-    ax.plot([0.0, 2.15], [0.0, 0.0], ls="--", lw=1.3, color=BLUE)
-    ax.scatter([0.0], [0.0], marker="s", s=44, color=ORANGE, zorder=3)
-    ax.scatter([1.65], [0.12], marker="*", s=90, color=VERMILION, zorder=4)
-    ax.text(0.0, -0.28, r"$S_1$", ha="center")
-    ax.text(1.65, 0.34, r"$G$", ha="center")
-    ax.set_title("① 有界误差测向")
-    ax.text(1.05, -0.78, r"$\theta_1\pm1^\circ$", ha="center", color=GRAY)
+    fig, ax = plt.subplots(figsize=(9.2, 2.15), constrained_layout=True)
+    box_width = 1.62
+    box_height = 1.26
+    gap = 0.36
+    y0 = 0.18
 
-    ax = axes[1]
-    ax.add_patch(Wedge((-1.6, -0.8), 3.2, 17, 35, color=SKY, alpha=0.28))
-    ax.add_patch(Wedge((1.6, -0.9), 3.2, 137, 157, color=ORANGE, alpha=0.25))
-    region = Polygon(
-        [(0.02, -0.02), (0.26, 0.02), (0.34, 0.23), (0.11, 0.34), (-0.08, 0.17)],
-        closed=True,
-        facecolor=GREEN,
-        edgecolor="#006B4F",
-        alpha=0.75,
-        lw=1.2,
-    )
-    ax.add_patch(region)
-    ax.scatter([-1.6, 1.6], [-0.8, -0.9], marker="s", s=38, color=[BLUE, ORANGE])
-    ax.plot([-0.08, 0.34], [0.17, 0.23], color=VERMILION, lw=2.0)
-    ax.set_title("② 扇形交与区域直径")
-    ax.text(0.13, 0.60, r"$D(\Omega)$", ha="center", color=VERMILION)
+    for index, ((title, subtitle, symbol), color) in enumerate(
+        zip(stages, colors, strict=True)
+    ):
+        x0 = index * (box_width + gap)
+        box = FancyBboxPatch(
+            (x0, y0),
+            box_width,
+            box_height,
+            boxstyle="round,pad=0.04,rounding_size=0.08",
+            facecolor=color,
+            edgecolor=color,
+            alpha=0.16,
+            linewidth=1.4,
+        )
+        ax.add_patch(box)
+        ax.text(
+            x0 + 0.13,
+            y0 + box_height - 0.18,
+            f"步骤 {index + 1}",
+            color=color,
+            fontsize=7.5,
+            fontweight="bold",
+            va="top",
+        )
+        ax.text(
+            x0 + box_width / 2,
+            y0 + 0.78,
+            title,
+            ha="center",
+            va="center",
+            fontsize=10,
+            fontweight="bold",
+        )
+        ax.text(
+            x0 + box_width / 2,
+            y0 + 0.48,
+            symbol,
+            ha="center",
+            va="center",
+            fontsize=10,
+            color=color,
+        )
+        ax.text(
+            x0 + box_width / 2,
+            y0 + 0.18,
+            subtitle,
+            ha="center",
+            va="bottom",
+            fontsize=7.6,
+            color=GRAY,
+        )
+        if index < len(stages) - 1:
+            arrow = FancyArrowPatch(
+                (x0 + box_width + 0.04, y0 + box_height / 2),
+                (x0 + box_width + gap - 0.04, y0 + box_height / 2),
+                arrowstyle="-|>",
+                mutation_scale=12,
+                linewidth=1.25,
+                color=GRAY,
+            )
+            ax.add_patch(arrow)
 
-    ax = axes[2]
-    safe = [
-        (x, y)
-        for x in (0.4, 0.8, 1.2, 1.6)
-        for y in (-1.0, -0.5, 0.0, 0.5, 1.0)
-        if (x - 0.7) ** 2 + (0.75 * y) ** 2 < 1.2
-    ]
-    ax.scatter(
-        [p[0] for p in safe],
-        [p[1] for p in safe],
-        s=28,
-        facecolor=SKY,
-        edgecolor=BLUE,
-        lw=0.6,
-    )
-    ax.scatter([0.0], [0.0], marker="s", s=44, color=ORANGE)
-    ax.scatter([1.15], [0.78], marker="D", s=62, color=VERMILION, zorder=4)
-    ax.annotate(
-        "",
-        xy=(1.10, 0.72),
-        xytext=(0.08, 0.04),
-        arrowprops={"arrowstyle": "->", "lw": 1.5, "color": GRAY},
-    )
-    ax.set_title("③ 鲁棒选择第二检测点")
-    ax.text(1.15, 1.04, r"$S_2^\ast$", ha="center", color=VERMILION)
-
-    for ax in axes:
-        ax.set_aspect("equal")
-        ax.set_xlim(-2.35, 2.35)
-        ax.set_ylim(-1.35, 1.45)
-        ax.set_xticks([])
-        ax.set_yticks([])
-        for spine in ax.spines.values():
-            spine.set_visible(False)
-
+    total_width = len(stages) * box_width + (len(stages) - 1) * gap
+    ax.set_xlim(-0.08, total_width + 0.08)
+    ax.set_ylim(0.05, 1.58)
+    ax.axis("off")
     _save(fig, path)
+
+
+def _draw_overview(path: Path) -> None:
+    stages = [
+        ("有界测向", "示向度 ±1°", r"$\theta_i\pm\varepsilon$"),
+        ("线性化约束", "一次观测对应两个半平面", r"$H_{2i-1}\cap H_{2i}$"),
+        ("定位区域", "半平面交形成凸多边形", r"$\Omega=\cap_i W_i$"),
+        ("区域直径", "旋转卡壳确定最远点对", r"$D(\Omega)$"),
+        ("覆盖判定", "逐顶点检验直径圆", r"$\|v_i-C\|\leq r$"),
+    ]
+    _draw_workflow(path, stages, [BLUE, SKY, GREEN, ORANGE, VERMILION])
+
+
+def _draw_problem2_workflow(path: Path) -> None:
+    """Draw the five-stage robust second-point selection workflow."""
+
+    stages = [
+        ("首次不确定域", "角度与距离联合采样", r"$\Omega_1$"),
+        ("保证接收区", "先用硬约束筛选候选点", r"$\mathcal{C}_{\mathrm{safe}}$"),
+        ("交会质量", "评价最坏定位几何", r"$\gamma_{\min},\ E_{\max}$"),
+        ("代价折中", "综合接收裕量与移动距离", r"$M,\ L,\ J$"),
+        ("双侧推荐", "保留示向线两侧最优点", r"$S_2^{(+)},\ S_2^{(-)}$"),
+    ]
+    _draw_workflow(path, stages, [SKY, GREEN, BLUE, ORANGE, VERMILION])
 
 
 def _draw_problem1(
@@ -465,6 +503,7 @@ def generate_all(output_dir: str | Path) -> dict[str, Any]:
         )
 
     _draw_overview(destination / "problem12_overview.pdf")
+    _draw_problem2_workflow(destination / "problem2_workflow.pdf")
     _draw_problem1(
         destination / "problem1_region.pdf",
         observations,
