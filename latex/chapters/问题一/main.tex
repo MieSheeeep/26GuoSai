@@ -1,16 +1,12 @@
 \section{问题一：定位区域直径与圆覆盖判定}
 
-\subsection{问题分析}
-
-由于测向机示向度存在不超过 \(1^{\circ}\) 的误差，一次观测给出的不是一条确定射线，而是一个包含真实方向的窄扇形。多个检测点对同一干扰源进行观测后，干扰源的位置应同时满足全部扇形约束，因此定位问题可转化为二维半平面交问题。Tokekar 和 Isler 将未知但有界的测向误差表示为包含真实目标的二维扇形，并以扇形交集的面积或直径度量定位不确定性\cite{tokekar2013bearing}，与本题交会定位机制一致。
-
-本问的计算路线如图所示：先把每个测向扇形写成两个线性半平面，求出其公共凸多边形；再用旋转卡壳求多边形的最远顶点对；最后以最远点对为直径作圆，并逐顶点检验覆盖性。
-
-\safeimage[0.92\textwidth]{figures/problem12_overview.pdf}{问题一、问题二的有界误差定位与鲁棒选点思路}
-
 \subsection{有界示向约束}
 
-记第 \(i\) 个检测点为 \(S_i=(x_i,y_i)^{\mathsf T}\)，测得的示向度为 \(\theta_i\)，误差上界为 \(\varepsilon=1\degree\)。定义方向单位向量
+Tokekar 和 Isler 将未知但有界的测向误差表示为包含真实目标的二维扇形，并以扇形交集的面积或直径度量定位不确定性\cite{tokekar2013bearing}。据此，本文先把每个测向扇形写成两个线性半平面，求其公共凸多边形，再计算最远顶点对并检验对应直径圆的覆盖性，整体流程如图~\ref{fig:problem12-overview} 所示。
+
+\safeimage[0.92\textwidth]{figures/problem12_overview.pdf}{问题一、问题二的有界误差定位与鲁棒选点思路\label{fig:problem12-overview}}
+
+记第 \(i\) 个检测点为 \(S_i=(x_i,y_i)^{\mathsf T}\)，测得的示向度为 \(\theta_i\)，误差上界为 \(\varepsilon=1^{\circ}\)。定义方向单位向量
 \begin{equation}
   \vect u(\theta)=\bigl(\cos\theta,\sin\theta\bigr)^{\mathsf T},
 \end{equation}
