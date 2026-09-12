@@ -40,7 +40,7 @@ PROBLEM_SECTION_ORDER = [
     r"\\subsection\{模型建立[^}]*\}",
     r"\\subsection\{模型求解[^}]*\}",
     r"\\subsection\{结果分析[^}]*\}",
-    r"\\subsection\{本问小结\}",
+    r"\\subsection\{结论\}",
 ]
 
 
