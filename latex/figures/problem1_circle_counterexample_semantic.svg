@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1672" height="941" viewBox="0 0 1672 941" role="img" aria-label="Diameter circle counterexample and covering example">
+  <title>最远点对确定的直径圆仍须逐顶点检验</title>
+  <desc>左：边长为二的等边三角形，其顶点C在AB的直径圆外。右：内接正六边形的六个顶点均在FC的直径圆上。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#111" />
+    </marker>
+  </defs>
+  <g id="panel-frames" fill="white" stroke="#111" stroke-width="1.5">
+    <rect id="panel-counterexample" x="16" y="68" width="805" height="765" />
+    <rect id="panel-covered-example" x="851" y="68" width="805" height="765" />
+  </g>
+  <g id="equilateral-counterexample">
+    <g id="diameter-circle-AB">
+      <circle id="disk-B-M-1" cx="412.0" cy="570.0" r="250.0" fill="#f1f1f1" stroke="#111" stroke-width="2" />
+    </g>
+    <g id="region-triangle-ABC">
+      <polygon points="162.0000,570.0000 662.0000,570.0000 412.0000,136.9873" fill="none" stroke="#111" stroke-width="2.2" />
+    </g>
+    <g id="measurements-triangle" fill="none" stroke="#111" stroke-width="1.6">
+      <line x1="162.0000" y1="570.0000" x2="662.0000" y2="570.0000" id="diameter-AB" stroke-width="2.3" />
+      <line x1="412.0000" y1="570.0000" x2="412.0000" y2="136.9873" id="altitude-MC" stroke-dasharray="8 6" />
+      <line x1="412.0000" y1="570.0000" x2="646.9232" y2="484.4950" id="radius-M-to-circle" stroke-width="1.8" />
+    </g>
+    <g id="vertices-and-midpoint-triangle" fill="#111">
+      <circle id="node-A-triangle" cx="162.0000" cy="570.0000" r="5.7" />
+      <circle id="node-B-triangle" cx="662.0000" cy="570.0000" r="5.7" />
+      <circle id="node-C-triangle" cx="412.0000" cy="136.9873" r="5.7" />
+      <circle id="node-M-triangle" cx="412.0000" cy="570.0000" r="5.7" />
+    </g>
+    <g id="native-editable-labels-triangle">
+      <text id="label-A-triangle" x="135.0000" y="578.0000" font-size="29" font-family="Times New Roman, Cambria Math, serif" fill="#111" font-style="italic">
+        <tspan>A</tspan>
+      </text>
+      <text id="label-B-triangle" x="673.0000" y="578.0000" font-size="29" font-family="Times New Roman, Cambria Math, serif" fill="#111" font-style="italic">
+        <tspan>B</tspan>
+      </text>
+      <text id="label-C-triangle" x="402.0000" y="116.9873" font-size="29" font-family="Times New Roman, Cambria Math, serif" fill="#111" font-style="italic">
+        <tspan>C</tspan>
+      </text>
+      <text id="label-M" x="402.0000" y="604.0000" font-size="28" font-family="Times New Roman, Cambria Math, serif" fill="#111" font-style="italic">
+        <tspan>M</tspan>
+      </text>
+      <text id="label-AB-equals-2" x="412.0000" y="651.0000" font-size="27" font-family="Times New Roman, Cambria Math, serif" fill="#111" text-anchor="middle" font-style="italic">
+        <tspan>AB = D = 2</tspan>
+      </text>
+      <text id="label-radius-one" x="566.0000" y="512.0000" font-size="26" font-family="Times New Roman, Cambria Math, serif" fill="#111" font-style="italic">
+        <tspan>r = 1</tspan>
+      </text>
+      <text id="label-height-inequality" x="511.0000" y="302.0000" font-size="27" font-family="Times New Roman, Cambria Math, serif" fill="#111" font-style="italic">
+        <tspan>MC = √3 &gt; 1 = r</tspan>
+      </text>
+      <text id="label-left-conclusion" x="412.0000" y="776.0000" font-size="21" font-family="Microsoft YaHei, SimHei, sans-serif" fill="#111" text-anchor="middle">
+        <tspan>C 位于圆外：未覆盖</tspan>
+      </text>
+      <text id="label-not-covered" x="591.0000" y="145.0000" font-size="30" font-family="Microsoft YaHei, SimHei, sans-serif" fill="#111">
+        <tspan>未覆盖</tspan>
+      </text>
+    </g>
+    <line x1="572.0000" y1="137.0000" x2="435.0000" y2="137.9873" id="leader-uncovered-C" stroke="#111" stroke-width="1.5" marker-end="url(#arrow)" />
+  </g>
+  <g id="regular-hexagon-covered-example">
+    <g id="diameter-circle-FC">
+      <circle id="disk-B-O-R" cx="1255.0" cy="456.0" r="269.0" fill="#f7f7f7" stroke="#111" stroke-width="2" />
+    </g>
+    <g id="region-hexagon-ABCDEF">
+      <polygon points="1120.5000,688.9608 1389.5000,688.9608 1524.0000,456.0000 1389.5000,223.0392 1120.5000,223.0392 986.0000,456.0000" fill="#e9e9e9" stroke="#111" stroke-width="2.2" />
+    </g>
+    <g id="measurements-hexagon" fill="none" stroke="#111">
+      <line x1="986.0000" y1="456.0000" x2="1524.0000" y2="456.0000" id="diameter-FC" stroke-width="2.3" />
+      <line x1="1255.0000" y1="456.0000" x2="1389.5000" y2="223.0392" id="radius-O-D" stroke-width="1.7" />
+    </g>
+    <g id="vertices-and-center-hexagon" fill="#111">
+      <circle id="node-C-hexagon" cx="1524.0000" cy="456.0000" r="5.7" />
+      <circle id="node-D-hexagon" cx="1389.5000" cy="223.0392" r="5.7" />
+      <circle id="node-E-hexagon" cx="1120.5000" cy="223.0392" r="5.7" />
+      <circle id="node-F-hexagon" cx="986.0000" cy="456.0000" r="5.7" />
+      <circle id="node-A-hexagon" cx="1120.5000" cy="688.9608" r="5.7" />
+      <circle id="node-B-hexagon" cx="1389.5000" cy="688.9608" r="5.7" />
+      <circle id="node-O" cx="1255.0" cy="456.0" r="5.7" />
+    </g>
+    <g id="native-editable-labels-hexagon">
+      <text id="label-C-hexagon" x="1537.0000" y="465.0000" font-size="29" font-family="Times New Roman, Cambria Math, serif" fill="#111" font-style="italic">
+        <tspan>C</tspan>
+      </text>
+      <text id="label-D-hexagon" x="1396.5000" y="210.0392" font-size="29" font-family="Times New Roman, Cambria Math, serif" fill="#111" font-style="italic">
+        <tspan>D</tspan>
+      </text>
+      <text id="label-E-hexagon" x="1096.5000" y="210.0392" font-size="29" font-family="Times New Roman, Cambria Math, serif" fill="#111" font-style="italic">
+        <tspan>E</tspan>
+      </text>
+      <text id="label-F-hexagon" x="954.0000" y="465.0000" font-size="29" font-family="Times New Roman, Cambria Math, serif" fill="#111" font-style="italic">
+        <tspan>F</tspan>
+      </text>
+      <text id="label-A-hexagon" x="1111.5000" y="723.9608" font-size="29" font-family="Times New Roman, Cambria Math, serif" fill="#111" font-style="italic">
+        <tspan>A</tspan>
+      </text>
+      <text id="label-B-hexagon" x="1398.5000" y="723.9608" font-size="29" font-family="Times New Roman, Cambria Math, serif" fill="#111" font-style="italic">
+        <tspan>B</tspan>
+      </text>
+      <text id="label-O" x="1243.0000" y="494.0000" font-size="27" font-family="Times New Roman, Cambria Math, serif" fill="#111" font-style="italic">
+        <tspan>O</tspan>
+      </text>
+      <text id="label-FC-equals-2R" x="1255.0000" y="434.0000" font-size="27" font-family="Times New Roman, Cambria Math, serif" fill="#111" text-anchor="middle" font-style="italic">
+        <tspan>FC = 2R</tspan>
+      </text>
+      <text id="label-radius-R" x="1351.0000" y="336.0000" font-size="27" font-family="Times New Roman, Cambria Math, serif" fill="#111" font-style="italic">
+        <tspan>R</tspan>
+      </text>
+      <text id="label-right-conclusion" x="1255.0000" y="788.0000" font-size="21" font-family="Microsoft YaHei, SimHei, sans-serif" fill="#111" text-anchor="middle">
+        <tspan>六个顶点均在圆上：覆盖</tspan>
+      </text>
+      <text id="label-covered" x="1515.0000" y="133.0000" font-size="30" font-family="Microsoft YaHei, SimHei, sans-serif" fill="#111">
+        <tspan>覆盖</tspan>
+      </text>
+    </g>
+    <line x1="1510.0000" y1="146.0000" x2="1456.0000" y2="223.0000" id="leader-covered-circle" stroke="#111" stroke-width="1.5" marker-end="url(#arrow)" />
+  </g>
+  <g id="coverage-test-footer">
+    <text id="label-algorithm-flow" x="836.0000" y="872.0000" font-size="25" font-family="Microsoft YaHei, SimHei, sans-serif" fill="#111" text-anchor="middle">
+      <tspan>最远点对  →  作直径圆  →  逐顶点检验  →  覆盖判定</tspan>
+    </text>
+    <rect id="criterion-box" x="565" y="888" width="542" height="43" fill="white" stroke="#111" stroke-width="1.3" />
+    <text id="label-vertex-criterion" x="836.0000" y="918.0000" font-size="25" font-family="Times New Roman, Cambria Math, serif" fill="#111" text-anchor="middle">
+      <tspan>max</tspan>
+      <tspan font-size="70%" baseline-shift="sub">1≤i≤k</tspan>
+      <tspan> ‖v</tspan>
+      <tspan font-size="70%" baseline-shift="sub">i</tspan>
+      <tspan> − O‖</tspan>
+      <tspan font-size="70%" baseline-shift="sub">2</tspan>
+      <tspan> ≤ r + τ</tspan>
+    </text>
+  </g>
+</svg>
