@@ -10,13 +10,7 @@
 powershell -ExecutionPolicy Bypass -File .\build.ps1
 ```
 
-该命令生成电子版：第一页为摘要页，不包含承诺书和编号专用页。若需按纸质版装订格式生成带官方前置页的版本，运行：
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\build-paper.ps1
-```
-
-纸质版的前两页由 `figures/format2026_promise.pdf` 和 `figures/format2026_number.pdf` 导入官方 Word 格式文件；摘要页从正文页码 1 开始编号。
+该命令生成竞赛电子版，第一页为摘要页，正文页码从摘要页开始编号。
 
 也可以手动依次运行：
 
@@ -42,7 +36,7 @@ latexmk -xelatex -interaction=nonstopmode main.tex
 - `config/`：宏包、页面格式和公共命令。官方格式变化时优先修改这里。
 - `chapters/`：论文正文；每个一级大标题一个文件夹。
 - `chapters/问题一/main.tex` 至 `chapters/问题四/main.tex`：各问的分析、模型或策略、算法和结果集中写在同一个文件中。
-- `figures/`：论文图片。模板中的图片不存在时会显示可编译的占位框。
+- `figures/`：正文引用的图片及其生成脚本；未入正文的生图参照稿统一保存在项目根目录的 `inkscape_export/image_generated_references_png/`，避免重复存放。
 - `code/`：附录引用的源程序。
 - `references/`：BibLaTeX 文献数据库。
 - `tests/`：模板结构与必备内容检查。

@@ -22,15 +22,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="0.89353246"
-     inkscape:cx="935.05277"
-     inkscape:cy="470.60406"
+     inkscape:zoom="0.63182286"
+     inkscape:cx="1355.6015"
+     inkscape:cy="766.82885"
      inkscape:window-width="2560"
      inkscape:window-height="1494"
      inkscape:window-x="-11"
      inkscape:window-y="-11"
      inkscape:window-maximized="1"
-     inkscape:current-layer="native-editable-labels-posthoc" />
+     inkscape:current-layer="svg12" />
   <title
      id="title1">首次测向后的双侧第二检测点候选区域</title>
   <desc
@@ -289,15 +289,15 @@
        id="native-editable-labels-main">
       <text
          id="label-axis-x"
-         x="1105"
-         y="605"
+         x="1176.6259"
+         y="567.50836"
          font-size="23px"
          font-family="'Cambria Math', 'Times New Roman', serif"
          fill="#111111">x (m)</text>
       <text
          id="label-axis-y"
-         x="213"
-         y="245"
+         x="208.46713"
+         y="269.46231"
          font-size="23px"
          font-family="'Cambria Math', 'Times New Roman', serif"
          fill="#111111">y (m)</text>
@@ -358,8 +358,8 @@
          text-anchor="end">-500</text>
       <text
          id="tick-y-500"
-         x="254"
-         y="290"
+         x="249.48363"
+         y="298.67487"
          font-size="17px"
          font-family="'Cambria Math', 'Times New Roman', serif"
          fill="#111111"
@@ -367,7 +367,7 @@
       <text
          id="label-alpha-zero"
          x="682"
-         y="526"
+         y="522.08295"
          font-size="21px"
          font-family="'Cambria Math', 'Times New Roman', serif"
          fill="#111111">α = 0°</text>

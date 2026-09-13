@@ -14,4 +14,4 @@
 
 这些是生成上述可复现图的 Python 脚本，以及参照图说明 README。
 
-注意：当前命令行环境没有找到 `inkscape` 可执行文件，所以这里没有调用 Inkscape 批量转换；导出的 PDF/SVG/PNG 格式本身均为 Inkscape 支持格式。
+论文实际采用文件名带 `(已调整).svg` 的人工编辑版本。重新导入论文时运行 `latex/figures/import_inkscape_edits.py`。

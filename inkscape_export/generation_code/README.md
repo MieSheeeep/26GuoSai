@@ -1,16 +1,8 @@
-# 生图参照稿
+# 图形生成代码
 
-本目录保存内置生图模型生成的原始 PNG，文件名与论文图位对应，供后续重新设计图像时参考。原始文件仍保存在 Codex 的生成目录；这里是工作区副本。
+这里保存导出包自带的几何图生成脚本。可编辑的最终图在相邻的
+`inkscape_openable_figures/` 中，以 `(已调整).svg` 为准；论文使用的对应 PDF
+由 `latex/figures/import_inkscape_edits.py` 生成。
 
-| 文件 | 对应正文图位 | 当前使用情况 |
-| --- | --- | --- |
-| `overall_workflow_selected.png` | 四问总流程 | 正文使用同图 `../overall_workflow.png` |
-| `overall_workflow_alternative.png` | 四问总流程 | 备选布局，未入正文 |
-| `problem1_circle_counterexample_selected.png` | 直径圆反例 | 正文使用同图 `../problem1_circle_counterexample.png` |
-| `problem1_wedge_intersection_draft.png` | 测向角域交集 | 仅供版式参考；正文使用精确绘制的 `../problem1_wedge_intersection.pdf` |
-| `problem2_forward_lateral_region_draft.png` | 第二检测点双侧候选带 | 仅供版式参考；正文使用 `../problem2_forward_lateral_region.pdf` |
-| `problem2_reception_condition_draft.png` | 再次接收的圆盘条件 | 仅供版式参考；正文使用 `../problem2_reception_condition.pdf` |
-| `problem3_discovery_coverage_draft.png` | 全向源发现覆盖 | 旧稿参照；当前问题三正文使用同学提交的 `../q3_method_overview.pdf` 等图 |
-| `problem4_directional_certificate_draft.png` | 定向源多点证书 | 备选参照；当前问题四正文使用自己的图组 |
-
-带数值坐标的生图原稿存在几何比例或标注偏差，不应直接作为计算证据。`../generate_missing_geometry.py` 可重建问题一、二正文使用的几何 PDF；其中的问题三覆盖图属于旧稿备选，不参与当前正文。图位的内容要求仍保留在问题一、二对应章节的 LaTeX 注释中。
+生图参照稿统一放在 `image_generated_references_png/`，不直接用于几何计算。
+本目录的脚本与论文工程中的脚本内容相同，是导出包的独立副本。

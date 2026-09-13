@@ -4,19 +4,8 @@
 \input{config/layout}
 \input{config/commands}
 
-% 改为 \showtoctrue 可显示目录；正式提交前请以当年规范为准。
-\newif\ifprintedition
-\printeditionfalse
-\ifdefined\printeditionenabled
-  \printeditiontrue
-\fi
-
 \begin{document}
 
-\ifprintedition
-  \includepdf[pages=1,pagecommand={\thispagestyle{empty}}]{figures/format2026_promise.pdf}
-  \includepdf[pages=1,pagecommand={\thispagestyle{empty}}]{figures/format2026_number.pdf}
-\fi
 \pagenumbering{arabic}
 \setcounter{page}{1}
 \input{chapters/摘要/main}
