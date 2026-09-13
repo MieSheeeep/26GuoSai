@@ -4,7 +4,13 @@
 
 ## 快速编译
 
-在本目录打开 PowerShell，依次运行：
+在本目录打开 PowerShell，运行（无需安装 Perl）：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\build.ps1
+```
+
+也可以手动依次运行：
 
 ```powershell
 xelatex -interaction=nonstopmode -halt-on-error main.tex
@@ -13,7 +19,7 @@ xelatex -interaction=nonstopmode -halt-on-error main.tex
 xelatex -interaction=nonstopmode -halt-on-error main.tex
 ```
 
-若安装了 `latexmk`，也可运行：
+若另外安装了 Perl，也可使用 `latexmk`：
 
 ```powershell
 latexmk -xelatex -interaction=nonstopmode main.tex
