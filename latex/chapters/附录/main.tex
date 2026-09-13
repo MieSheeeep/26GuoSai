@@ -1,21 +1,44 @@
 \appendix
+\section{问题一算例补充数据}
+
+\begin{table}[H]
+  \centering
+  \caption{问题一验证算例的定位多边形顶点}
+  \label{tab:p1-vertices}
+  \begin{tabular}{crr@{\qquad}crr}
+    \toprule
+    顶点 & \(x/\mathrm{m}\) & \(y/\mathrm{m}\) &
+    顶点 & \(x/\mathrm{m}\) & \(y/\mathrm{m}\) \\
+    \midrule
+    \(V_1\) & \(281.8447\) & \(421.2370\) &
+    \(V_4\) & \(316.6367\) & \(403.6157\) \\
+    \(V_2\) & \(289.7997\) & \(404.9015\) &
+    \(V_5\) & \(302.1513\) & \(430.8989\) \\
+    \(V_3\) & \(303.2828\) & \(393.7451\) &
+    \(V_6\) & \(298.3041\) & \(434.3152\) \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
 \section{程序与支撑材料}
 
 \subsection{程序文件说明}
 \begin{table}[H]
   \centering
   \caption{程序文件与用途}
-  \begin{tabularx}{\textwidth}{p{0.28\textwidth}X}
+  \begin{tabularx}{\textwidth}{p{0.38\textwidth}X}
     \toprule
     文件 & 用途 \\
     \midrule
-    \texttt{code/example.py} & 程序入口占位示例；定稿时替换为实际提交文件及对应运行说明 \\
-    \placeholder{程序文件名} & \placeholder{说明对应问题与运行方式} \\
+    \texttt{src/problem1.py} & 问题一的定位区域、直径与覆盖检验 \\
+    \texttt{src/problem2\_unified.py} & 问题二双侧候选公式和统一算例的复算程序 \\
+    \texttt{q3\_best\_standalone.py} & 问题三的全向源搜索、定位与清除程序 \\
+    \texttt{q4\_standalone\_副本.py} & 问题四的混合源搜索、定位与清除程序 \\
     \bottomrule
   \end{tabularx}
 \end{table}
 
-\lstinputlisting[caption={程序入口示例},label={lst:example}]{code/example.py}
+问题三、四的策略描述以表中两份独立程序为准。正式测试日志及运行说明需与最终提交的程序版本对应。
 
 \subsection{支撑材料清单}
 \begin{enumerate}
