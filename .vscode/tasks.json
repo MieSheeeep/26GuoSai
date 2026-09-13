@@ -4,13 +4,12 @@
     {
       "label": "编译论文（XeLaTeX + Biber）",
       "type": "shell",
-      "command": "powershell",
+      "command": "E:\\texlive\\texlive\\2025\\bin\\windows\\latexmk.exe",
       "args": [
-        "-NoProfile",
-        "-ExecutionPolicy",
-        "Bypass",
-        "-File",
-        "${workspaceFolder}/latex/build.ps1"
+        "-xelatex",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "main.tex"
       ],
       "options": {
         "cwd": "${workspaceFolder}/latex"

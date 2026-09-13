@@ -1,0 +1,30 @@
+{
+  "design": "stratified fixed-seed offline validation",
+  "runs_total": 3000,
+  "scenario_definitions": {
+    "q3_uniform": "16 omnidirectional sources uniformly distributed by area in the target disk",
+    "q3_boundary": "16 omnidirectional sources uniformly distributed by area in the 1350--1800 m annulus",
+    "q3_clustered": "16 omnidirectional sources sampled around one random cluster centre",
+    "q4_mixed": "8 omnidirectional and 8 directional sources; positions and directional headings are random",
+    "q4_directional": "16 directional sources with random positions and headings",
+    "q4_outward": "16 directional sources in the 1150--1800 m annulus, each pointing radially outward"
+  },
+  "common_assumptions": {
+    "sources_per_run": 16,
+    "channels": "16 distinct channels sampled without replacement from 1--20",
+    "reception_radius_m": "independent uniform[1000,1500]",
+    "bearing_error_deg": "independent uniform[-1,1], then rounded to 0.01 degree",
+    "directional_visibility": "closed forward half-plane (plus/minus 90 degrees)",
+    "near_threshold_m": 5,
+    "clear_threshold_m": 20,
+    "movement_speed_m_per_s": 5,
+    "measure_cost_s": 5,
+    "channel_switch_cost_s": 1,
+    "clear_sequence_cost_s": 5
+  },
+  "controller_sha256": {
+    "q3_best_standalone.py": "c8d9bb472e9e77778d189ae79cc4c17affcbd764b65000198eb45cae1170615e",
+    "q4_standalone_副本.py": "1cb313586edda3e2aece576dee38c767c93735c5c1e3618def3285d86f005c01"
+  },
+  "scope_note": "This harness is independent of the official simulator and supports empirical, not universal, claims."
+}
