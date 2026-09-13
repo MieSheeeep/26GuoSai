@@ -28,11 +28,10 @@ CONTENT_RULES = {
     "chapters/附录/main.tex": [r"原文件名"],
 }
 
+# The Q3/Q4 chapters keep their separately authored section structure.
 PROBLEM_CHAPTERS = [
     "chapters/问题一/main.tex",
     "chapters/问题二/main.tex",
-    "chapters/问题三/main.tex",
-    "chapters/问题四/main.tex",
 ]
 
 PROBLEM_SECTION_ORDER = [

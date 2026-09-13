@@ -10,7 +10,7 @@
 | `problem1_wedge_intersection_draft.png` | 测向角域交集 | 仅供版式参考；正文使用精确绘制的 `../problem1_wedge_intersection.pdf` |
 | `problem2_forward_lateral_region_draft.png` | 第二检测点双侧候选带 | 仅供版式参考；正文使用 `../problem2_forward_lateral_region.pdf` |
 | `problem2_reception_condition_draft.png` | 再次接收的圆盘条件 | 仅供版式参考；正文使用 `../problem2_reception_condition.pdf` |
-| `problem3_discovery_coverage_draft.png` | 全向源发现覆盖 | 仅供版式参考；正文使用 `../problem3_discovery_coverage.pdf` |
+| `problem3_discovery_coverage_draft.png` | 全向源发现覆盖 | 旧稿参照；当前问题三正文使用同学提交的 `../q3_method_overview.pdf` 等图 |
 | `problem4_directional_certificate_draft.png` | 定向源多点证书 | 备选参照；当前问题四正文使用自己的图组 |
 
-带数值坐标的生图原稿存在几何比例或标注偏差，不应直接作为计算证据。正文所用的四张几何 PDF 可用 `../generate_missing_geometry.py` 重建；图位的内容要求仍保留在对应章节的 LaTeX 注释中。
+带数值坐标的生图原稿存在几何比例或标注偏差，不应直接作为计算证据。`../generate_missing_geometry.py` 可重建问题一、二正文使用的几何 PDF；其中的问题三覆盖图属于旧稿备选，不参与当前正文。图位的内容要求仍保留在问题一、二对应章节的 LaTeX 注释中。
