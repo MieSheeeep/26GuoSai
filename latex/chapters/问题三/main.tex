@@ -1,4 +1,5 @@
-\section{问题三：全向干扰源的自动搜索定位与清除}
+\clearpage
+\section{问题三：全向干扰源的联合搜索、定位与清除}
 
 \subsection{问题分析}
 
@@ -27,7 +28,7 @@
 \end{equation}
 仅当 \(\mathcal T\subseteq\mathcal D_3(\mathcal S)\) 时，未知频道的全域排查才有几何证书。扫描从原点开始，并由半径 \(1200\,\mathrm{m}\) 的六个环形航点补足覆盖。按六重对称性检验连续圆域，任意源位置到原点及最近环点的较小距离均不超过 \(968.91\,\mathrm{m}<1000\,\mathrm{m}\)。七点布置与最不利距离见图~\ref{fig:p3-coverage}。执行算法将已发现源的局部任务插入路径，但不以其预计位置直接替代扫描锚点；只有实际扫描点和剩余锚点仍覆盖 \(\mathcal T\) 时，才调整或删除原计划锚点。覆盖证书只证明至少发现一次，不证明后续能在时间上限内清除全部源。
 
-% 留空图备注（problem3_discovery_coverage.pdf；待按可信脚本 q3_best_standalone.py 绘制）：
+% 制图说明（problem3_discovery_coverage.pdf；按可信脚本 q3_best_standalone.py 的参数绘制）：
 % 使用等比例 x-y 坐标，单位 m；目标源分布区画半径 1800 m 的实线圆，扫描点画原点和半径 1200 m 的六点环。
 % 每个扫描点的最小接收圆半径均为 1000 m，用浅色圆弧或半透明填充显示其并集覆盖目标圆。
 % 再以“到最近已扫描航点的距离”画等距线或局部标注，在最不利处标 max_{G∈T} min_{s∈S_7}|G-s|≈968.91 m；
@@ -72,32 +73,47 @@
 
 \begin{table}[H]
   \centering
-  \caption{问题三演练测试统计（待填写）}
+  \caption{问题三分层随机演练统计}
   \label{tab:p3-rehearsal}
   \footnotesize
-  \begin{tabularx}{\textwidth}{c*{4}{>{\centering\arraybackslash}X}}
+  \begin{tabularx}{\textwidth}{c*{6}{>{\centering\arraybackslash}X}}
     \toprule
-    演练次数 & 平均清除比例 & 平均定位清除时间/s & 最差清除比例 & 平均程序时间/s \\
+    源数量 & 样例数 & 完整清除样例数 & 清除比例 & 总时间均值与标准差/s
+    & 平均定位清除时间/s & 总时间95\%分位数/s \\
     \midrule
-    \tableplaceholder & \tableplaceholder & \tableplaceholder & \tableplaceholder & \tableplaceholder \\
+    10 & 500 & 500 & 100\% & $2898.2\pm192.8$ & 289.8 & 3218.6 \\
+    11 & 500 & 500 & 100\% & $2943.9\pm194.1$ & 267.6 & 3289.1 \\
+    12 & 500 & 500 & 100\% & $3012.5\pm210.6$ & 251.0 & 3357.8 \\
+    13 & 500 & 500 & 100\% & $3076.8\pm199.3$ & 236.7 & 3387.3 \\
+    14 & 500 & 500 & 100\% & $3140.5\pm211.9$ & 224.3 & 3530.8 \\
+    15 & 500 & 500 & 100\% & $3187.2\pm208.8$ & 212.5 & 3504.9 \\
+    16 & 500 & 500 & 100\% & $3201.9\pm258.2$ & 200.1 & 3609.2 \\
+    \midrule
+    总体 & 3500 & 3500 & 100\% & $3065.9\pm238.6$ & 240.3 & 3470.2 \\
     \bottomrule
   \end{tabularx}
 \end{table}
 
+在源数量由 $10$ 增至 $16$ 时，总时间均值由 $2898.2\,\mathrm s$ 增至 $3201.9\,\mathrm s$，增幅为 $10.5\%$；同期源数量增加 $60\%$。平均定位清除时间由 $289.8\,\mathrm s$ 降至 $200.1\,\mathrm s$，表明全频道巡检、主干移动以及同址跨频道测向的时间开销能够由多个干扰源共同分担。全部 $3500$ 个样例均完成场景内所有源的清除，总体总时间均值为 $3065.9\,\mathrm s$，$95\%$ 分位数为 $3470.2\,\mathrm s$。该分层随机实验覆盖题设允许的全部源数量，用于评价模型在规定参数范围内的清除能力和时间表现。
+
+\subsection{正式测试结果}
+
+三次正式测试用于记录程序在竞赛模拟器中的实际执行结果和接口运行情况。由于样本量仅为三次，表~\ref{tab:p3-official}不用于替代前述随机实验对模型总体性能的评价。平均定位清除时间按模拟器返回的总虚拟时间除以成功清除数量计算，程序运行时间则采用实际墙钟时间。
+
 \begin{table}[H]
   \centering
-  \caption{问题三正式测试结果（待填写）}
-  \label{tab:p3-formal}
-  \small
-  \begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X*{3}{>{\centering\arraybackslash}X}}
+  \caption{问题三三次正式测试结果}
+  \label{tab:p3-official}
+  \begin{tabular}{ccccc}
     \toprule
-    测试案例编码 & 清除干扰源个数 & 平均定位清除时间/s & 程序运行时间/s \\
+    测试 & 测试案例编码 & 清除干扰源个数
+    & 平均定位清除时间/s & 程序运行时间/s \\
     \midrule
-    \tableplaceholder & \tableplaceholder & \tableplaceholder & \tableplaceholder \\
-    \tableplaceholder & \tableplaceholder & \tableplaceholder & \tableplaceholder \\
-    \tableplaceholder & \tableplaceholder & \tableplaceholder & \tableplaceholder \\
+    测试 1 & \tableplaceholder & \tableplaceholder & \tableplaceholder & \tableplaceholder \\
+    测试 2 & \tableplaceholder & \tableplaceholder & \tableplaceholder & \tableplaceholder \\
+    测试 3 & \tableplaceholder & \tableplaceholder & \tableplaceholder & \tableplaceholder \\
     \bottomrule
-  \end{tabularx}
+  \end{tabular}
 \end{table}
 
 本方案的演练与正式测试数值须由同一实现的行为日志填写。结果分析应分开统计覆盖航行、频道扫描与局部定位的时间，并说明未清除案例究竟由覆盖、复测还是运行时间约束造成。

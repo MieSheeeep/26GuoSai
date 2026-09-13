@@ -1,5 +1,26 @@
 \appendix
-\section{问题一算例补充数据}
+\section{问题一补充计算}
+\label{app:p1-computation}
+
+\subsection{半平面系数与边界交点}
+
+将式~\eqref{eq:p1-wedge-cross} 中的叉积展开，第 \(i\) 次测向对应的两个线性约束为
+\begin{equation}
+  \begin{aligned}
+  \sin(\theta_i-\varepsilon)x-\cos(\theta_i-\varepsilon)y
+  &\le \sin(\theta_i-\varepsilon)x_i-\cos(\theta_i-\varepsilon)y_i,\\
+  -\sin(\theta_i+\varepsilon)x+\cos(\theta_i+\varepsilon)y
+  &\le -\sin(\theta_i+\varepsilon)x_i+\cos(\theta_i+\varepsilon)y_i.
+  \end{aligned}
+\end{equation}
+若两条边界为 \(a_px+b_py=c_p\) 与 \(a_qx+b_qy=c_q\)，记 \(\Delta=a_pb_q-a_qb_p\)。当 \(|\Delta|>\tau\) 时，交点坐标为
+\begin{equation}
+  x=\frac{c_pb_q-c_qb_p}{\Delta},\qquad
+  y=\frac{a_pc_q-a_qc_p}{\Delta}.
+\end{equation}
+平行或近乎平行的边界不用于求交点。交点仍须满足全部半平面约束，才能作为可行顶点。若存在非零公共衰退方向，则交集无界；有效顶点不足三个时，交集为空或退化。
+
+\subsection{验证算例顶点}
 
 \begin{table}[H]
   \centering

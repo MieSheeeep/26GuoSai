@@ -12,13 +12,7 @@
 
 \paragraph{步骤一：将有界示向转化为半平面}
 
-记第 \(i\) 个检测点为 \(S_i=(x_i,y_i)^{\mathsf T}\)，测得的示向度为 \(\theta_i\)，误差上界为 \(\varepsilon=1^{\circ}\)。定义方向单位向量
-\begin{equation}
-  \vect u(\theta)=\bigl(\cos\theta,\sin\theta\bigr)^{\mathsf T},
-\end{equation}
-以及二维叉积
-\(\operatorname{cross}(\vect a,\vect b)=a_xb_y-a_yb_x\)。
-当角度换算为弧度参与计算时，干扰源候选位置 \(\vect x\) 位于第 \(i\) 个测向扇形内，当且仅当
+记第 \(i\) 个检测点为 \(S_i\)，示向度为 \(\theta_i\)，误差上界为 \(\varepsilon=1^{\circ}\)。令 \(\vect u(\theta)=(\cos\theta,\sin\theta)^{\mathsf T}\)，\(\operatorname{cross}(a,b)=a_xb_y-a_yb_x\)。候选位置 \(\vect x\) 落在示向度两侧各 \(1\degree\) 的扇形内，等价于同时满足
 \begin{equation}
   \operatorname{cross}\!\left(
   \vect u(\theta_i-\varepsilon),\vect x-S_i
@@ -29,41 +23,30 @@
   \label{eq:p1-wedge-cross}
 \end{equation}
 
-式~\eqref{eq:p1-wedge-cross} 分别规定候选点位于两条误差边界的内侧。将叉积展开，可把每次测向写成两个便于统一求交的闭半平面：
-\begin{equation}
-  \begin{aligned}
-  \sin(\theta_i-\varepsilon)x-\cos(\theta_i-\varepsilon)y
-  &\le
-  \sin(\theta_i-\varepsilon)x_i-\cos(\theta_i-\varepsilon)y_i,\\
-  -\sin(\theta_i+\varepsilon)x+\cos(\theta_i+\varepsilon)y
-  &\le
-  -\sin(\theta_i+\varepsilon)x_i+\cos(\theta_i+\varepsilon)y_i.
-  \end{aligned}
-  \label{eq:p1-halfplanes}
-\end{equation}
-记第 \(i\) 次观测对应的扇形为 \(W_i\)。真实源位置必须同时满足全部测向约束，因此 \(m\) 次观测的公共定位区域为
+图~\ref{fig:p1-wedge-intersection} 把两个不等式对应的边界和内侧画在同一坐标系中。
+
+% 制图说明（problem1_wedge_intersection.pdf；本图解释式 eq:p1-wedge-cross 与 eq:p1-region）：
+% 左幅只画一个检测点 S_i、中心示向线 theta_i、两条 theta_i±1° 边界；用箭头标出两个叉积不等式各自保留的半平面。
+% 两个半平面的公共部分画成有色扇形 W_i，清楚区分“射线”与“带误差的角域”；角度须标 1° 而非整扇形宽度 1°。
+% 右幅画三个不同检测点的扇形相交，交集突出为凸多边形 Omega，标出可行顶点与一条被排除的候选边界交点。
+% 画面只承担几何解释；不要把半径 1800 m 的源分布圆误画为多边形的一条直边，也不要在此图提前画光学清除圆。
+% 字母、颜色和线型与后文 problem1_region.pdf 一致；左幅为显示 1° 窄角域而纵向放大，边界斜率与角度参数仍按公式计算。
+\safeimage[0.92\textwidth]{figures/problem1_wedge_intersection.pdf}{有界示向对应的半平面及公共定位区域\label{fig:p1-wedge-intersection}}
+
+每次测向给出两个闭半平面；记它们的交集为 \(W_i\)，则 \(m\) 次观测的公共定位区域为
 \begin{equation}
   \Omega=\bigcap_{i=1}^{m}W_i.
   \label{eq:p1-region}
 \end{equation}
-由于半平面的交集保持凸性，\(\Omega\) 在非空、有界且面积非零时是凸多边形。题目还给出半径 \(1800\,\mathrm{m}\) 的目标圆域；它可作为源位置的先验边界，但与圆域直接求交会使边界出现圆弧。为对应题目所要求的多边形定位区域，下文对测向半平面交计算直径和覆盖性，并另用目标圆域检查结果是否符合场景范围。
+半平面交在非空、有界且面积非零时是凸多边形。题目给出的目标圆可用于检查源位置是否处于场景范围；若直接与圆相交，边界会出现圆弧，便不再是本问要求计算的定位多边形。
 
 \paragraph{步骤二：求取公共定位多边形}
 
-为了得到式~\eqref{eq:p1-region} 的显式顶点，先将全部 \(2m\) 个半平面统一写成
+为了从式~\eqref{eq:p1-region} 得到顶点，把 \(2m\) 个半平面统一写成
 \begin{equation}
   H_j=\{(x,y):a_jx+b_jy\le c_j\},\qquad j=1,\ldots,2m.
 \end{equation}
-对任意两条边界直线
-\(a_px+b_py=c_p\) 与 \(a_qx+b_qy=c_q\)，令
-\(\Delta=a_pb_q-a_qb_p\)。当 \(|\Delta|\) 大于数值容差 \(\tau\) 时，两直线交点为
-\begin{equation}
-  x=\frac{c_pb_q-c_qb_p}{\Delta},\qquad
-  y=\frac{a_pc_q-a_qc_p}{\Delta}.
-  \label{eq:p1-line-intersection}
-\end{equation}
-边界直线的交点只是潜在顶点，还须逐一代入全部半平面，剔除不满足约束的点。将保留点去重并用单调链算法排序，可得到逆时针顶点集
-\(V=\{\vect v_1,\ldots,\vect v_k\}\)。至此，隐式的角域交集被转化为有限顶点序列。计算前还要识别异常情形：若存在非零公共衰退方向，则区域无界；若有效顶点不足三个，则区域为空或退化。对此程序报告无法形成有效定位多边形，并提示补充检测点。
+两两求边界直线的交点，再逐一检查交点是否落在全部半平面内。只有通过检查的交点才可能是定位区域顶点；去重并排序后得到逆时针顶点集 \(V=\{\vect v_1,\ldots,\vect v_k\}\)。若交集为空、无界或退化，程序不输出多边形直径，而提示补充检测点。交点坐标公式与异常情形的计算细节列于附录~\ref{app:p1-computation}。
 
 \subsection{模型求解：直径计算与覆盖判定}
 
@@ -91,7 +74,14 @@
 \end{equation}
 若最远点对不唯一，须对每一组端点所确定的圆分别执行式~\eqref{eq:p1-cover}；不同直径圆未必给出相同的覆盖结果。
 
-直径相等并不保证覆盖。以边长为 \(2\) 的等边三角形为例，区域直径也是 \(2\)；取任一边作直径，所得圆半径为 \(1\)，但第三个顶点距圆心 \(\sqrt{3}>1\)，仍在圆外。这一反例说明题目不存在普遍成立的“可以覆盖”结论，具体算例必须逐顶点判断。
+直径相等并不保证覆盖。图~\ref{fig:p1-circle-counterexample} 中，边长为 \(2\) 的等边三角形以一条边作直径圆，第三个顶点距圆心 \(\sqrt3>1\)，落在圆外。因此，覆盖与否仍须按式~\eqref{eq:p1-cover} 检验。
+
+% 制图说明（problem1_circle_counterexample.png；内置生图模型生成，用于解释“直径已知≠直径圆必覆盖”）：
+% 左幅画边长 2 的等边三角形 ABC，AB 为一组最远点对，M 为 AB 中点；画半径 1 的直径圆。
+% 用高线标 MC=√3>1，第三顶点 C 必须明显位于圆外；图内写“本例不覆盖”。
+% 右幅可简绘问题一三站算例的凸六边形与直径圆，六个顶点全在圆内，写“本例覆盖”；须注明右幅与左幅不是同一尺度。
+% 两幅都标出“先确定最远点对，再逐顶点检验”的顺序；不能用直径线段穿过图形就暗示整个区域被圆覆盖。
+\safeimage[0.84\textwidth]{figures/problem1_circle_counterexample.png}{等边三角形反例与直径圆覆盖判定\label{fig:p1-circle-counterexample}}
 
 \subsubsection{算法与复杂度}
 
@@ -102,8 +92,8 @@
   \AlgoIn{观测集合 \(\{(S_i,\theta_i)\}_{i=1}^{m}\)，误差上界 \(\varepsilon\)，数值容差 \(\tau\)}
   \AlgoOut{凸多边形顶点 \(V\)、直径 \(D\)、直径端点、圆参数与覆盖判定}
   \begin{enumerate}[leftmargin=2.5em]
-    \AlgoStep{按式~\eqref{eq:p1-halfplanes} 生成半平面，并检测公共衰退方向；若存在则报告交集无界。}
-    \AlgoStep{按式~\eqref{eq:p1-line-intersection} 枚举边界交点，筛除不可行点，再用单调链生成凸包 \(V\)。}
+    \AlgoStep{按式~\eqref{eq:p1-wedge-cross} 生成半平面，并检测公共衰退方向；若存在则报告交集无界。}
+    \AlgoStep{枚举边界交点，筛除不可行点，再用单调链生成凸包 \(V\)。}
     \AlgoStep{采用旋转卡壳求最远顶点对 \((A,B)\) 及直径 \(D\)。}
     \AlgoStep{按式~\eqref{eq:p1-circle} 作圆，再按式~\eqref{eq:p1-cover} 检查全部顶点。}
   \end{enumerate}
@@ -131,7 +121,7 @@
 \end{table}
 
 % 制图备注（problem1_region.pdf；仅供后续重绘，不改当前图片）：
-% 目的：用同一算例串起“观测扇形—交集顶点—最远点对—覆盖结论”，让读者能把表1输入和表2、表3结果对上。
+% 目的：用同一算例串起“观测扇形—交集顶点—最远点对—覆盖结论”，让读者能对照正文输入表、结果表和附录顶点表。
 % 建议左右两幅共享坐标方向，左图为目标区域中的三站几何：标 S_1=(-500,-200)、S_2=(900,-100)、
 % S_3=(0,1000) m 和真实位置 G=(300,400) m；每站画中心示向线与 ±1° 两条边界，交集用半透明蓝色突出。
 % 左图标明三站观测都含 G，目标圆边界若未显示须在图注说明当前局部视图经过裁切。
@@ -160,7 +150,7 @@
   \end{tabular}
 \end{table}
 
-在六个顶点中，\(V_3=(303.2828,393.7451)\) 与 \(V_6=(298.3041,434.3152)\) 距离最远，故 \(D(\Omega)=40.8745\,\mathrm{m}\)。由这对端点得到圆心 \(C=(300.7934,414.0302)\,\mathrm{m}\)、半径 \(r=20.4372\,\mathrm{m}\)。六个顶点逐一满足式~\eqref{eq:p1-cover}，因此本算例的直径圆可以覆盖定位区域；判定依据是顶点检验，而非直径数值本身。
+表~\ref{tab:p1-result} 列出最远点对、直径及圆参数。六个顶点逐一满足式~\eqref{eq:p1-cover}，所以本算例可以覆盖；此结论来自顶点检验，而非直径数值本身。
 
 另以两种方式检查程序结果：一是将真实位置 \(G\) 代入全部半平面，确认其未被误排除；二是用顶点对直接枚举复核旋转卡壳所得直径。程序测试还包含跨越 \(0\degree\) 的角度、平行边界、无界交集、退化输入及随机凸多边形等情形。等边三角形反例则独立说明，即使直径计算正确，覆盖结论仍可能为否。
 
