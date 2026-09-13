@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1672"
+   height="941"
+   viewBox="0 0 1672 941"
+   role="img"
+   aria-label="Single bearing wedge and intersection of three bearing wedges"
+   version="1.1"
+   id="svg50"
+   sodipodi:docname="problem1_wedge_intersection_semantic(已调整).svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview50"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.1776316"
+     inkscape:cx="828.35753"
+     inkscape:cy="470.86033"
+     inkscape:window-width="2560"
+     inkscape:window-height="1494"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="native-editable-labels-intersection" />
+  <title
+     id="title1">有界示向角域与三次示向的公共定位区域</title>
+  <desc
+     id="desc1">左幅为纵向放大十倍的正负一度扇形；右幅由三个扇形的半平面交计算定位多边形。</desc>
+  <defs
+     id="defs2">
+    <pattern
+       id="hatch-W1"
+       patternUnits="userSpaceOnUse"
+       width="10"
+       height="10"
+       patternTransform="rotate(45)">
+      <line
+         x1="0.000"
+         y1="0.000"
+         x2="0.000"
+         y2="10.000"
+         stroke="#d5d5d5"
+         stroke-width="2"
+         id="line1" />
+    </pattern>
+    <pattern
+       id="hatch-W3"
+       patternUnits="userSpaceOnUse"
+       width="12"
+       height="12"
+       patternTransform="rotate(-45)">
+      <line
+         x1="0.000"
+         y1="0.000"
+         x2="0.000"
+         y2="12.000"
+         stroke="#dedede"
+         stroke-width="2"
+         id="line2" />
+    </pattern>
+    <marker
+       id="arrow"
+       markerWidth="8"
+       markerHeight="8"
+       refX="7"
+       refY="4"
+       orient="auto"
+       markerUnits="strokeWidth">
+      <path
+         d="M0,0 L8,4 L0,8 Z"
+         fill="#111"
+         id="path2" />
+    </marker>
+  </defs>
+  <rect
+     id="note-background-4"
+     x="-458.89389"
+     y="733.89386"
+     width="427.94412"
+     height="62.474861"
+     fill="#ffffff"
+     style="stroke-width:1.63593"
+     transform="translate(851,68)" />
+  <g
+     id="panels"
+     fill="white"
+     stroke="#111"
+     stroke-width="1.5">
+    <rect
+       id="panel-single"
+       x="16"
+       y="68"
+       width="805"
+       height="806" />
+    <rect
+       id="panel-intersection"
+       x="851"
+       y="68"
+       width="805"
+       height="806" />
+  </g>
+  <g
+     id="single-bearing-construction"
+     transform="matrix(1.1072614,0,0,1.0744428,-25.032716,-19.931533)">
+    <g
+       id="region-Wi">
+      <polygon
+         points="106,475 680,374.808 680,575.192 "
+         fill="#f2f2f2"
+         id="polygon2" />
+      <polygon
+         points="106,475 680,374.808 680,575.192 "
+         fill="url(#hatch-W1)"
+         id="polygon3" />
+    </g>
+    <g
+       id="bearing-rays"
+       fill="none"
+       stroke="#111111"
+       stroke-width="2.2">
+      <line
+         x1="106"
+         y1="475"
+         x2="680"
+         y2="374.80801"
+         id="ray-theta-upper"
+         marker-end="url(#arrow)" />
+      <line
+         x1="106"
+         y1="475"
+         x2="703"
+         y2="475"
+         id="ray-theta-center"
+         stroke-dasharray="6, 5"
+         stroke-width="1.6"
+         marker-end="url(#arrow)" />
+      <line
+         x1="106"
+         y1="475"
+         x2="680"
+         y2="575.19202"
+         id="ray-theta-lower"
+         marker-end="url(#arrow)" />
+    </g>
+    <circle
+       id="node-Si"
+       cx="106"
+       cy="475"
+       r="5.5999999"
+       fill="#111111" />
+    <path
+       id="angle-arc-upper"
+       d="m 259,475 a 153,153 0 0 0 -2.279,-26.308"
+       fill="none"
+       stroke="#111111"
+       stroke-width="1.5" />
+    <path
+       id="angle-arc-lower"
+       d="m 259,475 a 153,153 0 0 1 -2.279,26.308"
+       fill="none"
+       stroke="#111111"
+       stroke-width="1.5" />
+    <g
+       id="native-editable-labels-single">
+      <text
+         id="label-Si"
+         x="59"
+         y="451"
+         font-size="31px"
+         font-family="'Times New Roman', 'Cambria Math', serif"
+         fill="#111111"
+         font-style="italic"><tspan
+           id="tspan3">S</tspan><tspan
+           font-size="70%"
+           baseline-shift="sub"
+           id="tspan4">i</tspan></text>
+      <text
+         id="label-theta-upper"
+         x="671.89502"
+         y="349.49985"
+         font-size="27px"
+         font-family="'Times New Roman', 'Cambria Math', serif"
+         fill="#111111"
+         font-style="italic"><tspan
+           id="tspan5">θ</tspan><tspan
+           font-size="70%"
+           baseline-shift="sub"
+           id="tspan6">i</tspan><tspan
+           id="tspan7">+ 1°</tspan></text>
+      <text
+         id="label-theta-center"
+         x="710"
+         y="484"
+         font-size="27px"
+         font-family="'Times New Roman', 'Cambria Math', serif"
+         fill="#111111"
+         font-style="italic"><tspan
+           id="tspan8">θ</tspan><tspan
+           font-size="70%"
+           baseline-shift="sub"
+           id="tspan9">i</tspan></text>
+      <text
+         id="label-theta-lower"
+         x="663.45911"
+         y="615.08081"
+         font-size="27px"
+         font-family="'Times New Roman', 'Cambria Math', serif"
+         fill="#111111"
+         font-style="italic"><tspan
+           id="tspan10">θ</tspan><tspan
+           font-size="70%"
+           baseline-shift="sub"
+           id="tspan11">i</tspan><tspan
+           id="tspan12">− 1°</tspan></text>
+      <text
+         id="label-Wi"
+         x="507.84161"
+         y="458.61279"
+         font-size="35px"
+         font-family="'Times New Roman', 'Cambria Math', serif"
+         fill="#111111"
+         font-style="italic"><tspan
+           id="tspan13">W</tspan><tspan
+           font-size="70%"
+           baseline-shift="sub"
+           id="tspan14">i</tspan></text>
+      <text
+         id="label-angle-upper"
+         x="283.96973"
+         y="462.53229"
+         font-size="22px"
+         font-family="'Times New Roman', 'Cambria Math', serif"
+         fill="#111111"><tspan
+           id="tspan15">1°</tspan></text>
+      <text
+         id="label-angle-lower"
+         x="283.96973"
+         y="498.88705"
+         font-size="22px"
+         font-family="'Times New Roman', 'Cambria Math', serif"
+         fill="#111111"><tspan
+           id="tspan16">1°</tspan></text>
+      <text
+         id="label-upper-halfplane"
+         x="254"
+         y="273"
+         font-size="24px"
+         font-family="'Times New Roman', 'Cambria Math', serif"
+         fill="#111111"><tspan
+           id="tspan17">cross(u(θ</tspan><tspan
+           font-size="70%"
+           baseline-shift="sub"
+           id="tspan18">i</tspan><tspan
+           id="tspan19">+1°), x−S</tspan><tspan
+           font-size="70%"
+           baseline-shift="sub"
+           id="tspan20">i</tspan><tspan
+           id="tspan21">) ≤ 0</tspan></text>
+      <text
+         id="label-lower-halfplane"
+         x="253"
+         y="704"
+         font-size="24px"
+         font-family="'Times New Roman', 'Cambria Math', serif"
+         fill="#111111"><tspan
+           id="tspan22">cross(u(θ</tspan><tspan
+           font-size="70%"
+           baseline-shift="sub"
+           id="tspan23">i</tspan><tspan
+           id="tspan24">−1°), x−S</tspan><tspan
+           font-size="70%"
+           baseline-shift="sub"
+           id="tspan25">i</tspan><tspan
+           id="tspan26">) ≥ 0</tspan></text>
+      <text
+         id="text52"
+         x="748.91858"
+         y="807.40314"
+         text-anchor="middle"
+         font-family="'Microsoft YaHei', SimHei, sans-serif"
+         font-size="19px"
+         fill="#333333"
+         style="font-size:24.4485px;text-align:end;text-anchor:end"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.4485px;font-family:KaiTi;-inkscape-font-specification:KaiTi;writing-mode:lr-tb;fill:#000000;fill-opacity:1"
+           id="tspan52" /></text>
+    </g>
+    <g
+       id="constraint-leaders"
+       fill="none"
+       stroke="#111111"
+       stroke-width="1.3">
+      <line
+         x1="425"
+         y1="284"
+         x2="432"
+         y2="410.09601"
+         marker-end="url(#arrow)"
+         id="line26" />
+      <line
+         x1="421"
+         y1="672"
+         x2="432"
+         y2="539.90399"
+         marker-end="url(#arrow)"
+         id="line27" />
+    </g>
+  </g>
+  <g
+     id="three-bearing-intersection"
+     transform="translate(851 68)">
+    <g
+       id="region-W1">
+      <polygon
+         points="706.219,1.500 803.500,1.500 803.500,258.333 65.000,735.000"
+         fill="#f8f8f8"
+         id="polygon27" />
+      <polygon
+         points="706.219,1.500 803.500,1.500 803.500,258.333 65.000,735.000"
+         fill="url(#hatch-W1)"
+         id="polygon28" />
+    </g>
+    <g
+       id="region-W2">
+      <polygon
+         points="725.000,680.000 1.500,406.319 1.500,140.320"
+         fill="#ebebeb"
+         id="polygon29" />
+    </g>
+    <g
+       id="region-W3">
+      <polygon
+         points="360.000,80.000 461.822,804.500 258.178,804.500"
+         fill="#f6f6f6"
+         id="polygon30" />
+      <polygon
+         points="360.000,80.000 461.822,804.500 258.178,804.500"
+         fill="url(#hatch-W3)"
+         id="polygon31" />
+    </g>
+    <g
+       id="wedge-boundaries"
+       stroke="#111"
+       stroke-width="1.35"
+       fill="none">
+      <g
+         id="rays-S1">
+        <line
+           x1="65.000"
+           y1="735.000"
+           x2="706.219"
+           y2="1.500"
+           id="ray-S1-minus" />
+        <line
+           x1="65.000"
+           y1="735.000"
+           x2="803.500"
+           y2="258.333"
+           id="ray-S1-plus" />
+      </g>
+      <g
+         id="rays-S2">
+        <line
+           x1="725.000"
+           y1="680.000"
+           x2="1.500"
+           y2="406.319"
+           id="ray-S2-minus" />
+        <line
+           x1="725.000"
+           y1="680.000"
+           x2="1.500"
+           y2="140.320"
+           id="ray-S2-plus" />
+      </g>
+      <g
+         id="rays-S3">
+        <line
+           x1="360.000"
+           y1="80.000"
+           x2="461.822"
+           y2="804.500"
+           id="ray-S3-minus" />
+        <line
+           x1="360.000"
+           y1="80.000"
+           x2="258.178"
+           y2="804.500"
+           id="ray-S3-plus" />
+      </g>
+    </g>
+    <g
+       id="region-Omega">
+      <polygon
+         points="419.864,505.952 362.600,542.913 298.357,518.612 306.823,458.375 354.607,403.713 411.454,446.117"
+         fill="#d5d5d5"
+         stroke="#111"
+         stroke-width="2.2"
+         id="polygon32" />
+    </g>
+    <circle
+       id="node-A"
+       cx="354.607"
+       cy="403.713"
+       r="5.3"
+       fill="#111" />
+    <circle
+       id="node-B"
+       cx="298.357"
+       cy="518.612"
+       r="5.3"
+       fill="#111" />
+    <circle
+       id="node-C"
+       cx="419.864"
+       cy="505.952"
+       r="5.3"
+       fill="#111" />
+    <circle
+       cx="362.600"
+       cy="542.913"
+       r="2.5"
+       fill="#111"
+       id="circle32" />
+    <circle
+       cx="306.823"
+       cy="458.375"
+       r="2.5"
+       fill="#111"
+       id="circle33" />
+    <circle
+       cx="411.454"
+       cy="446.117"
+       r="2.5"
+       fill="#111"
+       id="circle34" />
+    <g
+       id="stations">
+      <circle
+         id="node-S1"
+         cx="65.0"
+         cy="735.0"
+         r="5.6"
+         fill="#111" />
+      <circle
+         id="node-S2"
+         cx="725.0"
+         cy="680.0"
+         r="5.6"
+         fill="#111" />
+      <circle
+         id="node-S3"
+         cx="360.0"
+         cy="80.0"
+         r="5.6"
+         fill="#111" />
+    </g>
+    <g
+       id="native-editable-labels-intersection">
+      <text
+         id="label-S1"
+         x="34"
+         y="771"
+         font-size="31"
+         font-family="Times New Roman, Cambria Math, serif"
+         fill="#111"
+         font-style="italic"><tspan
+           id="tspan34">S</tspan><tspan
+           font-size="70%"
+           baseline-shift="sub"
+           id="tspan35">1</tspan></text>
+      <text
+         id="label-S2"
+         x="742"
+         y="713"
+         font-size="31"
+         font-family="Times New Roman, Cambria Math, serif"
+         fill="#111"
+         font-style="italic"><tspan
+           id="tspan36">S</tspan><tspan
+           font-size="70%"
+           baseline-shift="sub"
+           id="tspan37">2</tspan></text>
+      <text
+         id="label-S3"
+         x="342"
+         y="58"
+         font-size="31"
+         font-family="Times New Roman, Cambria Math, serif"
+         fill="#111"
+         font-style="italic"><tspan
+           id="tspan38">S</tspan><tspan
+           font-size="70%"
+           baseline-shift="sub"
+           id="tspan39">3</tspan></text>
+      <text
+         id="label-W1"
+         x="177.34077"
+         y="629.12848"
+         font-size="31px"
+         font-family="'Times New Roman', 'Cambria Math', serif"
+         fill="#111111"
+         font-style="italic"><tspan
+           id="tspan40">W</tspan><tspan
+           font-size="70%"
+           baseline-shift="sub"
+           id="tspan41">1</tspan></text>
+      <text
+         id="label-W2"
+         x="540.12292"
+         y="600.6369"
+         font-size="31px"
+         font-family="'Times New Roman', 'Cambria Math', serif"
+         fill="#111111"
+         font-style="italic"><tspan
+           id="tspan42">W</tspan><tspan
+           font-size="70%"
+           baseline-shift="sub"
+           id="tspan43">2</tspan></text>
+      <text
+         id="label-W3"
+         x="338.67596"
+         y="295.77655"
+         font-size="31px"
+         font-family="'Times New Roman', 'Cambria Math', serif"
+         fill="#111111"
+         font-style="italic"><tspan
+           id="tspan44">W</tspan><tspan
+           font-size="70%"
+           baseline-shift="sub"
+           id="tspan45">3</tspan></text>
+      <text
+         id="label-Omega"
+         x="356.60336"
+         y="488.39664"
+         font-size="39px"
+         font-family="'Times New Roman', 'Cambria Math', serif"
+         fill="#111111"
+         text-anchor="middle"
+         font-style="italic"><tspan
+           id="tspan46">Ω</tspan></text>
+      <text
+         id="label-A"
+         x="342.40082"
+         y="387.31683"
+         font-size="26px"
+         font-family="'Times New Roman', 'Cambria Math', serif"
+         fill="#111111"
+         font-style="italic"><tspan
+           id="tspan47">A</tspan></text>
+      <text
+         id="label-B"
+         x="272.8096"
+         y="539.42212"
+         font-size="26px"
+         font-family="'Times New Roman', 'Cambria Math', serif"
+         fill="#111111"
+         font-style="italic"><tspan
+           id="tspan48">B</tspan></text>
+      <text
+         id="label-C"
+         x="427.86365"
+         y="524.76208"
+         font-size="26px"
+         font-family="'Times New Roman', 'Cambria Math', serif"
+         fill="#111111"
+         font-style="italic"><tspan
+           id="tspan49">C</tspan></text>
+    </g>
+    <g
+       id="excluded-boundary-crossing"
+       transform="translate(-7.6424554,45.854749)">
+      <line
+         x1="391.44699"
+         y1="346.565"
+         x2="405.44699"
+         y2="360.565"
+         stroke="#111111"
+         stroke-width="2"
+         id="line49" />
+      <line
+         x1="391.44699"
+         y1="360.565"
+         x2="405.44699"
+         y2="346.565"
+         stroke="#111111"
+         stroke-width="2"
+         id="line50" />
+      <text
+         id="label-excluded"
+         x="413.44699"
+         y="342.565"
+         font-family="'Microsoft YaHei', SimHei, sans-serif"
+         font-size="20px"
+         fill="#111111">排除</text>
+    </g>
+    <g
+       id="excluded-boundary-crossing-9"
+       transform="translate(-84.723171,195.14129)">
+      <line
+         x1="391.44699"
+         y1="346.565"
+         x2="405.44699"
+         y2="360.565"
+         stroke="#111111"
+         stroke-width="2"
+         id="line49-4" />
+      <line
+         x1="391.44699"
+         y1="361.41415"
+         x2="405.44699"
+         y2="347.41415"
+         stroke="#111111"
+         stroke-width="2"
+         id="line50-8" />
+      <text
+         id="label-excluded-8"
+         x="410.05035"
+         y="395.21304"
+         font-family="'Microsoft YaHei', SimHei, sans-serif"
+         font-size="20px"
+         fill="#111111">排除</text>
+    </g>
+  </g>
+  <metadata
+     id="metadata52">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>有界示向角域与三次示向的公共定位区域</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
