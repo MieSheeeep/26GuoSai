@@ -1,0 +1,30 @@
+{
+  "latex-workshop.latex.rootFile.useSubFile": false,
+  "latex-workshop.latex.rootFile": "${workspaceFolder}/latex/main.tex",
+  "latex-workshop.latex.autoBuild.run": "never",
+  "latex-workshop.latex.recipe.default": "user",
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.latex.tools": [
+    {
+      "name": "paper-build",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/latex/build.ps1"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/latex"
+      },
+      "env": {}
+    }
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "paper-build",
+      "tools": ["paper-build"]
+    }
+  ]
+}
