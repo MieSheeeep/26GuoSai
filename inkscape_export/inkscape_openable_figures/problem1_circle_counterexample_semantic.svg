@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1672"
+   height="941"
+   viewBox="0 0 1672 941"
+   role="img"
+   aria-label="Diameter circle counterexample and covering example"
+   version="1.1"
+   id="svg25"
+   sodipodi:docname="problem1_circle_counterexample_semantic.svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview25"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.6466525"
+     inkscape:cx="731.4015"
+     inkscape:cy="300.43223"
+     inkscape:window-width="2560"
+     inkscape:window-height="1494"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg25"
+     inkscape:rotation="1" />
+  <title
+     id="title1">最远点对确定的直径圆仍须逐顶点检验</title>
+  <desc
+     id="desc1">左：边长为二的等边三角形，其顶点C在AB的直径圆外。右：内接正六边形的六个顶点均在FC的直径圆上。</desc>
+  <defs
+     id="defs1">
+    <marker
+       id="arrow"
+       markerWidth="8"
+       markerHeight="8"
+       refX="7"
+       refY="4"
+       orient="auto"
+       markerUnits="strokeWidth">
+      <path
+         d="M0,0 L8,4 L0,8 Z"
+         fill="#111"
+         id="path1" />
+    </marker>
+  </defs>
+  <g
+     id="panel-frames"
+     fill="#ffffff"
+     stroke="#111111"
+     stroke-width="1.5"
+     transform="matrix(0.9999293,0,0,-1.1606526,3.3395688,994.72469)">
+    <rect
+       id="panel-counterexample"
+       x="16"
+       y="68"
+       width="805"
+       height="765" />
+    <rect
+       id="panel-covered-example"
+       x="851"
+       y="68"
+       width="805"
+       height="765" />
+  </g>
+  <g
+     id="equilateral-counterexample"
+     transform="translate(7.8416589,-36.65332)">
+    <g
+       id="diameter-circle-AB"
+       style="fill:#d7f4ee">
+      <circle
+         id="disk-B-M-1"
+         cx="412"
+         cy="570"
+         r="250"
+         fill="#f1f1f1"
+         stroke="#111111"
+         stroke-width="2"
+         style="fill:#d7f4ee" />
+    </g>
+    <g
+       id="region-triangle-ABC">
+      <polygon
+         points="662,570 412,136.9873 162,570 "
+         fill="none"
+         stroke="#111111"
+         stroke-width="2.2"
+         id="polygon1" />
+    </g>
+    <g
+       id="measurements-triangle"
+       fill="none"
+       stroke="#111111"
+       stroke-width="1.6">
+      <line
+         x1="162"
+         y1="570"
+         x2="662"
+         y2="570"
+         id="diameter-AB"
+         stroke-width="2.3" />
+      <line
+         x1="412"
+         y1="570"
+         x2="412"
+         y2="136.9873"
+         id="altitude-MC"
+         stroke-dasharray="8, 6" />
+    </g>
+    <g
+       id="vertices-and-midpoint-triangle"
+       fill="#111111">
+      <circle
+         id="node-A-triangle"
+         cx="162"
+         cy="570"
+         r="5.6999998" />
+      <circle
+         id="node-B-triangle"
+         cx="662"
+         cy="570"
+         r="5.6999998" />
+      <circle
+         id="node-C-triangle"
+         cx="412"
+         cy="136.9873"
+         r="5.6999998" />
+      <circle
+         id="node-M-triangle"
+         cx="412"
+         cy="570"
+         r="5.6999998" />
+    </g>
+    <g
+       id="native-editable-labels-triangle">
+      <text
+         id="label-A-triangle"
+         x="135"
+         y="578"
+         font-size="29px"
+         font-family="'Times New Roman', 'Cambria Math', serif"
+         fill="#111111"
+         font-style="italic"><tspan
+           id="tspan1">A</tspan></text>
+      <text
+         id="label-B-triangle"
+         x="673"
+         y="578"
+         font-size="29px"
+         font-family="'Times New Roman', 'Cambria Math', serif"
+         fill="#111111"
+         font-style="italic"><tspan
+           id="tspan2">B</tspan></text>
+      <text
+         id="label-C-triangle"
+         x="402"
+         y="116.9873"
+         font-size="29px"
+         font-family="'Times New Roman', 'Cambria Math', serif"
+         fill="#111111"
+         font-style="italic"><tspan
+           id="tspan3">C</tspan></text>
+      <text
+         id="label-M"
+         x="402"
+         y="604"
+         font-size="28px"
+         font-family="'Times New Roman', 'Cambria Math', serif"
+         fill="#111111"
+         font-style="italic"><tspan
+           id="tspan4">M</tspan></text>
+      <text
+         id="label-AM-BM-equal-one"
+         x="412"
+         y="648.74115"
+         font-size="25px"
+         font-family="'Times New Roman', 'Cambria Math', serif"
+         fill="#111111"
+         text-anchor="middle"
+         font-style="italic"><tspan
+           id="tspan6">AM = BM = 1</tspan></text>
+      <text
+         id="label-height-inequality"
+         x="511"
+         y="302"
+         font-size="27px"
+         font-family="'Times New Roman', 'Cambria Math', serif"
+         fill="#111111"
+         font-style="italic"><tspan
+           id="tspan9">MC = √3 &gt; 1 = r</tspan></text>
+      <text
+         id="label-not-covered"
+         x="591"
+         y="145"
+         font-size="30px"
+         font-family="'Microsoft YaHei', SimHei, sans-serif"
+         fill="#111111"
+         style="font-size:37.3333px"><tspan
+           id="tspan11"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.3333px;font-family:KaiTi;-inkscape-font-specification:KaiTi">未覆盖</tspan></text>
+    </g>
+    <line
+       x1="572"
+       y1="137"
+       x2="435"
+       y2="137.9873"
+       id="leader-uncovered-C"
+       stroke="#111111"
+       stroke-width="1.5"
+       marker-end="url(#arrow)" />
+  </g>
+  <g
+     id="regular-hexagon-covered-example"
+     transform="translate(-1.2309876,57.69966)">
+    <g
+       id="diameter-circle-FC"
+       style="fill:#d7f4ee">
+      <circle
+         id="disk-B-O-R"
+         cx="1255"
+         cy="456"
+         r="269"
+         fill="#f7f7f7"
+         stroke="#111111"
+         stroke-width="2"
+         style="fill:#d7f4ee" />
+    </g>
+    <g
+       id="region-hexagon-ABCDEF"
+       style="fill:#f4eed7">
+      <polygon
+         points="1389.5,223.0392 1120.5,223.0392 986,456 1120.5,688.9608 1389.5,688.9608 1524,456 "
+         fill="#e9e9e9"
+         stroke="#111111"
+         stroke-width="2.2"
+         id="polygon11"
+         style="fill:#f4eed7" />
+    </g>
+    <g
+       id="measurements-hexagon"
+       fill="none"
+       stroke="#111111">
+      <line
+         x1="986"
+         y1="456"
+         x2="1524"
+         y2="456"
+         id="diameter-FC"
+         stroke-width="2.3" />
+      <line
+         x1="1255"
+         y1="456"
+         x2="1389.5"
+         y2="223.0392"
+         id="radius-O-D"
+         stroke-width="1.7" />
+    </g>
+    <g
+       id="vertices-and-center-hexagon"
+       fill="#111111">
+      <circle
+         id="node-C-hexagon"
+         cx="1524"
+         cy="456"
+         r="5.6999998" />
+      <circle
+         id="node-D-hexagon"
+         cx="1389.5"
+         cy="223.0392"
+         r="5.6999998" />
+      <circle
+         id="node-E-hexagon"
+         cx="1120.5"
+         cy="223.0392"
+         r="5.6999998" />
+      <circle
+         id="node-F-hexagon"
+         cx="986"
+         cy="456"
+         r="5.6999998" />
+      <circle
+         id="node-A-hexagon"
+         cx="1120.5"
+         cy="688.96082"
+         r="5.6999998" />
+      <circle
+         id="node-B-hexagon"
+         cx="1389.5"
+         cy="688.96082"
+         r="5.6999998" />
+      <circle
+         id="node-O"
+         cx="1255"
+         cy="456"
+         r="5.6999998" />
+    </g>
+    <g
+       id="native-editable-labels-hexagon">
+      <text
+         id="label-C-hexagon"
+         x="1537"
+         y="465"
+         font-size="29px"
+         font-family="'Times New Roman', 'Cambria Math', serif"
+         fill="#111111"
+         font-style="italic"><tspan
+           id="tspan12">C</tspan></text>
+      <text
+         id="label-D-hexagon"
+         x="1396.5"
+         y="210.0392"
+         font-size="29px"
+         font-family="'Times New Roman', 'Cambria Math', serif"
+         fill="#111111"
+         font-style="italic"><tspan
+           id="tspan13">D</tspan></text>
+      <text
+         id="label-E-hexagon"
+         x="1096.5"
+         y="210.0392"
+         font-size="29px"
+         font-family="'Times New Roman', 'Cambria Math', serif"
+         fill="#111111"
+         font-style="italic"><tspan
+           id="tspan14">E</tspan></text>
+      <text
+         id="label-F-hexagon"
+         x="954"
+         y="465"
+         font-size="29px"
+         font-family="'Times New Roman', 'Cambria Math', serif"
+         fill="#111111"
+         font-style="italic"><tspan
+           id="tspan15">F</tspan></text>
+      <text
+         id="label-A-hexagon"
+         x="1111.5"
+         y="723.96082"
+         font-size="29px"
+         font-family="'Times New Roman', 'Cambria Math', serif"
+         fill="#111111"
+         font-style="italic"><tspan
+           id="tspan16">A</tspan></text>
+      <text
+         id="label-B-hexagon"
+         x="1398.5"
+         y="723.96082"
+         font-size="29px"
+         font-family="'Times New Roman', 'Cambria Math', serif"
+         fill="#111111"
+         font-style="italic"><tspan
+           id="tspan17">B</tspan></text>
+      <text
+         id="label-O"
+         x="1243"
+         y="494"
+         font-size="27px"
+         font-family="'Times New Roman', 'Cambria Math', serif"
+         fill="#111111"
+         font-style="italic"><tspan
+           id="tspan18">O</tspan></text>
+      <text
+         id="label-FC-equals-2R"
+         x="1161.4412"
+         y="443.27856"
+         font-size="27px"
+         font-family="'Times New Roman', 'Cambria Math', serif"
+         fill="#111111"
+         text-anchor="middle"
+         font-style="italic"><tspan
+           id="tspan20">FC = 2R</tspan></text>
+      <text
+         id="label-radius-R"
+         x="1329.3501"
+         y="359.9696"
+         font-size="27px"
+         font-family="'Times New Roman', 'Cambria Math', serif"
+         fill="#111111"
+         font-style="italic"><tspan
+           id="tspan21">R</tspan></text>
+      <text
+         id="label-covered"
+         x="1515"
+         y="133"
+         font-size="30px"
+         font-family="'Microsoft YaHei', SimHei, sans-serif"
+         fill="#111111"
+         style="font-size:37.3333px"><tspan
+           id="tspan23"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.3333px;font-family:KaiTi;-inkscape-font-specification:KaiTi">覆盖</tspan></text>
+    </g>
+    <line
+       x1="1510"
+       y1="146"
+       x2="1456"
+       y2="223"
+       id="leader-covered-circle"
+       stroke="#111111"
+       stroke-width="1.5"
+       marker-end="url(#arrow)" />
+  </g>
+</svg>

@@ -1,0 +1,772 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1942"
+   height="960"
+   viewBox="0 0 1942 960"
+   role="img"
+   aria-label="First bearing sector, paired lateral candidate bands, and post hoc intersection"
+   version="1.1"
+   id="svg12"
+   sodipodi:docname="problem2_forward_lateral_region_semantic(已调整).svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview12"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.89353246"
+     inkscape:cx="935.05277"
+     inkscape:cy="470.60406"
+     inkscape:window-width="2560"
+     inkscape:window-height="1494"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="native-editable-labels-posthoc" />
+  <title
+     id="title1">首次测向后的双侧第二检测点候选区域</title>
+  <desc
+     id="desc1">左图按等比例坐标构造首次测向的方向扇形、接收截断和双侧参数候选带；右图为独立的事后方位线交会示意。</desc>
+  <defs
+     id="defs1">
+    <marker
+       id="arrow"
+       markerWidth="8"
+       markerHeight="8"
+       refX="7"
+       refY="4"
+       orient="auto"
+       markerUnits="strokeWidth">
+      <path
+         d="M0,0 L8,4 L0,8 Z"
+         fill="#111"
+         id="path1" />
+    </marker>
+    <clipPath
+       id="main-plot-clip">
+      <rect
+         x="145"
+         y="270"
+         width="1050"
+         height="495"
+         id="rect1" />
+    </clipPath>
+  </defs>
+  <rect
+     id="rect22"
+     x="237.08038"
+     y="284.12277"
+     width="400"
+     height="360"
+     fill="#ffffff"
+     stroke="#111111"
+     stroke-width="1.25" />
+  <g
+     id="panel-frames"
+     fill="#ffffff"
+     stroke="#111111"
+     stroke-width="1.4"
+     transform="translate(7.9136083,-1.5827184)">
+    <rect
+       id="panel-candidate-construction"
+       x="19.982357"
+       y="51.982357"
+       width="1130.7201"
+       height="755.03528"
+       style="stroke-width:1.36472" />
+    <rect
+       id="panel-posthoc-intersection"
+       x="1172.9514"
+       y="52.02824"
+       width="749.02032"
+       height="754.94354"
+       style="stroke-width:1.45648" />
+  </g>
+  <rect
+     id="inset-frame-3"
+     x="320.82135"
+     y="450.96231"
+     width="192.21495"
+     height="176.433"
+     fill="#ffffff"
+     stroke="#111111"
+     stroke-width="0.606614" />
+  <g
+     id="first-bearing-and-candidates"
+     transform="translate(-83.884271)">
+    <g
+       id="equal-scale-main-plot"
+       clip-path="url(#main-plot-clip)">
+      <g
+         id="target-region-T-background">
+        <circle
+           id="target-circle-r1800"
+           cx="270"
+           cy="535"
+           r="900"
+           fill="none"
+           stroke="#999999"
+           stroke-width="1.8"
+           stroke-dasharray="8, 6" />
+      </g>
+      <g
+         id="region-W-S1-alpha">
+        <path
+           id="angular-sector-displayed-to-1800"
+           d="m 270,535 899.8615,-15.7873 v 31.5746 z"
+           fill="#eaf7f6" />
+      </g>
+      <g
+         id="region-Omega1">
+        <path
+           id="reception-truncated-sector"
+           d="m 270,535 749.8846,-13.1561 a 750,750 0 0 1 0,26.3122 z"
+           fill="#c6e9e6"
+           stroke="#267f80"
+           stroke-width="1.6" />
+      </g>
+      <g
+         id="bearing-boundary-rays"
+         fill="none"
+         stroke="#267f80"
+         stroke-width="1.6"
+         stroke-dasharray="7, 5">
+        <line
+           x1="270"
+           y1="535"
+           x2="1169.8615"
+           y2="519.21271"
+           id="ray-alpha-plus-epsilon" />
+        <line
+           x1="270"
+           y1="535"
+           x2="1169.8615"
+           y2="550.78729"
+           id="ray-alpha-minus-epsilon" />
+      </g>
+      <g
+         id="candidate-bands-main">
+        <rect
+           id="candidate-band-plus"
+           x="465"
+           y="493.5"
+           width="67.5"
+           height="11.5"
+           fill="#ffe3c4"
+           stroke="#c96f0c"
+           stroke-width="1.2" />
+        <rect
+           id="candidate-band-minus"
+           x="465"
+           y="565"
+           width="67.5"
+           height="11.5"
+           fill="#ffe3c4"
+           stroke="#c96f0c"
+           stroke-width="1.2" />
+        <circle
+           id="node-Q3-plus-main"
+           cx="532.5"
+           cy="505"
+           r="5.8000002"
+           fill="#d37409" />
+        <circle
+           id="node-Q3-minus-main"
+           cx="532.5"
+           cy="565"
+           r="5.8000002"
+           fill="#d37409" />
+        <circle
+           id="node-Q4-plus-main"
+           cx="466.345"
+           cy="493.62"
+           r="5.8000002"
+           fill="#d37409" />
+        <circle
+           id="node-Q4-minus-main"
+           cx="466.345"
+           cy="576.38"
+           r="5.8000002"
+           fill="#d37409" />
+      </g>
+    </g>
+    <g
+       id="axes-and-projections"
+       fill="none"
+       stroke="#111111">
+      <line
+         x1="145"
+         y1="535"
+         x2="1194"
+         y2="535"
+         id="axis-x"
+         stroke-width="1.7"
+         marker-end="url(#arrow)" />
+      <line
+         x1="270"
+         y1="765"
+         x2="270"
+         y2="274"
+         id="axis-y"
+         stroke-width="1.7"
+         marker-end="url(#arrow)" />
+      <line
+         x1="270"
+         y1="535"
+         x2="1020"
+         y2="535"
+         id="ray-alpha-center"
+         stroke="#111111"
+         stroke-width="1.8"
+         marker-end="url(#arrow)" />
+      <line
+         x1="1020"
+         y1="465"
+         x2="1020"
+         y2="610"
+         id="projection-d-plus"
+         stroke="#555555"
+         stroke-width="1.2"
+         stroke-dasharray="5, 5" />
+      <line
+         x1="270"
+         y1="535"
+         x2="270"
+         y2="544"
+         stroke-width="1.2"
+         id="line1" />
+      <line
+         x1="465"
+         y1="535"
+         x2="465"
+         y2="544"
+         stroke-width="1.2"
+         id="line2" />
+      <line
+         x1="532.5"
+         y1="535"
+         x2="532.5"
+         y2="544"
+         stroke-width="1.2"
+         id="line3" />
+      <line
+         x1="770"
+         y1="535"
+         x2="770"
+         y2="544"
+         stroke-width="1.2"
+         id="line4" />
+      <line
+         x1="1020"
+         y1="535"
+         x2="1020"
+         y2="544"
+         stroke-width="1.2"
+         id="line5" />
+      <line
+         x1="261"
+         y1="285"
+         x2="270"
+         y2="285"
+         stroke-width="1.2"
+         id="line7" />
+    </g>
+    <circle
+       id="node-S1-main"
+       cx="270"
+       cy="535"
+       r="6.1999998"
+       fill="#111111" />
+    <g
+       id="native-editable-labels-main">
+      <text
+         id="label-axis-x"
+         x="1105"
+         y="605"
+         font-size="23px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111">x (m)</text>
+      <text
+         id="label-axis-y"
+         x="213"
+         y="245"
+         font-size="23px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111">y (m)</text>
+      <text
+         id="label-S1-main"
+         x="287"
+         y="572"
+         font-size="23px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111">S₁=(0,0)</text>
+      <text
+         id="tick-x-0"
+         x="255.17122"
+         y="554.36603"
+         font-size="17px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111"
+         text-anchor="middle">0</text>
+      <text
+         id="tick-x-390"
+         x="456.60635"
+         y="616.84998"
+         font-size="17px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111"
+         text-anchor="middle">390</text>
+      <text
+         id="tick-x-525"
+         x="549.56708"
+         y="616.29034"
+         font-size="17px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111"
+         text-anchor="middle">525</text>
+      <text
+         id="tick-x-1000"
+         x="770"
+         y="572"
+         font-size="17px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111"
+         text-anchor="middle">1000</text>
+      <text
+         id="tick-x-1500"
+         x="1020"
+         y="572"
+         font-size="17px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111"
+         text-anchor="middle">1500</text>
+      <text
+         id="tick-y--500"
+         x="241.33823"
+         y="765.07214"
+         font-size="17px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111"
+         text-anchor="end">-500</text>
+      <text
+         id="tick-y-500"
+         x="254"
+         y="290"
+         font-size="17px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111"
+         text-anchor="end">500</text>
+      <text
+         id="label-alpha-zero"
+         x="682"
+         y="526"
+         font-size="21px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111">α = 0°</text>
+      <text
+         id="label-epsilon-plus"
+         x="840"
+         y="500"
+         font-size="19px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#267f80">+1.0051°</text>
+      <text
+         id="label-epsilon-minus"
+         x="840"
+         y="590"
+         font-size="19px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#267f80">−1.0051°</text>
+      <text
+         id="label-d-minus"
+         x="292"
+         y="485"
+         font-size="20px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111">d₋ = 0 m</text>
+      <text
+         id="label-d-plus"
+         x="1008.3786"
+         y="634.89142"
+         font-size="20px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111">d₊ = 1500 m</text>
+      <text
+         id="label-omega1"
+         x="1040"
+         y="482"
+         font-size="23px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#267f80">Ω₁</text>
+      <text
+         id="label-target-circle"
+         x="845.18091"
+         y="657.54456"
+         font-size="19px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#666666">𝒯: r = 1800 m</text>
+      <text
+         id="label-parameters"
+         x="280.09372"
+         y="336.34555"
+         font-size="20px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111"><tspan
+           sodipodi:role="line"
+           id="tspan22"
+           x="280.09372"
+           y="336.34555">Λ=[0.26,0.35]</tspan><tspan
+           sodipodi:role="line"
+           id="tspan23"
+           x="280.09372"
+           y="361.34555">H=[60,83] m</tspan></text>
+      <text
+         id="label-Q3-coordinate"
+         x="554.89252"
+         y="651.89252"
+         font-size="20px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#a65a07">Q₃=(525, ±60) m</text>
+      <text
+         id="label-Q4-coordinate"
+         x="299.16592"
+         y="652.67535"
+         font-size="20px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#a65a07">Q₄=(392.69, ±82.76) m</text>
+    </g>
+    <line
+       x1="966.27203"
+       y1="653.94214"
+       x2="1160.4905"
+       y2="665.41858"
+       id="leader-target-circle"
+       stroke="#888888"
+       stroke-width="1.14504"
+       marker-end="url(#arrow)" />
+    <g
+       id="candidate-band-local-inset">
+      <rect
+         id="inset-frame"
+         x="730"
+         y="70"
+         width="400"
+         height="360"
+         fill="#ffffff"
+         stroke="#111111"
+         stroke-width="1.25" />
+      <text
+         id="label-inset-title"
+         x="930"
+         y="103"
+         font-size="21px"
+         font-family="'Microsoft YaHei', SimHei, sans-serif"
+         fill="#111111"
+         text-anchor="middle" />
+      <line
+         x1="770"
+         y1="265"
+         x2="1090"
+         y2="265"
+         id="inset-centerline"
+         stroke="#777777"
+         stroke-width="1.2"
+         stroke-dasharray="5, 4" />
+      <g
+         id="candidate-bands-magnified">
+        <rect
+           id="candidate-band-plus-magnified"
+           x="790"
+           y="140.5"
+           width="202.5"
+           height="34.5"
+           fill="#ffe3c4"
+           stroke="#c96f0c"
+           stroke-width="1.4" />
+        <rect
+           id="candidate-band-minus-magnified"
+           x="790"
+           y="355"
+           width="202.5"
+           height="34.5"
+           fill="#ffe3c4"
+           stroke="#c96f0c"
+           stroke-width="1.4" />
+      </g>
+      <circle
+         id="node-Q3-plus"
+         cx="992.5"
+         cy="175"
+         r="6.5"
+         fill="#d37409" />
+      <circle
+         id="node-Q3-minus"
+         cx="992.5"
+         cy="355"
+         r="6.5"
+         fill="#d37409" />
+      <circle
+         id="node-Q4-plus"
+         cx="794.03497"
+         cy="140.86"
+         r="6.5"
+         fill="#d37409" />
+      <circle
+         id="node-Q4-minus"
+         cx="794.03497"
+         cy="389.14001"
+         r="6.5"
+         fill="#d37409" />
+      <text
+         id="label-Q4-plus"
+         x="770"
+         y="125"
+         font-size="19px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#a65a07">Q₄⁽⁺⁾</text>
+      <text
+         id="label-Q3-plus"
+         x="1005"
+         y="162"
+         font-size="19px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#a65a07">Q₃⁽⁺⁾</text>
+      <text
+         id="label-Q3-minus"
+         x="1005"
+         y="343"
+         font-size="19px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#a65a07">Q₃⁽⁻⁾</text>
+      <text
+         id="label-Q4-minus"
+         x="770"
+         y="415"
+         font-size="19px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#a65a07">Q₄⁽⁻⁾</text>
+    </g>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.03069px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 729.58731,71.768003 402.85035,451.32165"
+       id="path13"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:transform-center-x="-70.795319"
+       inkscape:transform-center-y="8.0816801" />
+  </g>
+  <g
+     id="posthoc-bearing-intersection">
+    <g
+       id="posthoc-axes"
+       fill="none"
+       stroke="#111"
+       stroke-width="1.4">
+      <line
+         x1="1260.0000"
+         y1="612.0000"
+         x2="1876.0000"
+         y2="612.0000"
+         id="posthoc-axis-x"
+         marker-end="url(#arrow)" />
+      <line
+         x1="1370.0000"
+         y1="667.0000"
+         x2="1370.0000"
+         y2="281.0000"
+         id="posthoc-axis-y"
+         marker-end="url(#arrow)" />
+      <line
+         x1="1370.0000"
+         y1="612.0000"
+         x2="1370.0000"
+         y2="620.0000"
+         stroke-width="1"
+         id="line8" />
+      <line
+         x1="1555.0000"
+         y1="612.0000"
+         x2="1555.0000"
+         y2="620.0000"
+         stroke-width="1"
+         id="line9" />
+      <line
+         x1="1740.0000"
+         y1="612.0000"
+         x2="1740.0000"
+         y2="620.0000"
+         stroke-width="1"
+         id="line10" />
+      <line
+         x1="1362.0000"
+         y1="612.0000"
+         x2="1370.0000"
+         y2="612.0000"
+         stroke-width="1"
+         id="line11" />
+      <line
+         x1="1362.0000"
+         y1="390.0000"
+         x2="1370.0000"
+         y2="390.0000"
+         stroke-width="1"
+         id="line12" />
+    </g>
+    <text
+       id="posthoc-x-0"
+       x="1358.9484"
+       y="631.60632"
+       font-size="17px"
+       font-family="'Cambria Math', 'Times New Roman', serif"
+       fill="#111111"
+       text-anchor="middle">0</text>
+    <text
+       id="posthoc-x-500"
+       x="1555.000"
+       y="640.000"
+       font-size="17"
+       font-family="Cambria Math, Times New Roman, serif"
+       fill="#111"
+       text-anchor="middle">500</text>
+    <text
+       id="posthoc-x-1000"
+       x="1740.000"
+       y="640.000"
+       font-size="17"
+       font-family="Cambria Math, Times New Roman, serif"
+       fill="#111"
+       text-anchor="middle">1000</text>
+    <text
+       id="posthoc-y-600"
+       x="1353.000"
+       y="395.000"
+       font-size="17"
+       font-family="Cambria Math, Times New Roman, serif"
+       fill="#111"
+       text-anchor="end">600</text>
+    <g
+       id="posthoc-first-bearing">
+      <line
+         x1="1370.0000"
+         y1="612.0000"
+         x2="1740.0000"
+         y2="612.0000"
+         id="line-S1-G"
+         stroke="#111"
+         stroke-width="2.2" />
+    </g>
+    <g
+       id="posthoc-second-bearing">
+      <line
+         x1="1296.0000"
+         y1="390.0000"
+         x2="1740.0000"
+         y2="612.0000"
+         id="line-S2-G"
+         stroke="#111"
+         stroke-width="2.2" />
+    </g>
+    <circle
+       id="node-S1-posthoc"
+       cx="1370.0000"
+       cy="612.0000"
+       r="6.2"
+       fill="#111" />
+    <circle
+       id="node-S2-posthoc"
+       cx="1296.0000"
+       cy="390.0000"
+       r="6.2"
+       fill="#111" />
+    <circle
+       id="node-G-posthoc"
+       cx="1740.0000"
+       cy="612.0000"
+       r="6.8"
+       fill="#b33434" />
+    <path
+       id="angle-gamma"
+       d="M1669.0000,612.0000 A71.0,71.0 0 0 0 1676.4957,580.2478"
+       fill="none"
+       stroke="#111"
+       stroke-width="1.5" />
+    <g
+       id="native-editable-labels-posthoc">
+      <text
+         id="label-posthoc-title"
+         x="1556.8552"
+         y="112"
+         font-size="28px"
+         font-family="'Microsoft YaHei', SimHei, sans-serif"
+         fill="#111111"
+         text-anchor="middle"
+         style="font-size:37.3333px"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.3333px;font-family:KaiTi;-inkscape-font-specification:KaiTi"
+           id="tspan24">事后交会示意</tspan></text>
+      <text
+         id="label-posthoc-axis-x"
+         x="1834.000"
+         y="644.000"
+         font-size="21"
+         font-family="Cambria Math, Times New Roman, serif"
+         fill="#111">x (m)</text>
+      <text
+         id="label-posthoc-axis-y"
+         x="1311.368"
+         y="276.36804"
+         font-size="21px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111">y (m)</text>
+      <text
+         id="label-S1-posthoc"
+         x="1382.000"
+         y="685.000"
+         font-size="21"
+         font-family="Cambria Math, Times New Roman, serif"
+         fill="#111">S₁=(0,0)</text>
+      <text
+         id="label-S2-posthoc"
+         x="1204.0061"
+         y="367.32129"
+         font-size="21px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111">S₂=(−200,600)</text>
+      <text
+         id="label-G-posthoc"
+         x="1743.000"
+         y="590.000"
+         font-size="21"
+         font-family="Cambria Math, Times New Roman, serif"
+         fill="#a22">G=(1000,0)</text>
+      <text
+         id="label-gamma"
+         x="1552.2578"
+         y="595.98944"
+         font-size="20px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111">γ ≈ 26.565°</text>
+      <text
+         id="label-G-posthoc-only"
+         x="1577"
+         y="721"
+         font-size="19px"
+         font-family="'Microsoft YaHei', SimHei, sans-serif"
+         fill="#444444"
+         text-anchor="middle" />
+    </g>
+  </g>
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 513.18413,450.45929 132.6197,-20.70434"
+     id="path22"
+     inkscape:connector-type="polyline"
+     inkscape:connector-curvature="0" />
+</svg>

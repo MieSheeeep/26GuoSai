@@ -31,13 +31,16 @@
 % 右幅画三个不同检测点的扇形相交，交集突出为凸多边形 Omega，标出可行顶点与一条被排除的候选边界交点。
 % 画面只承担几何解释；不要把半径 1800 m 的源分布圆误画为多边形的一条直边，也不要在此图提前画光学清除圆。
 % 字母、颜色和线型与后文 problem1_region.pdf 一致；左幅为显示 1° 窄角域而纵向放大，边界斜率与角度参数仍按公式计算。
-\safeimage[0.92\textwidth]{figures/problem1_wedge_intersection.pdf}{有界示向对应的半平面及公共定位区域\label{fig:p1-wedge-intersection}}
+\safeimage[0.98\textwidth]{figures/problem1_wedge_intersection_edited.pdf}{有界示向对应的半平面及公共定位区域\label{fig:p1-wedge-intersection}}
+
+图~\ref{fig:p1-wedge-intersection} 左侧以纵向放大的示意图展示一次观测：中心线为 \(\theta_i\)，上下边界分别为 \(\theta_i+1\degree\) 与 \(\theta_i-1\degree\)。两条边界各保留一个半平面，其重叠部分才是该次观测允许的扇形 \(W_i\)，图中放大仅为使窄角域可辨。
 
 每次测向给出两个闭半平面；记它们的交集为 \(W_i\)，则 \(m\) 次观测的公共定位区域为
 \begin{equation}
   \Omega=\bigcap_{i=1}^{m}W_i.
   \label{eq:p1-region}
 \end{equation}
+图右侧用三次测向说明交集的筛选：\(W_1,W_2,W_3\) 同时覆盖的灰色多边形为 \(\Omega\)；带叉号的边界交点虽落在部分扇形中，却不满足全部观测约束，故不属于定位区域。图中的 \(A,B,C\) 只标识部分可行顶点。
 半平面交在非空、有界且面积非零时是凸多边形。题目给出的目标圆可用于检查源位置是否处于场景范围；若直接与圆相交，边界会出现圆弧，便不再是本问要求计算的定位多边形。
 
 \paragraph{步骤二：求取公共定位多边形}
@@ -81,7 +84,9 @@
 % 用高线标 MC=√3>1，第三顶点 C 必须明显位于圆外；图内写“本例不覆盖”。
 % 右幅可简绘问题一三站算例的凸六边形与直径圆，六个顶点全在圆内，写“本例覆盖”；须注明右幅与左幅不是同一尺度。
 % 两幅都标出“先确定最远点对，再逐顶点检验”的顺序；不能用直径线段穿过图形就暗示整个区域被圆覆盖。
-\safeimage[0.84\textwidth]{figures/problem1_circle_counterexample.png}{等边三角形反例与直径圆覆盖判定\label{fig:p1-circle-counterexample}}
+\safeimage[0.96\textwidth]{figures/problem1_circle_counterexample_edited.pdf}{等边三角形反例与正六边形的直径圆覆盖对照\label{fig:p1-circle-counterexample}}
+
+图~\ref{fig:p1-circle-counterexample} 右侧给出相反情形：正六边形的相对顶点 \(F,C\) 构成直径 \(FC=2R\)，以其中点 \(O\) 为圆心、\(R\) 为半径作圆，六个顶点均在圆上，因而整个六边形被圆盘覆盖。左右两幅是独立的几何示例；右幅不是下文三站算例的定位多边形。
 
 \subsubsection{算法与复杂度}
 
@@ -129,9 +134,9 @@
 % 以 C=(300.7934,414.0302) m 为圆心画半径 r=20.4372 m 的圆，标出 C、G 和六个顶点。
 % 右图应让“六顶点均在圆内，所以本例覆盖”可由视觉直接检验；若标签拥挤，可用引线或局部放大框。
 % 两幅坐标均注明单位 m，明确左图与右图比例不同；颜色/线型分别区分中心线、误差边界、多边形与直径圆。
-\safeimage[0.94\textwidth]{figures/problem1_region.pdf}{三站有界测向交会及定位区域直径圆}
+\safeimage[0.98\textwidth]{figures/problem1_region_edited.pdf}{三站有界测向交会及定位区域直径圆}
 
-图左显示三站示向带在 \(G\) 附近相交，图右放大公共区域及其直径圆。真实位置落在交集内，表明三组加误差后的观测仍与设定源位置相容。六个顶点的数值坐标列于附录表~\ref{tab:p1-vertices}，正文只保留最远点对及覆盖判定。
+图左的深虚线表示三站示向中心线，浅点线表示各自的 \(\pm1\degree\) 边界；它们在真实位置 \(G=(300,400)\,\mathrm m\) 附近相交。图右以不同尺度放大公共定位区域：浅色六边形为 \(\Omega\)，虚线圆以最远顶点对 \(V_3,V_6\) 为直径，\(C\) 为圆心。真实位置落在交集内，表明三组加误差后的观测仍与设定源位置相容。六个顶点的数值坐标列于附录表~\ref{tab:p1-vertices}，正文只保留最远点对及覆盖判定。
 
 \begin{table}[H]
   \centering

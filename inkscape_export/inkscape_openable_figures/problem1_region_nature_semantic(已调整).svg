@@ -1,0 +1,957 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1672"
+   height="941"
+   viewBox="0 0 1672 941"
+   role="img"
+   aria-label="Three bounded bearings intersect in a convex hexagon with a covering diameter circle"
+   version="1.1"
+   id="svg22"
+   sodipodi:docname="problem1_region_nature_semantic(已调整).svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview22"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.58881579"
+     inkscape:cx="743.01676"
+     inkscape:cy="296.35754"
+     inkscape:window-width="2560"
+     inkscape:window-height="1494"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg22" />
+  <title
+     id="title1">三站有界测向交会与定位区域直径圆</title>
+  <desc
+     id="desc1">左幅为三站正负一度测向的全局交会，右幅为六顶点定位多边形及由最远顶点对V3、V6确定的直径圆。</desc>
+  <defs
+     id="defs1">
+    <marker
+       id="arrow"
+       markerWidth="8"
+       markerHeight="8"
+       refX="7"
+       refY="4"
+       orient="auto"
+       markerUnits="strokeWidth">
+      <path
+         d="M0,0 L8,4 L0,8 Z"
+         fill="#111"
+         id="path1" />
+    </marker>
+    <clipPath
+       id="overview-clip">
+      <rect
+         x="43"
+         y="115"
+         width="835"
+         height="697"
+         id="rect1" />
+    </clipPath>
+  </defs>
+  <g
+     id="panel-frames"
+     fill="white"
+     stroke="#111"
+     stroke-width="1.4">
+    <rect
+       id="panel-three-stations"
+       x="16"
+       y="68"
+       width="884"
+       height="792" />
+    <rect
+       id="panel-polygon-detail"
+       x="920"
+       y="68"
+       width="736"
+       height="792" />
+  </g>
+  <g
+     id="three-station-overview">
+    <g
+       id="overview-axes"
+       fill="none"
+       stroke="#111"
+       stroke-width="1.35">
+      <line
+         x1="45.0000"
+         y1="690.0000"
+         x2="872.0000"
+         y2="690.0000"
+         id="overview-x-axis"
+         marker-end="url(#arrow)" />
+      <line
+         x1="335.0000"
+         y1="814.0000"
+         x2="335.0000"
+         y2="132.0000"
+         id="overview-y-axis"
+         marker-end="url(#arrow)" />
+      <line
+         x1="100.0000"
+         y1="690.0000"
+         x2="100.0000"
+         y2="698.0000"
+         stroke-width="1"
+         id="line1" />
+      <line
+         x1="335.0000"
+         y1="690.0000"
+         x2="335.0000"
+         y2="698.0000"
+         stroke-width="1"
+         id="line2" />
+      <line
+         x1="570.0000"
+         y1="690.0000"
+         x2="570.0000"
+         y2="698.0000"
+         stroke-width="1"
+         id="line3" />
+      <line
+         x1="758.0000"
+         y1="690.0000"
+         x2="758.0000"
+         y2="698.0000"
+         stroke-width="1"
+         id="line4" />
+      <line
+         x1="327.0000"
+         y1="784.0000"
+         x2="335.0000"
+         y2="784.0000"
+         stroke-width="1"
+         id="line5" />
+      <line
+         x1="327.0000"
+         y1="690.0000"
+         x2="335.0000"
+         y2="690.0000"
+         stroke-width="1"
+         id="line6" />
+      <line
+         x1="327.0000"
+         y1="502.0000"
+         x2="335.0000"
+         y2="502.0000"
+         stroke-width="1"
+         id="line7" />
+      <line
+         x1="327.0000"
+         y1="220.0000"
+         x2="335.0000"
+         y2="220.0000"
+         stroke-width="1"
+         id="line8" />
+    </g>
+    <text
+       id="overview-x-tick--500"
+       x="100.000"
+       y="721.000"
+       font-size="17"
+       font-family="Cambria Math, Times New Roman, serif"
+       fill="#111"
+       text-anchor="middle">-500</text>
+    <text
+       id="overview-x-tick-0"
+       x="335.000"
+       y="721.000"
+       font-size="17"
+       font-family="Cambria Math, Times New Roman, serif"
+       fill="#111"
+       text-anchor="middle">0</text>
+    <text
+       id="overview-x-tick-500"
+       x="570.000"
+       y="721.000"
+       font-size="17"
+       font-family="Cambria Math, Times New Roman, serif"
+       fill="#111"
+       text-anchor="middle">500</text>
+    <text
+       id="overview-x-tick-900"
+       x="758.000"
+       y="721.000"
+       font-size="17"
+       font-family="Cambria Math, Times New Roman, serif"
+       fill="#111"
+       text-anchor="middle">900</text>
+    <text
+       id="overview-y-tick--200"
+       x="317.000"
+       y="789.000"
+       font-size="17"
+       font-family="Cambria Math, Times New Roman, serif"
+       fill="#111"
+       text-anchor="end">-200</text>
+    <text
+       id="overview-y-tick-400"
+       x="317.000"
+       y="507.000"
+       font-size="17"
+       font-family="Cambria Math, Times New Roman, serif"
+       fill="#111"
+       text-anchor="end">400</text>
+    <text
+       id="overview-y-tick-1000"
+       x="317.000"
+       y="225.000"
+       font-size="17"
+       font-family="Cambria Math, Times New Roman, serif"
+       fill="#111"
+       text-anchor="end">1000</text>
+    <text
+       id="overview-axis-x-label"
+       x="822.84918"
+       y="673.12292"
+       font-size="20px"
+       font-family="'Cambria Math', 'Times New Roman', serif"
+       fill="#111111">x (m)</text>
+    <text
+       id="overview-axis-y-label"
+       x="277.000"
+       y="120.000"
+       font-size="20"
+       font-family="Cambria Math, Times New Roman, serif"
+       fill="#111">y (m)</text>
+    <g
+       id="bearing-constructions"
+       clip-path="url(#overview-clip)">
+      <g
+         id="bearing-S1">
+        <line
+           x1="100.0000"
+           y1="784.0000"
+           x2="855.9191"
+           y2="225.2637"
+           id="ray-S1-minus-one-degree"
+           fill="none"
+           stroke="#aeb9bc"
+           stroke-width="1.3"
+           stroke-dasharray="2.5 5" />
+        <line
+           x1="100.0000"
+           y1="784.0000"
+           x2="846.0527"
+           y2="212.1561"
+           id="ray-S1-center"
+           fill="none"
+           stroke="#4b5960"
+           stroke-width="1.8"
+           stroke-dasharray="8 6" />
+        <line
+           x1="100.0000"
+           y1="784.0000"
+           x2="835.9590"
+           y2="199.2228"
+           id="ray-S1-plus-one-degree"
+           fill="none"
+           stroke="#aeb9bc"
+           stroke-width="1.3"
+           stroke-dasharray="2.5 5" />
+      </g>
+      <g
+         id="bearing-S2">
+        <line
+           x1="758.0000"
+           y1="737.0000"
+           x2="55.1305"
+           y2="112.8410"
+           id="ray-S2-minus-one-degree"
+           fill="none"
+           stroke="#aeb9bc"
+           stroke-width="1.3"
+           stroke-dasharray="2.5 5" />
+        <line
+           x1="758.0000"
+           y1="737.0000"
+           x2="44.3445"
+           y2="125.2028"
+           id="ray-S2-center"
+           fill="none"
+           stroke="#4b5960"
+           stroke-width="1.8"
+           stroke-dasharray="8 6" />
+        <line
+           x1="758.0000"
+           y1="737.0000"
+           x2="33.7758"
+           y2="137.7510"
+           id="ray-S2-plus-one-degree"
+           fill="none"
+           stroke="#aeb9bc"
+           stroke-width="1.3"
+           stroke-dasharray="2.5 5" />
+      </g>
+      <g
+         id="bearing-S3">
+        <line
+           x1="335.0000"
+           y1="220.0000"
+           x2="746.5535"
+           y2="1065.1176"
+           id="ray-S3-minus-one-degree"
+           fill="none"
+           stroke="#aeb9bc"
+           stroke-width="1.3"
+           stroke-dasharray="2.5 5" />
+        <line
+           x1="335.0000"
+           y1="220.0000"
+           x2="761.2401"
+           y2="1057.8063"
+           id="ray-S3-center"
+           fill="none"
+           stroke="#4b5960"
+           stroke-width="1.8"
+           stroke-dasharray="8 6" />
+        <line
+           x1="335.0000"
+           y1="220.0000"
+           x2="775.7969"
+           y2="1050.2398"
+           id="ray-S3-plus-one-degree"
+           fill="none"
+           stroke="#aeb9bc"
+           stroke-width="1.3"
+           stroke-dasharray="2.5 5" />
+      </g>
+    </g>
+    <g
+       id="region-Omega-overview">
+      <polygon
+         points="467.4670,492.0186 471.2059,499.6963 477.5429,504.9398 483.8193,500.3006 477.0111,487.4775 475.2029,485.8718"
+         fill="#bfdad9"
+         stroke="#174d52"
+         stroke-width="2.1"
+         id="polygon8" />
+    </g>
+    <polygon
+       points="476.0000,495.0000 483.0000,502.0000 476.0000,509.0000 469.0000,502.0000"
+       id="&lt;built-in function id&gt;"
+       fill="#a75f25"
+       stroke="white"
+       stroke-width="1.4" />
+    <circle
+       id="node-S1"
+       cx="100.0000"
+       cy="784.0000"
+       r="5.7"
+       fill="#111" />
+    <circle
+       id="node-S2"
+       cx="758.0000"
+       cy="737.0000"
+       r="5.7"
+       fill="#111" />
+    <circle
+       id="node-S3"
+       cx="335.0000"
+       cy="220.0000"
+       r="5.7"
+       fill="#111" />
+    <rect
+       id="overview-legend-background"
+       x="35.391247"
+       y="87.117783"
+       width="212.75298"
+       height="179.72408"
+       fill="#ffffff"
+       stroke="#999999"
+       stroke-width="0.81476" />
+    <g
+       id="overview-legend-marks">
+      <line
+         x1="67.598206"
+         y1="127.07692"
+         x2="105.59821"
+         y2="127.07692"
+         stroke="#4b5960"
+         stroke-width="1.8"
+         stroke-dasharray="8, 6"
+         id="line9" />
+      <line
+         x1="67.598206"
+         y1="153.07692"
+         x2="105.59821"
+         y2="153.07692"
+         stroke="#aeb9bc"
+         stroke-width="1.3"
+         stroke-dasharray="2.5, 5"
+         id="line10" />
+      <rect
+         x="73.598206"
+         y="171.07692"
+         width="25"
+         height="17"
+         fill="#bfdad9"
+         stroke="#174d52"
+         stroke-width="1"
+         id="rect10" />
+      <circle
+         id="legend-station-mark"
+         cx="85.598206"
+         cy="206.07692"
+         r="4.8000002"
+         fill="#111111" />
+      <polygon
+         points="93.6,263 88,268.6 82.4,263 88,257.4 "
+         id="polygon10"
+         fill="#a75f25"
+         stroke="#ffffff"
+         stroke-width="1.4"
+         transform="translate(-2.4017929,-30.923083)" />
+    </g>
+    <g
+       id="native-editable-labels-overview">
+      <text
+         id="label-S1-overview"
+         x="124.000"
+         y="798.000"
+         font-size="20"
+         font-family="Cambria Math, Times New Roman, serif"
+         fill="#111">S₁=(−500,−200)</text>
+      <text
+         id="label-S2-overview"
+         x="713.47577"
+         y="768.79688"
+         font-size="20px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111">S₂=(900,−100)</text>
+      <text
+         id="label-S3-overview"
+         x="350.000"
+         y="207.000"
+         font-size="20"
+         font-family="Cambria Math, Times New Roman, serif"
+         fill="#111">S₃=(0,1000)</text>
+      <text
+         id="label-G-overview"
+         x="504.41061"
+         y="504.22333"
+         font-size="21px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#91521f">G=(300,400)</text>
+      <text
+         id="label-overview-legend-center"
+         x="116.59821"
+         y="133.07692"
+         font-size="16px"
+         font-family="'Microsoft YaHei', SimHei, sans-serif"
+         fill="#444444"
+         style="font-size:18.6667px"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:KaiTi;-inkscape-font-specification:KaiTi"
+           id="tspan22">测向中心线</tspan></text>
+      <text
+         id="label-overview-legend-boundary"
+         x="116.59821"
+         y="159.07692"
+         font-size="16px"
+         font-family="'Microsoft YaHei', SimHei, sans-serif"
+         fill="#777777"
+         style="font-size:18.6667px"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:KaiTi;-inkscape-font-specification:KaiTi"
+           id="tspan23">±1°误差边界</tspan></text>
+      <text
+         id="label-overview-legend-region"
+         x="116.59821"
+         y="185.07692"
+         font-size="16px"
+         font-family="'Microsoft YaHei', SimHei, sans-serif"
+         fill="#111111"
+         style="font-size:18.6667px"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:KaiTi;-inkscape-font-specification:KaiTi"
+           id="tspan24">公共区域 Ω</tspan></text>
+      <text
+         id="label-overview-legend-station"
+         x="116.59821"
+         y="212.07692"
+         font-size="16px"
+         font-family="'Microsoft YaHei', SimHei, sans-serif"
+         fill="#111111"
+         style="font-size:18.6667px"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:KaiTi;-inkscape-font-specification:KaiTi"
+           id="tspan25">检测点 Sᵢ</tspan></text>
+      <text
+         id="label-overview-legend-source"
+         x="116.59821"
+         y="238.07692"
+         font-size="16px"
+         font-family="'Microsoft YaHei', SimHei, sans-serif"
+         fill="#111111"
+         style="font-size:18.6667px"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:KaiTi;-inkscape-font-specification:KaiTi"
+           id="tspan26">真实位置 G</tspan></text>
+    </g>
+  </g>
+  <g
+     id="six-vertex-polygon-detail">
+    <g
+       id="detail-grid"
+       fill="none"
+       stroke="#e5e8e8"
+       stroke-width="1">
+      <line
+         x1="1062.0000"
+         y1="178.0000"
+         x2="1062.0000"
+         y2="725.0000"
+         id="line11" />
+      <line
+         x1="1177.0000"
+         y1="178.0000"
+         x2="1177.0000"
+         y2="725.0000"
+         id="line12" />
+      <line
+         x1="1292.0000"
+         y1="178.0000"
+         x2="1292.0000"
+         y2="725.0000"
+         id="line13" />
+      <line
+         x1="1407.0000"
+         y1="178.0000"
+         x2="1407.0000"
+         y2="725.0000"
+         id="line14" />
+      <line
+         x1="1522.0000"
+         y1="178.0000"
+         x2="1522.0000"
+         y2="725.0000"
+         id="line15" />
+      <line
+         x1="1040.0000"
+         y1="726.0000"
+         x2="1540.0000"
+         y2="726.0000"
+         id="line16" />
+      <line
+         x1="1040.0000"
+         y1="611.0000"
+         x2="1540.0000"
+         y2="611.0000"
+         id="line17" />
+      <line
+         x1="1040.0000"
+         y1="496.0000"
+         x2="1540.0000"
+         y2="496.0000"
+         id="line18" />
+      <line
+         x1="1040.0000"
+         y1="381.0000"
+         x2="1540.0000"
+         y2="381.0000"
+         id="line19" />
+      <line
+         x1="1040.0000"
+         y1="266.0000"
+         x2="1540.0000"
+         y2="266.0000"
+         id="line20" />
+    </g>
+    <g
+       id="detail-axes"
+       fill="none"
+       stroke="#111"
+       stroke-width="1.2">
+      <line
+         x1="1040.0000"
+         y1="725.0000"
+         x2="1546.0000"
+         y2="725.0000"
+         id="detail-x-axis"
+         marker-end="url(#arrow)" />
+      <line
+         x1="1040.0000"
+         y1="725.0000"
+         x2="1040.0000"
+         y2="208.0000"
+         id="detail-y-axis"
+         marker-end="url(#arrow)" />
+    </g>
+    <g
+       id="diameter-circle">
+      <circle
+         id="circle-center-C-radius-r"
+         cx="1301.1246"
+         cy="449.6528"
+         r="235.0281"
+         fill="none"
+         stroke="#386c65"
+         stroke-width="2.1"
+         stroke-dasharray="9 7" />
+    </g>
+    <g
+       id="region-Omega-detail">
+      <polygon
+         points="1083.2142,366.7748 1174.6966,554.6324 1329.7521,682.9309 1483.3221,569.4199 1316.7400,255.6630 1272.4972,216.3746"
+         fill="#dbe9e9"
+         stroke="#174d52"
+         stroke-width="2.1"
+         id="polygon20" />
+    </g>
+    <g
+       id="farthest-vertex-pair">
+      <line
+         x1="1329.7521"
+         y1="682.9309"
+         x2="1272.4972"
+         y2="216.3746"
+         id="diameter-V3-V6"
+         stroke="#9e5930"
+         stroke-width="3.2" />
+    </g>
+    <circle
+       id="node-V1"
+       cx="1083.2142"
+       cy="366.7748"
+       r="4.7"
+       fill="#174d52" />
+    <circle
+       id="node-V2"
+       cx="1174.6966"
+       cy="554.6324"
+       r="4.7"
+       fill="#174d52" />
+    <circle
+       id="node-V3"
+       cx="1329.7521"
+       cy="682.9309"
+       r="6.1"
+       fill="#174d52" />
+    <circle
+       id="node-V4"
+       cx="1483.3221"
+       cy="569.4199"
+       r="4.7"
+       fill="#174d52" />
+    <circle
+       id="node-V5"
+       cx="1316.7400"
+       cy="255.6630"
+       r="4.7"
+       fill="#174d52" />
+    <circle
+       id="node-V6"
+       cx="1272.4972"
+       cy="216.3746"
+       r="6.1"
+       fill="#174d52" />
+    <polygon
+       points="1292.0000,604.0000 1299.0000,611.0000 1292.0000,618.0000 1285.0000,611.0000"
+       id="polygon21"
+       fill="#a75f25"
+       stroke="white"
+       stroke-width="1.4" />
+    <circle
+       id="node-C-center"
+       cx="1301.1246"
+       cy="449.6528"
+       r="4.8"
+       fill="#111" />
+    <rect
+       id="detail-legend-background"
+       x="978.56042"
+       y="89.768684"
+       width="629.18964"
+       height="67.038055"
+       fill="#ffffff"
+       stroke="#999999"
+       stroke-width="0.761946" />
+    <g
+       id="detail-legend-marks">
+      <line
+         x1="1011.3406"
+         y1="107.96863"
+         x2="1049.3406"
+         y2="107.96863"
+         stroke="#386c65"
+         stroke-width="2"
+         stroke-dasharray="9, 7"
+         id="line21" />
+      <rect
+         x="1222.3473"
+         y="98.268852"
+         width="24"
+         height="17"
+         fill="#dbe9e9"
+         stroke="#174d52"
+         stroke-width="1"
+         id="rect21" />
+      <line
+         x1="1433.3473"
+         y1="108.26885"
+         x2="1464.3473"
+         y2="108.26885"
+         stroke="#9e5930"
+         stroke-width="3"
+         id="line22" />
+      <circle
+         id="legend-vertex-mark"
+         cx="1039.3473"
+         cy="137.26884"
+         r="4.3000002"
+         fill="#174d52" />
+      <circle
+         id="legend-center-mark"
+         cx="1246.3473"
+         cy="137.26884"
+         r="4.3000002"
+         fill="#111111" />
+      <polygon
+         points="1385,184.5 1379.5,179 1385,173.5 1390.5,179 "
+         id="polygon22"
+         fill="#a75f25"
+         stroke="#ffffff"
+         stroke-width="1.4"
+         transform="translate(63.347287,-41.731151)" />
+    </g>
+    <g
+       id="native-editable-labels-detail">
+      <text
+         id="detail-x-tick-280"
+         x="1062.000"
+         y="752.000"
+         font-size="17"
+         font-family="Cambria Math, Times New Roman, serif"
+         fill="#111"
+         text-anchor="middle">280</text>
+      <text
+         id="detail-x-tick-290"
+         x="1177.000"
+         y="752.000"
+         font-size="17"
+         font-family="Cambria Math, Times New Roman, serif"
+         fill="#111"
+         text-anchor="middle">290</text>
+      <text
+         id="detail-x-tick-300"
+         x="1292.000"
+         y="752.000"
+         font-size="17"
+         font-family="Cambria Math, Times New Roman, serif"
+         fill="#111"
+         text-anchor="middle">300</text>
+      <text
+         id="detail-x-tick-310"
+         x="1407.000"
+         y="752.000"
+         font-size="17"
+         font-family="Cambria Math, Times New Roman, serif"
+         fill="#111"
+         text-anchor="middle">310</text>
+      <text
+         id="detail-x-tick-320"
+         x="1522.000"
+         y="752.000"
+         font-size="17"
+         font-family="Cambria Math, Times New Roman, serif"
+         fill="#111"
+         text-anchor="middle">320</text>
+      <text
+         id="detail-y-tick-390"
+         x="1028.000"
+         y="732.000"
+         font-size="17"
+         font-family="Cambria Math, Times New Roman, serif"
+         fill="#111"
+         text-anchor="end">390</text>
+      <text
+         id="detail-y-tick-400"
+         x="1028.000"
+         y="617.000"
+         font-size="17"
+         font-family="Cambria Math, Times New Roman, serif"
+         fill="#111"
+         text-anchor="end">400</text>
+      <text
+         id="detail-y-tick-410"
+         x="1028.000"
+         y="502.000"
+         font-size="17"
+         font-family="Cambria Math, Times New Roman, serif"
+         fill="#111"
+         text-anchor="end">410</text>
+      <text
+         id="detail-y-tick-420"
+         x="1028.000"
+         y="387.000"
+         font-size="17"
+         font-family="Cambria Math, Times New Roman, serif"
+         fill="#111"
+         text-anchor="end">420</text>
+      <text
+         id="detail-y-tick-430"
+         x="1028.000"
+         y="272.000"
+         font-size="17"
+         font-family="Cambria Math, Times New Roman, serif"
+         fill="#111"
+         text-anchor="end">430</text>
+      <text
+         id="detail-axis-x-label"
+         x="1554.6648"
+         y="752.97766"
+         font-size="20px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111">x (m)</text>
+      <text
+         id="detail-axis-y-label"
+         x="968.000"
+         y="222.000"
+         font-size="20"
+         font-family="Cambria Math, Times New Roman, serif"
+         fill="#111">y (m)</text>
+      <text
+         id="label-V1"
+         x="1074.8341"
+         y="412.81967"
+         font-size="20px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111">V1</text>
+      <text
+         id="label-V2"
+         x="1134.4904"
+         y="572.68787"
+         font-size="20px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111">V2</text>
+      <text
+         id="label-V3"
+         x="1322.3162"
+         y="709.38354"
+         font-size="20px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111">V3</text>
+      <text
+         id="label-V4"
+         x="1483.9812"
+         y="551.39764"
+         font-size="20px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111">V4</text>
+      <text
+         id="label-V5"
+         x="1339.740"
+         y="263.663"
+         font-size="20"
+         font-family="Cambria Math, Times New Roman, serif"
+         fill="#111">V5</text>
+      <text
+         id="label-V6"
+         x="1235.536"
+         y="214.41411"
+         font-size="20px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111">V6</text>
+      <text
+         id="label-C-center"
+         x="1316.125"
+         y="458.653"
+         font-size="21"
+         font-family="Cambria Math, Times New Roman, serif"
+         fill="#111">C</text>
+      <text
+         id="label-G-detail"
+         x="1259.000"
+         y="615.000"
+         font-size="21"
+         font-family="Cambria Math, Times New Roman, serif"
+         fill="#91521f">G</text>
+      <text
+         id="label-detail-circle-center"
+         x="1310.9274"
+         y="835.05029"
+         font-size="18px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111"
+         text-anchor="middle">C=(300.7934,414.0302) m</text>
+      <text
+         id="label-diameter"
+         x="1291.3966"
+         y="808.34076"
+         font-size="19px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111"
+         text-anchor="middle">V₃—V₆：D=40.8745 m；r=20.4372 m</text>
+      <text
+         id="label-legend-polygon"
+         x="1257.3473"
+         y="114.26885"
+         font-size="16px"
+         font-family="'Microsoft YaHei', SimHei, sans-serif"
+         fill="#111111"
+         style="font-size:18.6667px"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:KaiTi;-inkscape-font-specification:KaiTi"
+           id="tspan29">定位六边形 Ω</tspan></text>
+      <text
+         id="label-legend-diameter"
+         x="1475.3473"
+         y="114.26885"
+         font-size="16px"
+         font-family="'Microsoft YaHei', SimHei, sans-serif"
+         fill="#111111"
+         style="font-size:18.6667px"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:KaiTi;-inkscape-font-specification:KaiTi"
+           id="tspan31">直径 V₃V₆</tspan></text>
+      <text
+         id="label-legend-vertex"
+         x="1056.3473"
+         y="143.26884"
+         font-size="16px"
+         font-family="'Microsoft YaHei', SimHei, sans-serif"
+         fill="#111111"
+         style="font-size:18.6667px"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:KaiTi;-inkscape-font-specification:KaiTi"
+           id="tspan28">顶点 Vᵢ</tspan></text>
+      <text
+         id="label-legend-vertex-3"
+         x="1056.7679"
+         y="113.32468"
+         font-size="16px"
+         font-family="'Microsoft YaHei', SimHei, sans-serif"
+         fill="#111111"
+         style="font-size:18.6667px"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:KaiTi;-inkscape-font-specification:KaiTi"
+           id="tspan27">边界</tspan></text>
+      <text
+         id="label-legend-center"
+         x="1263.3473"
+         y="143.26884"
+         font-size="16px"
+         font-family="'Microsoft YaHei', SimHei, sans-serif"
+         fill="#111111"
+         style="font-size:18.6667px"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:KaiTi;-inkscape-font-specification:KaiTi"
+           id="tspan30">圆心 C</tspan></text>
+      <text
+         id="label-legend-source"
+         x="1465.3473"
+         y="143.26884"
+         font-size="16px"
+         font-family="'Microsoft YaHei', SimHei, sans-serif"
+         fill="#111111"
+         style="font-size:18.6667px"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:KaiTi;-inkscape-font-specification:KaiTi"
+           id="tspan32">真实位置 G</tspan></text>
+    </g>
+  </g>
+  <g
+     id="figure-conclusion" />
+</svg>

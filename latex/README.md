@@ -10,6 +10,14 @@
 powershell -ExecutionPolicy Bypass -File .\build.ps1
 ```
 
+该命令生成电子版：第一页为摘要页，不包含承诺书和编号专用页。若需按纸质版装订格式生成带官方前置页的版本，运行：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\build-paper.ps1
+```
+
+纸质版的前两页由 `figures/format2026_promise.pdf` 和 `figures/format2026_number.pdf` 导入官方 Word 格式文件；摘要页从正文页码 1 开始编号。
+
 也可以手动依次运行：
 
 ```powershell
@@ -48,7 +56,7 @@ latexmk -xelatex -interaction=nonstopmode main.tex
 5. 搜索 `\placeholder` 或“待填写”，清理所有占位内容。
 6. 按当年官方论文格式规范核对封面、字号、页边距、页码和提交材料。
 
-如需目录，将 `main.tex` 中的 `\showtocfalse` 改为 `\showtoctrue`。
+正式电子版按规范不设置目录；如有其他用途需要目录，应另行制作副本，不要把目录加入竞赛电子版。
 
 ## 自动检查
 

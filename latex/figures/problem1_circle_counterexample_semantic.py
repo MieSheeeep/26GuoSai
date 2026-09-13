@@ -98,7 +98,11 @@ label(texts_left, "label-C-triangle", C[0] - 10, C[1] - 20, [("C", "normal")], 2
 label(texts_left, "label-M", M[0] - 10, M[1] + 34, [("M", "normal")], 28)
 label(texts_left, "label-AB-equals-2", M[0], 651,
       [("AB = D = 2", "normal")], 27, anchor="middle")
-label(texts_left, "label-radius-one", 566, 512, [("r = 1", "normal")], 26)
+label(texts_left, "label-AM-BM-equal-one", M[0], 699,
+      [("AM = BM = 1", "normal")], 25, anchor="middle")
+label(texts_left, "label-radius-one", 523, 477, [("r = 1", "normal")], 25)
+label(texts_left, "label-radius-from-AB", M[0], 738,
+      [("r = AB/2 = 1", "normal")], 24, anchor="middle")
 label(texts_left, "label-height-inequality", 511, 302,
       [("MC = √3 > 1 = r", "normal")], 27)
 label(texts_left, "label-left-conclusion", M[0], 776,
@@ -146,6 +150,8 @@ for name, point in vertices.items():
     label(texts_right, f"label-{name}-hexagon", point[0] + dx, point[1] + dy,
           [(name, "normal")], 29)
 label(texts_right, "label-O", O[0] - 12, O[1] + 38, [("O", "normal")], 27)
+label(texts_right, "label-O-midpoint", O[0], O[1] + 108,
+      [("O = (F + C)/2", "normal")], 24, anchor="middle")
 label(texts_right, "label-FC-equals-2R", O[0], O[1] - 22,
       [("FC = 2R", "normal")], 27, anchor="middle")
 label(texts_right, "label-radius-R", 1351, 336, [("R", "normal")], 27)
@@ -165,9 +171,8 @@ label(footer, "label-algorithm-flow", 836, 872,
 el(footer, "rect", id="criterion-box", x="565", y="888", width="542", height="43",
    fill="white", stroke="#111", stroke_width="1.3")
 label(footer, "label-vertex-criterion", 836, 918,
-      [("max", "normal"), ("1≤i≤k", "sub"), (" ‖v", "normal"), ("i", "sub"),
-       (" − O‖", "normal"), ("2", "sub"), (" ≤ r + τ", "normal")],
-      25, anchor="middle", italic=False)
+      [("max { ‖vᵢ − O‖₂ : 1 ≤ i ≤ k } ≤ r + τ", "normal")],
+      24, anchor="middle", italic=False)
 
 ET.indent(root, space="  ")
 ET.ElementTree(root).write(OUT, encoding="utf-8", xml_declaration=True)

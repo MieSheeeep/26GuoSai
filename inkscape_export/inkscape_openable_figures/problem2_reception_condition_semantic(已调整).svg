@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1672"
+   height="1000"
+   viewBox="0 0 1672 1000"
+   role="img"
+   aria-label="Two example compatible reception disks and second detector check"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="problem2_reception_condition_semantic(已调整).svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview5"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.83271128"
+     inkscape:cx="670.70066"
+     inkscape:cy="395.69537"
+     inkscape:window-width="2560"
+     inkscape:window-height="1494"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg5" />
+  <title
+     id="title1">全向源的最小兼容接收半径与第二检测点</title>
+  <desc
+     id="desc1">近源虚线圆半径一千米，远源实线圆半径一千四百米；两个检测点位于两圆内，但两点检验不构成整个可行域的保证。</desc>
+  <defs
+     id="defs1">
+    <marker
+       id="arrow"
+       markerWidth="8"
+       markerHeight="8"
+       refX="7"
+       refY="4"
+       orient="auto"
+       markerUnits="strokeWidth">
+      <path
+         d="M0,0 L8,4 L0,8 Z"
+         fill="#111"
+         id="path1" />
+    </marker>
+  </defs>
+  <g
+     id="panel-frames"
+     fill="#ffffff"
+     stroke="#111111"
+     stroke-width="1.4"
+     transform="translate(272.60349,26.41972)">
+    <rect
+       id="panel-equal-scale-geometry"
+       x="16"
+       y="45"
+       width="1104"
+       height="855" />
+  </g>
+  <g
+     id="two-compatible-reception-disks"
+     transform="translate(272.60349,26.41972)">
+    <g
+       id="disk-G-far-rho-1400">
+      <circle
+         id="circle-far-r1400"
+         cx="652"
+         cy="485"
+         r="392"
+         fill="none"
+         stroke="#25765f"
+         stroke-width="2.5" />
+    </g>
+    <g
+       id="disk-G-near-rho-1000">
+      <circle
+         id="circle-near-r1000"
+         cx="400"
+         cy="485"
+         r="280"
+         fill="none"
+         stroke="#315fa5"
+         stroke-width="2.5"
+         stroke-dasharray="10, 7" />
+    </g>
+    <g
+       id="coordinate-axes"
+       fill="none"
+       stroke="#111111"
+       stroke-width="1.5">
+      <line
+         x1="92"
+         y1="485"
+         x2="1084"
+         y2="485"
+         id="axis-x"
+         marker-end="url(#arrow)" />
+      <line
+         x1="260"
+         y1="883"
+         x2="260"
+         y2="68"
+         id="axis-y"
+         marker-end="url(#arrow)" />
+      <line
+         x1="120"
+         y1="485"
+         x2="120"
+         y2="494"
+         id="tick-x--500"
+         stroke-width="1.1" />
+      <line
+         x1="260"
+         y1="485"
+         x2="260"
+         y2="494"
+         id="tick-x-0"
+         stroke-width="1.1" />
+      <line
+         x1="540"
+         y1="485"
+         x2="540"
+         y2="494"
+         id="tick-x-1000"
+         stroke-width="1.1" />
+      <line
+         x1="652"
+         y1="485"
+         x2="652"
+         y2="494"
+         id="tick-x-1400"
+         stroke-width="1.1" />
+      <line
+         x1="820"
+         y1="485"
+         x2="820"
+         y2="494"
+         id="tick-x-2000"
+         stroke-width="1.1" />
+      <line
+         x1="1044"
+         y1="485"
+         x2="1044"
+         y2="494"
+         id="tick-x-2800"
+         stroke-width="1.1" />
+      <line
+         x1="250"
+         y1="877"
+         x2="260"
+         y2="877"
+         id="tick-y--1400"
+         stroke-width="1.1" />
+      <line
+         x1="250"
+         y1="765"
+         x2="260"
+         y2="765"
+         id="tick-y--1000"
+         stroke-width="1.1" />
+      <line
+         x1="250"
+         y1="625"
+         x2="260"
+         y2="625"
+         id="tick-y--500"
+         stroke-width="1.1" />
+      <line
+         x1="250"
+         y1="345"
+         x2="260"
+         y2="345"
+         id="tick-y-500"
+         stroke-width="1.1" />
+      <line
+         x1="250"
+         y1="205"
+         x2="260"
+         y2="205"
+         id="tick-y-1000"
+         stroke-width="1.1" />
+      <line
+         x1="250"
+         y1="93"
+         x2="260"
+         y2="93"
+         id="tick-y-1400"
+         stroke-width="1.1" />
+    </g>
+    <g
+       id="sample-distance-checks"
+       fill="none"
+       stroke="#a97137"
+       stroke-width="1.3">
+      <line
+         x1="407"
+         y1="468.20001"
+         x2="400"
+         y2="485"
+         id="distance-S2-G-near" />
+      <line
+         x1="407"
+         y1="468.20001"
+         x2="652"
+         y2="485"
+         id="distance-S2-G-far"
+         stroke-dasharray="6, 5" />
+    </g>
+    <g
+       id="stations-and-possible-sources">
+      <circle
+         id="node-S1"
+         cx="260"
+         cy="485"
+         r="6.1999998"
+         fill="#111111" />
+      <circle
+         id="node-S2"
+         cx="407"
+         cy="468.20001"
+         r="6.5"
+         fill="#ba6a1a" />
+      <circle
+         id="node-G-near"
+         cx="400"
+         cy="485"
+         r="6.1999998"
+         fill="#315fa5" />
+      <circle
+         id="node-G-far"
+         cx="652"
+         cy="485"
+         r="6.1999998"
+         fill="#25765f" />
+    </g>
+    <g
+       id="native-editable-labels-geometry">
+      <text
+         id="label-axis-x"
+         x="1052.3966"
+         y="465.13968"
+         font-size="23px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111">x (m)</text>
+      <text
+         id="label-axis-y"
+         x="196.20671"
+         y="73.754189"
+         font-size="23px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111">y (m)</text>
+      <text
+         id="label-tick-x--500"
+         x="120"
+         y="518"
+         font-size="16px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111"
+         text-anchor="middle">-500</text>
+      <text
+         id="label-tick-x-0"
+         x="251.50838"
+         y="508.65921"
+         font-size="16px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111"
+         text-anchor="middle">0</text>
+      <text
+         id="label-tick-x-1000"
+         x="540"
+         y="518"
+         font-size="16px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111"
+         text-anchor="middle">1000</text>
+      <text
+         id="label-tick-x-1400"
+         x="652"
+         y="518"
+         font-size="16px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111"
+         text-anchor="middle">1400</text>
+      <text
+         id="label-tick-x-2000"
+         x="820"
+         y="518"
+         font-size="16px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111"
+         text-anchor="middle">2000</text>
+      <text
+         id="label-tick-x-2800"
+         x="1044"
+         y="518"
+         font-size="16px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111"
+         text-anchor="middle">2800</text>
+      <text
+         id="label-tick-y--1400"
+         x="241"
+         y="882"
+         font-size="16px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111"
+         text-anchor="end">-1400</text>
+      <text
+         id="label-tick-y--1000"
+         x="241"
+         y="770"
+         font-size="16px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111"
+         text-anchor="end">-1000</text>
+      <text
+         id="label-tick-y--500"
+         x="241"
+         y="630"
+         font-size="16px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111"
+         text-anchor="end">-500</text>
+      <text
+         id="label-tick-y-500"
+         x="241"
+         y="350"
+         font-size="16px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111"
+         text-anchor="end">500</text>
+      <text
+         id="label-tick-y-1000"
+         x="241"
+         y="210"
+         font-size="16px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111"
+         text-anchor="end">1000</text>
+      <text
+         id="label-tick-y-1400"
+         x="241"
+         y="98"
+         font-size="16px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111"
+         text-anchor="end">1400</text>
+      <text
+         id="label-near-circle"
+         x="35.217876"
+         y="259.97208"
+         font-size="23px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#315fa5">B(Gₙₑₐᵣ,1000) 虚线</text>
+      <text
+         id="label-far-circle"
+         x="902.75421"
+         y="164.06703"
+         font-size="23px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#25765f">B(Gfar,1400) 实线</text>
+      <text
+         id="label-S1"
+         x="167"
+         y="555"
+         font-size="22px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#111111">S₁=(0,0)</text>
+      <text
+         id="label-S2"
+         x="357.86594"
+         y="452.02234"
+         font-size="22px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#a65a12">S₂=(525,60)</text>
+      <text
+         id="label-G-near"
+         x="340.74301"
+         y="517.54187"
+         font-size="22px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#315fa5">Gnear=(500,0)</text>
+      <text
+         id="label-G-far"
+         x="530.98724"
+         y="538.80493"
+         font-size="22px"
+         font-family="'Cambria Math', 'Times New Roman', serif"
+         fill="#25765f">Gfar=(1400,0)</text>
+    </g>
+    <g
+       id="point-label-leaders"
+       fill="none"
+       stroke-width="1.1" />
+  </g>
+  <g
+     id="decision-flow-footer" />
+</svg>

@@ -56,7 +56,9 @@
 % 分别标 Q3 (525,±60) m 与 Q4 (392.69,±82.76) m，区分参数配置而非算法优劣。
 % 在一角画小型交会示意：事后验证源 G=(1000,0)，S_1 与任一 S_2 的示向线相交，标出侧移形成非零交会角；
 % G 仅用于结果复核，不能画成算法选点时已知的输入。若叠加定向源，须单独画发射可见半平面，不可用距离圈代替。
-\safeimage[0.92\textwidth]{figures/problem2_forward_lateral_region.pdf}{首次示向后的双侧候选区域与复测航点\label{fig:p2-forward-lateral}}
+\safeimage[0.92\textwidth]{figures/problem2_forward_lateral_region_edited.pdf}{首次示向后的双侧候选区域与复测航点\label{fig:p2-forward-lateral}}
+
+图~\ref{fig:p2-forward-lateral} 左侧以 \(S_1=(0,0)\)、\(\alpha=0\degree\) 为例：浅青色角域受 \(\pm1.0051\degree\) 测向误差约束，并在 \(d_+=1500\,\mathrm m\) 处由首次成功接收的距离上界截断；半径 \(1800\,\mathrm m\) 的目标圆弧只表示源分布背景。取 \(\Lambda=[0.26,0.35]\)、\(H=[60,83]\,\mathrm m\) 时，橙色区域是 \(x\in[390,525]\,\mathrm m\)、\(y\in[60,83]\,\mathrm m\) 与 \(y\in[-83,-60]\,\mathrm m\) 两块矩形候选带，其中标出的 \(Q_3,Q_4\) 对应后文两组参数。右侧小图另取 \(S_2=(-200,600)\,\mathrm m\)、事后已知的 \(G=(1000,0)\,\mathrm m\)，仅说明侧向基线能形成非零交会角；\(G\) 不参与候选点生成。
 
 这种布点同时处理交会与路程。若 \(h=0\)，两个检测点与示向中心线近乎共线；适当增大 \(h\) 可以改善交会角，但也增加移动距离。给定可能源位置 \(g\)，两次示向的锐交会角为
 \begin{equation}
@@ -80,7 +82,9 @@
 % 用虚线表示两个示例圆的交集，注释“仅是两种位置的示意，不等于对连续 Ω_1 的保证接收区”；
 % 如需画严格保证区，必须对 Ω_1 内全部 g 的 B(g,rho(g)) 求交并在图注说明计算方式。
 % 右上角用短注记“定向源另受朝向遮蔽”，不可把该图的全向接收结论转用到问题四。
-\safeimage[0.84\textwidth]{figures/problem2_reception_condition.pdf}{首次成功接收对第二检测点的距离约束\label{fig:p2-reception}}
+\safeimage[0.96\textwidth]{figures/problem2_reception_condition_edited.pdf}{首次成功接收对第二检测点的距离约束\label{fig:p2-reception}}
+
+图~\ref{fig:p2-reception} 以 \(S_1=(0,0)\,\mathrm m\) 和候选点 \(S_2=(525,60)\,\mathrm m\) 举例。若源在 \(G_{\mathrm{near}}=(500,0)\,\mathrm m\)，式~\eqref{eq:p2-compatible-radius} 给出半径 \(1000\,\mathrm m\) 的蓝色虚线接收圆；若源在 \(G_{\mathrm{far}}=(1400,0)\,\mathrm m\)，则得到半径 \(1400\,\mathrm m\) 的绿色实线圆。\(S_2\) 落在这两个圆内，只验证了两种示例位置；对整个连续可行域的保证仍须检验所有 \(g\in\Omega_1\)，定向源还需另行满足发射朝向约束。
 
 \subsection{模型求解：候选点生成与选择}
 

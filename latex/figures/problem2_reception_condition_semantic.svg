@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1672" height="1000" viewBox="0 0 1672 1000" role="img" aria-label="Two example compatible reception disks and second detector check">
+  <title>全向源的最小兼容接收半径与第二检测点</title>
+  <desc>近源虚线圆半径一千米，远源实线圆半径一千四百米；两个检测点位于两圆内，但两点检验不构成整个可行域的保证。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#111" />
+    </marker>
+  </defs>
+  <g id="panel-frames" fill="white" stroke="#111" stroke-width="1.4">
+    <rect id="panel-equal-scale-geometry" x="16" y="45" width="1104" height="855" />
+    <rect id="panel-explanation" x="1140" y="45" width="516" height="855" />
+  </g>
+  <g id="two-compatible-reception-disks">
+    <g id="disk-G-far-rho-1400">
+      <circle id="circle-far-r1400" cx="652.0" cy="485.0" r="392.00000000000006" fill="none" stroke="#25765f" stroke-width="2.5" />
+    </g>
+    <g id="disk-G-near-rho-1000">
+      <circle id="circle-near-r1000" cx="400.0" cy="485.0" r="280.0" fill="none" stroke="#315fa5" stroke-width="2.5" stroke-dasharray="10 7" />
+    </g>
+    <g id="coordinate-axes" fill="none" stroke="#111" stroke-width="1.5">
+      <line x1="92.0000" y1="485.0000" x2="1084.0000" y2="485.0000" id="axis-x" marker-end="url(#arrow)" />
+      <line x1="260.0000" y1="883.0000" x2="260.0000" y2="68.0000" id="axis-y" marker-end="url(#arrow)" />
+      <line x1="120.0000" y1="485.0000" x2="120.0000" y2="494.0000" id="tick-x--500" stroke-width="1.1" />
+      <line x1="260.0000" y1="485.0000" x2="260.0000" y2="494.0000" id="tick-x-0" stroke-width="1.1" />
+      <line x1="540.0000" y1="485.0000" x2="540.0000" y2="494.0000" id="tick-x-1000" stroke-width="1.1" />
+      <line x1="652.0000" y1="485.0000" x2="652.0000" y2="494.0000" id="tick-x-1400" stroke-width="1.1" />
+      <line x1="820.0000" y1="485.0000" x2="820.0000" y2="494.0000" id="tick-x-2000" stroke-width="1.1" />
+      <line x1="1044.0000" y1="485.0000" x2="1044.0000" y2="494.0000" id="tick-x-2800" stroke-width="1.1" />
+      <line x1="250.0000" y1="877.0000" x2="260.0000" y2="877.0000" id="tick-y--1400" stroke-width="1.1" />
+      <line x1="250.0000" y1="765.0000" x2="260.0000" y2="765.0000" id="tick-y--1000" stroke-width="1.1" />
+      <line x1="250.0000" y1="625.0000" x2="260.0000" y2="625.0000" id="tick-y--500" stroke-width="1.1" />
+      <line x1="250.0000" y1="345.0000" x2="260.0000" y2="345.0000" id="tick-y-500" stroke-width="1.1" />
+      <line x1="250.0000" y1="205.0000" x2="260.0000" y2="205.0000" id="tick-y-1000" stroke-width="1.1" />
+      <line x1="250.0000" y1="93.0000" x2="260.0000" y2="93.0000" id="tick-y-1400" stroke-width="1.1" />
+    </g>
+    <g id="sample-distance-checks" fill="none" stroke="#a97137" stroke-width="1.3">
+      <line x1="407.0000" y1="468.2000" x2="400.0000" y2="485.0000" id="distance-S2-G-near" />
+      <line x1="407.0000" y1="468.2000" x2="652.0000" y2="485.0000" id="distance-S2-G-far" stroke-dasharray="6 5" />
+    </g>
+    <g id="stations-and-possible-sources">
+      <circle id="node-S1" cx="260.0000" cy="485.0000" r="6.2" fill="#111" />
+      <circle id="node-S2" cx="407.0000" cy="468.2000" r="6.5" fill="#ba6a1a" />
+      <circle id="node-G-near" cx="400.0000" cy="485.0000" r="6.2" fill="#315fa5" />
+      <circle id="node-G-far" cx="652.0000" cy="485.0000" r="6.2" fill="#25765f" />
+    </g>
+    <g id="native-editable-labels-geometry">
+      <text id="label-axis-x" x="1049.000" y="556.000" font-size="23" font-family="Cambria Math, Times New Roman, serif" fill="#111">x (m)</text>
+      <text id="label-axis-y" x="203.000" y="78.000" font-size="23" font-family="Cambria Math, Times New Roman, serif" fill="#111">y (m)</text>
+      <text id="label-tick-x--500" x="120.000" y="518.000" font-size="16" font-family="Cambria Math, Times New Roman, serif" fill="#111" text-anchor="middle">-500</text>
+      <text id="label-tick-x-0" x="260.000" y="518.000" font-size="16" font-family="Cambria Math, Times New Roman, serif" fill="#111" text-anchor="middle">0</text>
+      <text id="label-tick-x-1000" x="540.000" y="518.000" font-size="16" font-family="Cambria Math, Times New Roman, serif" fill="#111" text-anchor="middle">1000</text>
+      <text id="label-tick-x-1400" x="652.000" y="518.000" font-size="16" font-family="Cambria Math, Times New Roman, serif" fill="#111" text-anchor="middle">1400</text>
+      <text id="label-tick-x-2000" x="820.000" y="518.000" font-size="16" font-family="Cambria Math, Times New Roman, serif" fill="#111" text-anchor="middle">2000</text>
+      <text id="label-tick-x-2800" x="1044.000" y="518.000" font-size="16" font-family="Cambria Math, Times New Roman, serif" fill="#111" text-anchor="middle">2800</text>
+      <text id="label-tick-y--1400" x="241.000" y="882.000" font-size="16" font-family="Cambria Math, Times New Roman, serif" fill="#111" text-anchor="end">-1400</text>
+      <text id="label-tick-y--1000" x="241.000" y="770.000" font-size="16" font-family="Cambria Math, Times New Roman, serif" fill="#111" text-anchor="end">-1000</text>
+      <text id="label-tick-y--500" x="241.000" y="630.000" font-size="16" font-family="Cambria Math, Times New Roman, serif" fill="#111" text-anchor="end">-500</text>
+      <text id="label-tick-y-500" x="241.000" y="350.000" font-size="16" font-family="Cambria Math, Times New Roman, serif" fill="#111" text-anchor="end">500</text>
+      <text id="label-tick-y-1000" x="241.000" y="210.000" font-size="16" font-family="Cambria Math, Times New Roman, serif" fill="#111" text-anchor="end">1000</text>
+      <text id="label-tick-y-1400" x="241.000" y="98.000" font-size="16" font-family="Cambria Math, Times New Roman, serif" fill="#111" text-anchor="end">1400</text>
+      <text id="label-near-circle" x="104.000" y="181.000" font-size="23" font-family="Cambria Math, Times New Roman, serif" fill="#315fa5">B(Gₙₑₐᵣ,1000)  虚线</text>
+      <text id="label-far-circle" x="755.000" y="80.000" font-size="23" font-family="Cambria Math, Times New Roman, serif" fill="#25765f">B(Gfar,1400)  实线</text>
+      <text id="label-S1" x="167.000" y="555.000" font-size="22" font-family="Cambria Math, Times New Roman, serif" fill="#111">S₁=(0,0)</text>
+      <text id="label-S2" x="450.000" y="424.000" font-size="22" font-family="Cambria Math, Times New Roman, serif" fill="#a65a12">S₂=(525,60)</text>
+      <text id="label-G-near" x="359.000" y="560.000" font-size="22" font-family="Cambria Math, Times New Roman, serif" fill="#315fa5">Gnear=(500,0)</text>
+      <text id="label-G-far" x="631.000" y="548.000" font-size="22" font-family="Cambria Math, Times New Roman, serif" fill="#25765f">Gfar=(1400,0)</text>
+    </g>
+    <g id="point-label-leaders" fill="none" stroke-width="1.1">
+      <line x1="453.0000" y1="432.0000" x2="407.0000" y2="468.2000" stroke="#a65a12" />
+      <line x1="395.0000" y1="540.0000" x2="400.0000" y2="485.0000" stroke="#315fa5" />
+    </g>
+  </g>
+  <g id="distance-logic-notes">
+    <text id="label-notes-title" x="1398.000" y="95.000" font-size="28" font-family="Microsoft YaHei, SimHei, sans-serif" fill="#111" text-anchor="middle">全向源：两点检验</text>
+    <text id="label-rho-general" x="1168.000" y="153.000" font-size="24" font-family="Cambria Math, Times New Roman, serif" fill="#111">ρ(g)=max{1000, ‖g−S₁‖₂}</text>
+    <line x1="1168.0000" y1="177.0000" x2="1628.0000" y2="177.0000" stroke="#aaa" stroke-width="1" />
+    <text id="label-near-heading" x="1168.000" y="222.000" font-size="23" font-family="Cambria Math, Times New Roman, serif" fill="#315fa5">近源 Gnear=(500,0)</text>
+    <text id="label-near-rho" x="1182.000" y="259.000" font-size="21" font-family="Cambria Math, Times New Roman, serif" fill="#315fa5">ρ(Gnear)=1000 m</text>
+    <text id="label-near-distance" x="1182.000" y="296.000" font-size="21" font-family="Cambria Math, Times New Roman, serif" fill="#111">‖S₂−Gnear‖=65.0 m</text>
+    <text id="label-near-checked" x="1182.000" y="330.000" font-size="20" font-family="Microsoft YaHei, SimHei, sans-serif" fill="#111">65.0 ≤ 1000：可再次接收</text>
+    <line x1="1168.0000" y1="359.0000" x2="1628.0000" y2="359.0000" stroke="#ccc" stroke-width="1" />
+    <text id="label-far-heading" x="1168.000" y="404.000" font-size="23" font-family="Cambria Math, Times New Roman, serif" fill="#25765f">远源 Gfar=(1400,0)</text>
+    <text id="label-far-rho" x="1182.000" y="441.000" font-size="21" font-family="Cambria Math, Times New Roman, serif" fill="#25765f">ρ(Gfar)=1400 m</text>
+    <text id="label-far-distance" x="1182.000" y="478.000" font-size="21" font-family="Cambria Math, Times New Roman, serif" fill="#111">‖S₂−Gfar‖≈877.1 m</text>
+    <text id="label-far-checked" x="1182.000" y="512.000" font-size="20" font-family="Microsoft YaHei, SimHei, sans-serif" fill="#111">877.1 ≤ 1400：可再次接收</text>
+    <line x1="1168.0000" y1="542.0000" x2="1628.0000" y2="542.0000" stroke="#ccc" stroke-width="1" />
+    <text id="label-two-samples-only" x="1168.000" y="584.000" font-size="21" font-family="Microsoft YaHei, SimHei, sans-serif" fill="#111">两点示意，非整个可行域保证。</text>
+    <text id="label-directional-limit" x="1168.000" y="619.000" font-size="21" font-family="Microsoft YaHei, SimHei, sans-serif" fill="#111">定向源还受朝向限制。</text>
+    <text id="label-global-intro" x="1168.000" y="674.000" font-size="21" font-family="Microsoft YaHei, SimHei, sans-serif" fill="#111">全域保证须对每个 g∈Ω₁ 检验：</text>
+    <rect id="all-source-criterion-box" x="1165" y="697" width="466" height="111" fill="white" stroke="#111" stroke-width="1.3" />
+    <text id="label-all-source-criterion" x="1398.000" y="740.000" font-size="22" font-family="Cambria Math, Times New Roman, serif" fill="#111" text-anchor="middle">∀g∈Ω₁，‖S₂−g‖₂≤ρ(g)</text>
+    <text id="label-all-source-intersection" x="1398.000" y="780.000" font-size="21" font-family="Cambria Math, Times New Roman, serif" fill="#111" text-anchor="middle">S₂ ∈ ⋂{B(g,ρ(g)) : g∈Ω₁}</text>
+    <text id="label-both-stations-in-disks" x="1398.000" y="851.000" font-size="18" font-family="Microsoft YaHei, SimHei, sans-serif" fill="#444" text-anchor="middle">S₁ 在两圆内（远源圆边界上）。</text>
+    <text id="label-scope-omnidirectional" x="1398.000" y="881.000" font-size="18" font-family="Microsoft YaHei, SimHei, sans-serif" fill="#444" text-anchor="middle">S₂ 在两圆内；距离条件仅适用于全向源。</text>
+  </g>
+  <g id="decision-flow-footer">
+    <text id="label-algorithm-flow" x="836.000" y="955.000" font-size="24" font-family="Microsoft YaHei, SimHei, sans-serif" fill="#111" text-anchor="middle">首次成功接收 → 求 ρ(g) → 画兼容接收圆 → 检查 S₂ 是否在圆内 → 判断再次接收</text>
+  </g>
+</svg>
